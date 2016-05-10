@@ -9,9 +9,9 @@ namespace OOAD_HR_System.Class
     public class AuthorizationClass
     {
 
-        String _id = null;
-        String _name = null;
-        String _value = null;
+        private String _authoID = null;
+        private String _authoName = null;
+        private String _authoValue = null;
 
         // ---------------------------------------------建構子---------------------------------------------
         public AuthorizationClass()
@@ -22,39 +22,39 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置id---------------------------------------------
-        void setId(String authoId, String id)
+        public void setId(String authoID, String newAuthodID)
         {
-            this._id = id;
+            this._authoID = newAuthodID;
         }
 
         // ---------------------------------------------取得id---------------------------------------------
-        String getId()
+        public String getId()
         {
-            return this._id;
+            return this._authoID;
         }
 
         // ---------------------------------------------設置名稱---------------------------------------------
-        void setName(String authoId, String name)
+        public void setName(String authoID, String authoName)
         {
-            this._name = name;
+            this._authoName = authoName;
         }
 
         // ---------------------------------------------取得名稱---------------------------------------------
-        String getName(String authoId)
+        public String getName(String authoID)
         {
-            return this._name;
+            return this._authoName;
         }
 
         //  ---------------------------------------------設置數值---------------------------------------------
-        void setValue(String authoId, String value)
+        public void setValue(String authoD, String authoValue)
         {
-            this._value = value;
+            this._authoValue = authoValue;
         }
 
         // ---------------------------------------------取得數值---------------------------------------------
-        String getValue(String authoId)
+        public String getValue(String authoID)
         {
-            return this._value;
+            return this._authoValue;
         }
 
     }

@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace OOAD_HR_System.Class
 {
-    class ReimburseDefClass
+    public class ReimburseDefClass
     {
 
-        String _id = null;
-        String _name = null;
-        String _createrId = null;        // 定義人的員工編號
-        float _maxAmount;
-        DateTime _creatDate;
+        private String _reimDefID = null;
+        private String _reimDefName = null;
+        private String _reimCreaterID = null;        // 定義人的員工編號
+        private float _reimDefMaxAmount;
+        private DateTime _reimDefCreatDate;
 
         // ---------------------------------------------建構子---------------------------------------------
-        ReimburseDefClass()
+        public ReimburseDefClass()
         {
 
         }
@@ -24,63 +24,63 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置id---------------------------------------------
-        void setId(String reimDefId, String id)
+        public void setId(String reimDefID, String newReimDefID)
         {
-            this._id = id;
+            this._reimDefID = newReimDefID;
         }
 
         // ---------------------------------------------取得id---------------------------------------------
-        String getId()
+        public String getId()
         {
-            return this._id;
+            return this._reimDefID;
         }
 
         // ---------------------------------------------設置報帳定義名稱---------------------------------------------
-        void setName(String reimDefId, String name)
+        public void setName(String reimDefID, String reimDefName)
         {
-            this._name = name;
+            this._reimDefName = reimDefName;
         }
 
         // ---------------------------------------------取得報帳定義名稱---------------------------------------------
-        String getName(String reimDefId)
+        public String getName(String reimDefID)
         {
-            return this._name;
+            return this._reimDefName;
         }
 
         // ---------------------------------------------設置定義人的員工編號---------------------------------------------
-        void setCreaterId(String reimDefId, String createrId)
+        public void setCreaterId(String reimDefID, String reimCreaterID)
         {
-            this._createrId = createrId;
+            this._reimCreaterID = reimCreaterID;
         }
 
         // ---------------------------------------------取得定義人的員工編號---------------------------------------------
-        String getCreaterId(String reimDefId)
+        public String getCreaterId(String reimDefID)
         {
-            return this._createrId;
+            return this._reimCreaterID;
         }
 
         // ---------------------------------------------設置報帳上限金額---------------------------------------------
-        void setMaxAmount(String reimDefId, float maxAmount)
+        public void setMaxAmount(String reimDefID, float reimDefMaxAmount)
         {
-            this._maxAmount = maxAmount;
+            this._reimDefMaxAmount = reimDefMaxAmount;
         }
 
         // ---------------------------------------------取得報帳金額上限---------------------------------------------
-        float getMaxAmountt(String reimDefId)
+        public float getMaxAmountt(String reimDefId)
         {
-            return this._maxAmount;
+            return this._reimDefMaxAmount;
         }
 
         // ---------------------------------------------設置報帳定義定義日期---------------------------------------------
-        void setCreateDate(String reimDefId, DateTime createDate)
+        public void setCreateDate(String reimDefId, DateTime createDate)
         {
-            this._creatDate = createDate;
+            this._reimDefCreatDate = createDate;
         }
 
         // ---------------------------------------------取得報帳定義定義日期---------------------------------------------
-        DateTime getCreateDate(String reimDefId)
+        public DateTime getCreateDate(String reimDefId)
         {
-            return this._creatDate;
+            return this._reimDefCreatDate;
         }
 
     }

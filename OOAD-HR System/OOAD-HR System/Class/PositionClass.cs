@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace OOAD_HR_System.Class
 {
-    class PositionClass
+    public class PositionClass
     {
 
-        String _id = null;
-        String _name = null;
-        float _basicSalary;
-        String _authoId = null;
+        private String _positionID = null;
+        private String _positionName = null;
+        private float _positionBasicSalary;
+        private String _authoID = null;
 
         // ---------------------------------------------建構子---------------------------------------------
-        PositionClass()
+        public PositionClass()
         {
 
         }
@@ -23,51 +23,51 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置id---------------------------------------------
-        void setId(String positionId, String id)
+        public void setId(String positionID, String newPositionID)
         {
-            this._id = id;
+            this._positionID = newPositionID;
         }
 
         // ---------------------------------------------取得id---------------------------------------------
-        String getId()
+        public String getId()
         {
-            return this._id;
+            return this._positionID;
         }
 
         // ---------------------------------------------設置職稱---------------------------------------------
-        void setName(String positionId, String name)
+        public void setName(String positionID, String positionName)
         {
-            this._name = name;
+            this._positionName = positionName;
         }
 
         // ---------------------------------------------取得職稱---------------------------------------------
-        String getName(String positionId)
+        public String getName(String positionID)
         {
-            return this._name;
+            return this._positionName;
         }
 
         // ---------------------------------------------設置職位底薪---------------------------------------------
-        void setBasicSalary(String positionId, float basicSalary)
+        public void setBasicSalary(String positionID, float positionBasicSalary)
         {
-            this._basicSalary = basicSalary;
+            this._positionBasicSalary = positionBasicSalary;
         }
 
         // ---------------------------------------------取得職位底薪---------------------------------------------
-        float getBasicSalary(String positionId)
+        public float getBasicSalary(String positionID)
         {
-            return this._basicSalary;
+            return this._positionBasicSalary;
         }
 
         // ---------------------------------------------設置權限id---------------------------------------------
-        void setAuthoId(String positionId, String authoId)
+        public void setAuthoId(String positionID, String authoID)
         {
-            this._authoId = authoId;
+            this._authoID = authoID;
         }
 
         // ---------------------------------------------取得權限id---------------------------------------------
-        String getAuthoId(String positionId)
+        public String getAuthoId(String positionID)
         {
-            return this._authoId;
+            return this._authoID;
         }
 
     }

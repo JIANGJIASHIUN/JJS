@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace OOAD_HR_System.Class
 {
-    class ReimburseClass
+    public class ReimburseClass
     {
 
-        String _id = null;
-        String _applicantId = null;         // 申請人員工編號
-        String _reimDefId = null;
-        DateTime _applicationDate;
-        float _applicationaMount;
+        private String _reimburseID = null;
+        private String _applicantID = null;         // 申請人員工編號
+        private String _reimDefID = null;
+        private DateTime _applicationDate;
+        private float _applicationAmount;
 
         // ---------------------------------------------建構子---------------------------------------------
-        ReimburseClass()
+        public ReimburseClass()
         {
 
         }
@@ -24,63 +24,63 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置報帳id---------------------------------------------
-        void setId(String reimId, String id)
+        public void setId(String reimburseID, String newReimburseID)
         {
-            this._id = id;
+            this._reimburseID = newReimburseID;
         }
 
         // ---------------------------------------------取得報帳id---------------------------------------------
-        String getId()
+        public String getId()
         {
-            return this._id;
+            return this._reimburseID;
         }
 
         // ---------------------------------------------設置申請人員工編號---------------------------------------------
-        void setApplicantId(String reimburseId, String applicantId)
+        public void setApplicantId(String reimburseID, String applicantID)
         {
-            this._applicantId = applicantId;
+            this._applicantID = applicantID;
         }
 
         // ---------------------------------------------取得申請人員工編號---------------------------------------------
-        String getApplicantId(String reimId)
+        public String getApplicantId(String reimburseID)
         {
-            return this._applicantId;
+            return this._applicantID;
         }
 
         // ---------------------------------------------設置報帳定義id---------------------------------------------
-        void setReimDefId(String reimId, String reimDefId)
+        public void setReimDefId(String reimburseID, String reimDefID)
         {
-            this._reimDefId = reimDefId;
+            this._reimDefID = reimDefID;
         }
 
         // ---------------------------------------------取得報帳定義id---------------------------------------------
-        String getReimDefId(String reimId)
+        public String getReimDefId(String reimburseID)
         {
-            return this._reimDefId;
+            return this._reimDefID;
         }
 
         // ---------------------------------------------設置報帳申請日期---------------------------------------------
-        void setApplicationDate(String reimId, DateTime applicationDate)
+        public void setApplicationDate(String reimburseID, DateTime applicationDate)
         {
             this._applicationDate = applicationDate;
         }
 
         // ---------------------------------------------取得報帳申請日期---------------------------------------------
-        DateTime getApplicationDate(String reimId)
+        public DateTime getApplicationDate(String reimburseID)
         {
             return this._applicationDate;
         }
 
         // ---------------------------------------------設置報帳申請金額---------------------------------------------
-        void setApplicationAmount(String reimId, float applicationAmount)
+        public void setApplicationAmount(String reimburseID, float applicationAmount)
         {
-            this._applicationaMount = applicationAmount;
+            this._applicationAmount = applicationAmount;
         }
 
         // ---------------------------------------------取得報帳申請金額---------------------------------------------
-        float getApplicationAmount(String reimId)
+        public float getApplicationAmount(String reimburseID)
         {
-            return this._applicationaMount;
+            return this._applicationAmount;
         }
 
     }

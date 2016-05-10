@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace OOAD_HR_System.Class
 {
-    class DepartmentClass
+    public class DepartmentClass
     {
 
-        String _id = null;
-        String _name = null;
-        DateTime _startTime;
-        DateTime _endTime;
-        String _manager = null;
+        private String _depertmentID = null;
+        private String _departmentName = null;
+        private DateTime _departmentStartTime;
+        private DateTime _departmentEndTime;
+        private String _departmentManager = null;
 
         // ---------------------------------------------建構子---------------------------------------------
-        DepartmentClass()
+        public DepartmentClass()
         {
 
         }
@@ -24,63 +24,63 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置id---------------------------------------------
-        void setId(String id)
+        public void setId(String departmentID, String newDepartmentID)
         {
-            this._id = id;
+            this._depertmentID = newDepartmentID;
         }
 
         // ---------------------------------------------取得id---------------------------------------------
-        String getId()
+        public String getId()
         {
-            return this._id;
+            return this._depertmentID;
         }
 
         // ---------------------------------------------設置名稱---------------------------------------------
-        void setName(String deptId, String name)
+        public void setName(String departmentID, String departmentName)
         {
-            this._name = name;
+            this._departmentName = departmentName;
         }
 
         // ---------------------------------------------取得名稱---------------------------------------------
-        String getName(String deptId)
+        public String getName(String departmentID)
         {
-            return this._name;
+            return this._departmentName;
         }
 
         // ---------------------------------------------設置創立時間---------------------------------------------
-        void setStartTime(String deptId, DateTime startTime)
+        public void setStartTime(String departmentID, DateTime departmentStartTime)
         {
-            this._startTime = startTime;
+            this._departmentStartTime = departmentStartTime;
         }
 
         // ---------------------------------------------取得創立時間---------------------------------------------
-        DateTime getStartTime(String deptId)
+        public DateTime getStartTime(String departmentID)
         {
-            return this._startTime;
+            return this._departmentStartTime;
         }
 
         // ---------------------------------------------設置關閉時間---------------------------------------------
-        void setEndTime(String deptId, DateTime endTime)
+        public void setEndTime(String departmentID, DateTime departmentEndTime)
         {
-            this._endTime = endTime;
+            this._departmentEndTime = departmentEndTime;
         }
 
         // ---------------------------------------------取得關閉時間---------------------------------------------
-        DateTime getEndTime(String deptId)
+        public DateTime getEndTime(String departmentID)
         {
-            return this._endTime;
+            return this._departmentEndTime;
         }
 
         // ---------------------------------------------設置管理人---------------------------------------------
-        void setManager(String deptId, String manager)
+        public void setManager(String departmentID, String departmentManager)
         {
-            this._manager = manager;
+            this._departmentManager = departmentManager;
         }
 
         // ---------------------------------------------取得管理人---------------------------------------------
-        String getManager(String deptId)
+        public String getManager(String departmentID)
         {
-            return this._manager; 
+            return this._departmentManager; 
         }
 
     }

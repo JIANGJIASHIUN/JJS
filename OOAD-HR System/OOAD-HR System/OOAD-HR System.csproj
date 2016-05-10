@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.8\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\AuthorizationClass.cs" />
+    <Compile Include="Class\BonusClass.cs" />
+    <Compile Include="Class\BonusDefClass.cs" />
+    <Compile Include="Class\BusinessMissionClass.cs" />
     <Compile Include="Class\CareerPlanningClass.cs" />
     <Compile Include="Class\DepartmentClass.cs" />
     <Compile Include="Class\EmplFamilyInsuClass.cs" />
@@ -53,7 +60,11 @@
     <Compile Include="Class\PositionClass.cs" />
     <Compile Include="Class\ReimburseClass.cs" />
     <Compile Include="Class\ReimburseDefClass.cs" />
+    <Compile Include="Class\SalaryClass.cs" />
     <Compile Include="Class\TraningClass.cs" />
+    <Compile Include="Class\TraningCourseClass.cs" />
+    <Compile Include="Class\WorkAttendanceClass.cs" />
+    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +77,10 @@
     <Compile Include="MainFunction.Designer.cs">
       <DependentUpon>MainFunction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AccountService.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
