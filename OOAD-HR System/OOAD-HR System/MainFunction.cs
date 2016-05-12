@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace OOAD_HR_System
 {
-    public partial class _mainFunction : Form
+    public partial class _female : Form
     {
 
         private Form _login = new Form();
 
-        public _mainFunction(Form login)
+        public _female(Form login)
         {
             _login = login;
 

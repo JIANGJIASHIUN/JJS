@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OOAD_HR_System.Model;
 using OOAD_HR_System.Service;
+using System.Windows.Forms;
 
 namespace OOAD_HR_System.Controller
 {
@@ -23,11 +24,32 @@ namespace OOAD_HR_System.Controller
         // 判斷帳號密碼是否符合資料庫中的資料
         public Boolean judgeAccountAndPassword(String account, String password)
         {
+
+            if (account == "" && password == "")
+            {
+                MessageBox.Show("請輸入員工ID與密碼!");
+                return false;
+            }
+            else if (account == "")
+            {
+                MessageBox.Show("請輸入員工ID!");
+                return false;
+            }
+            else if (password == "")
+            {
+                MessageBox.Show("請輸入密碼!");
+                return false;
+            }
+
             _loginModel = _accountService.searchByAccount(account);
             if (account == _loginModel.getAccount() && password == _loginModel.getPassword())
                 return true;
             else
+            {
+                MessageBox.Show("帳號密碼錯誤!");
                 return false;
+            }
+               
         }
 
     }

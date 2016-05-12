@@ -93,9 +93,11 @@
             this._loginButton.Text = "Login";
             this._loginButton.UseVisualStyleBackColor = true;
             this._loginButton.Click += new System.EventHandler(this.ClickLoginButton);
+            this._loginButton.Enter += new System.EventHandler(this.ClickLoginButton);
             // 
             // _login
             // 
+            this.AcceptButton = this._loginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 380);
