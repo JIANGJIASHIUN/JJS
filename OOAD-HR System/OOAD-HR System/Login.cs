@@ -29,7 +29,7 @@ namespace OOAD_HR_System
 
             if (_loginController.judgeAccountAndPassword(emplID, password))
             {
-                _mainFunction = new _female(this);
+                _mainFunction = new _mainFunction(this);
                 _mainFunction.Show();
                 this.Visible = false;
             }

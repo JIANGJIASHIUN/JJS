@@ -65,6 +65,26 @@
     <Compile Include="Class\TraningCourseClass.cs" />
     <Compile Include="Class\WorkAttendanceClass.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="hrmsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hrmsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="hrmsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hrmsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="hrmsDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hrmsDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="hrmsDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hrmsDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +116,50 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="hrmsDataSet.xsc">
+      <DependentUpon>hrmsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hrmsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hrmsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hrmsDataSet.xss">
+      <DependentUpon>hrmsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="hrmsDataSet1.xsc">
+      <DependentUpon>hrmsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="hrmsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hrmsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hrmsDataSet1.xss">
+      <DependentUpon>hrmsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="hrmsDataSet2.xsc">
+      <DependentUpon>hrmsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="hrmsDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hrmsDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hrmsDataSet2.xss">
+      <DependentUpon>hrmsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="hrmsDataSet3.xsc">
+      <DependentUpon>hrmsDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="hrmsDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hrmsDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="hrmsDataSet3.xss">
+      <DependentUpon>hrmsDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
