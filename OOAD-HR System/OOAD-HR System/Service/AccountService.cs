@@ -47,7 +47,7 @@ namespace OOAD_HR_System.Service
                 try {
                     DataTable dataSet = new DataTable();
 
-                    String searchString = String.Format("SELECT * FROM `account` WHERE `account` = '" + account + "'");
+                    String searchString = String.Format("SELECT * FROM account WHERE account = '" + account + "'");
                     MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
                     searchCommand.ExecuteNonQuery();
 
