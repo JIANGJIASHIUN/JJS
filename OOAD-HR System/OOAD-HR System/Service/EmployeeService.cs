@@ -54,7 +54,7 @@ namespace OOAD_HR_System.Service
                         _employeeModel.GetBlood(), _employeeModel.GetAddress(), _employeeModel.GetBirth(), _employeeModel.GetEmerPerson(), _employeeModel.GetEmerPhone(),
                         _employeeModel.GetMilitaryStatus(), _employeeModel.GetJobStatus(), _employeeModel.GetMarriedStatus(), _employeeModel.GetSpouse(),
                         _employeeModel.GetDeptID(), _employeeModel.GetPositionID(), _employeeModel.GetBasicSalary().ToString());*/
-                    String addString = String.Format("INSERT INTO 'employee'('emplID','emplName','ssn','sex','phone','blood','address','birth','emerPerson','emerPhoneNum','military','jobStat','marriedStat','spouse','deptID','positionID','basicSalary') VALUES('" + 
+                    String addString = String.Format("INSERT INTO employee(emplID,emplName,ssn,sex,phone,blood,address,birth,emerPerson,emerPhoneNum,military,jobStat,marriedStat,spouse,deptID,positionID,basicSalary) VALUES('" + 
                         _employeeModel.GetEmplID() + "','" + _employeeModel.GetName() + "','" + _employeeModel.GetSsn() + "','" + _employeeModel.GetSex() + "','" + 
                         _employeeModel.GetPhone() + "','" + _employeeModel.GetBlood() + "','" + _employeeModel.GetAddress() + "','" + _employeeModel.GetBirth() + "','" +
                         _employeeModel.GetEmerPerson() + "','" + _employeeModel.GetEmerPhone() + "','" + _employeeModel.GetMilitaryStatus() + "','" +
