@@ -33,6 +33,13 @@
             this._employee = new System.Windows.Forms.TabPage();
             this._employeePage = new System.Windows.Forms.TabControl();
             this._newEmployee = new System.Windows.Forms.TabPage();
+            this._newEmplPositionCB = new System.Windows.Forms.ComboBox();
+            this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hrmsDataSet3 = new OOAD_HR_System.hrmsDataSet3();
+            this._newEmplDeptCB = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hrmsDataSet2 = new OOAD_HR_System.hrmsDataSet2();
+            this._newEmplBasicSalaryTB = new System.Windows.Forms.TextBox();
             this._newEmplJobStatCB = new System.Windows.Forms.ComboBox();
             this._newEmplSpouseTB = new System.Windows.Forms.TextBox();
             this._newEmplMarriedStatCB = new System.Windows.Forms.ComboBox();
@@ -43,9 +50,6 @@
             this._phoneTB = new System.Windows.Forms.TextBox();
             this._dashLB = new System.Windows.Forms.Label();
             this._areaCodeTB = new System.Windows.Forms.TextBox();
-            this._sexGroupBox = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this._male = new System.Windows.Forms.RadioButton();
             this._newEmpllSsnTB = new System.Windows.Forms.TextBox();
             this._newEmplBirthDP = new System.Windows.Forms.DateTimePicker();
             this._newEmplNameTB = new System.Windows.Forms.TextBox();
@@ -76,24 +80,20 @@
             this._report = new System.Windows.Forms.TabPage();
             this._authorization = new System.Windows.Forms.TabPage();
             this._logoutButton = new System.Windows.Forms.Button();
-            this._newEmplBasicSalaryTB = new System.Windows.Forms.TextBox();
-            this._newEmplDeptCB = new System.Windows.Forms.ComboBox();
-            this._newEmplPositionCB = new System.Windows.Forms.ComboBox();
-            this.hrmsDataSet2 = new OOAD_HR_System.hrmsDataSet2();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentTableAdapter = new OOAD_HR_System.hrmsDataSet2TableAdapters.departmentTableAdapter();
-            this.hrmsDataSet3 = new OOAD_HR_System.hrmsDataSet3();
-            this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.positionTableAdapter = new OOAD_HR_System.hrmsDataSet3TableAdapters.positionTableAdapter();
+            this._newEmplBloodLB = new System.Windows.Forms.Label();
+            this._newEmplBloodCB = new System.Windows.Forms.ComboBox();
+            this._insertButton = new System.Windows.Forms.Button();
+            this._newEmplSexCB = new System.Windows.Forms.ComboBox();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this._employeePage.SuspendLayout();
             this._newEmployee.SuspendLayout();
-            this._sexGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainFunctionPage
@@ -139,6 +139,10 @@
             // 
             // _newEmployee
             // 
+            this._newEmployee.Controls.Add(this._newEmplSexCB);
+            this._newEmployee.Controls.Add(this._insertButton);
+            this._newEmployee.Controls.Add(this._newEmplBloodCB);
+            this._newEmployee.Controls.Add(this._newEmplBloodLB);
             this._newEmployee.Controls.Add(this._newEmplPositionCB);
             this._newEmployee.Controls.Add(this._newEmplDeptCB);
             this._newEmployee.Controls.Add(this._newEmplBasicSalaryTB);
@@ -152,7 +156,6 @@
             this._newEmployee.Controls.Add(this._phoneTB);
             this._newEmployee.Controls.Add(this._dashLB);
             this._newEmployee.Controls.Add(this._areaCodeTB);
-            this._newEmployee.Controls.Add(this._sexGroupBox);
             this._newEmployee.Controls.Add(this._newEmpllSsnTB);
             this._newEmployee.Controls.Add(this._newEmplBirthDP);
             this._newEmployee.Controls.Add(this._newEmplNameTB);
@@ -179,8 +182,60 @@
             this._newEmployee.Padding = new System.Windows.Forms.Padding(3);
             this._newEmployee.Size = new System.Drawing.Size(1537, 821);
             this._newEmployee.TabIndex = 0;
-            this._newEmployee.Text = "New";
+            this._newEmployee.Text = "Insert";
             this._newEmployee.UseVisualStyleBackColor = true;
+            // 
+            // _newEmplPositionCB
+            // 
+            this._newEmplPositionCB.DataSource = this.positionBindingSource;
+            this._newEmplPositionCB.DisplayMember = "positionName";
+            this._newEmplPositionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplPositionCB.FormattingEnabled = true;
+            this._newEmplPositionCB.Location = new System.Drawing.Point(144, 626);
+            this._newEmplPositionCB.Name = "_newEmplPositionCB";
+            this._newEmplPositionCB.Size = new System.Drawing.Size(341, 32);
+            this._newEmplPositionCB.TabIndex = 34;
+            this._newEmplPositionCB.ValueMember = "positionID";
+            this._newEmplPositionCB.SelectedIndexChanged += new System.EventHandler(this.ChangedNewEmplPositionCBSelectedIndex);
+            // 
+            // positionBindingSource
+            // 
+            this.positionBindingSource.DataMember = "position";
+            this.positionBindingSource.DataSource = this.hrmsDataSet3;
+            // 
+            // hrmsDataSet3
+            // 
+            this.hrmsDataSet3.DataSetName = "hrmsDataSet3";
+            this.hrmsDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // _newEmplDeptCB
+            // 
+            this._newEmplDeptCB.DataSource = this.departmentBindingSource;
+            this._newEmplDeptCB.DisplayMember = "departmentName";
+            this._newEmplDeptCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplDeptCB.FormattingEnabled = true;
+            this._newEmplDeptCB.Location = new System.Drawing.Point(177, 560);
+            this._newEmplDeptCB.Name = "_newEmplDeptCB";
+            this._newEmplDeptCB.Size = new System.Drawing.Size(308, 32);
+            this._newEmplDeptCB.TabIndex = 33;
+            this._newEmplDeptCB.ValueMember = "departmentID";
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "department";
+            this.departmentBindingSource.DataSource = this.hrmsDataSet2;
+            // 
+            // hrmsDataSet2
+            // 
+            this.hrmsDataSet2.DataSetName = "hrmsDataSet2";
+            this.hrmsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // _newEmplBasicSalaryTB
+            // 
+            this._newEmplBasicSalaryTB.Location = new System.Drawing.Point(185, 694);
+            this._newEmplBasicSalaryTB.Name = "_newEmplBasicSalaryTB";
+            this._newEmplBasicSalaryTB.Size = new System.Drawing.Size(299, 36);
+            this._newEmplBasicSalaryTB.TabIndex = 32;
             // 
             // _newEmplJobStatCB
             // 
@@ -273,38 +328,6 @@
             this._areaCodeTB.Name = "_areaCodeTB";
             this._areaCodeTB.Size = new System.Drawing.Size(78, 36);
             this._areaCodeTB.TabIndex = 22;
-            // 
-            // _sexGroupBox
-            // 
-            this._sexGroupBox.Controls.Add(this.radioButton1);
-            this._sexGroupBox.Controls.Add(this._male);
-            this._sexGroupBox.Location = new System.Drawing.Point(726, 86);
-            this._sexGroupBox.Name = "_sexGroupBox";
-            this._sexGroupBox.Size = new System.Drawing.Size(206, 64);
-            this._sexGroupBox.TabIndex = 21;
-            this._sexGroupBox.TabStop = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(95, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(102, 28);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Female";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // _male
-            // 
-            this._male.AutoSize = true;
-            this._male.Location = new System.Drawing.Point(8, 22);
-            this._male.Name = "_male";
-            this._male.Size = new System.Drawing.Size(81, 28);
-            this._male.TabIndex = 0;
-            this._male.TabStop = true;
-            this._male.Text = "Male";
-            this._male.UseVisualStyleBackColor = true;
             // 
             // _newEmpllSsnTB
             // 
@@ -578,65 +601,58 @@
             this._logoutButton.UseVisualStyleBackColor = true;
             this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
             // 
-            // _newEmplBasicSalaryTB
-            // 
-            this._newEmplBasicSalaryTB.Location = new System.Drawing.Point(185, 694);
-            this._newEmplBasicSalaryTB.Name = "_newEmplBasicSalaryTB";
-            this._newEmplBasicSalaryTB.Size = new System.Drawing.Size(299, 36);
-            this._newEmplBasicSalaryTB.TabIndex = 32;
-            // 
-            // _newEmplDeptCB
-            // 
-            this._newEmplDeptCB.DataSource = this.departmentBindingSource;
-            this._newEmplDeptCB.DisplayMember = "departmentName";
-            this._newEmplDeptCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._newEmplDeptCB.FormattingEnabled = true;
-            this._newEmplDeptCB.Location = new System.Drawing.Point(177, 560);
-            this._newEmplDeptCB.Name = "_newEmplDeptCB";
-            this._newEmplDeptCB.Size = new System.Drawing.Size(308, 32);
-            this._newEmplDeptCB.TabIndex = 33;
-            this._newEmplDeptCB.ValueMember = "departmentID";
-            // 
-            // _newEmplPositionCB
-            // 
-            this._newEmplPositionCB.DataSource = this.positionBindingSource;
-            this._newEmplPositionCB.DisplayMember = "positionName";
-            this._newEmplPositionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._newEmplPositionCB.FormattingEnabled = true;
-            this._newEmplPositionCB.Location = new System.Drawing.Point(144, 626);
-            this._newEmplPositionCB.Name = "_newEmplPositionCB";
-            this._newEmplPositionCB.Size = new System.Drawing.Size(341, 32);
-            this._newEmplPositionCB.TabIndex = 34;
-            this._newEmplPositionCB.ValueMember = "positionID";
-            this._newEmplPositionCB.SelectedIndexChanged += new System.EventHandler(this.ChangedNewEmplPositionCBSelectedIndex);
-            // 
-            // hrmsDataSet2
-            // 
-            this.hrmsDataSet2.DataSetName = "hrmsDataSet2";
-            this.hrmsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "department";
-            this.departmentBindingSource.DataSource = this.hrmsDataSet2;
-            // 
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
-            // hrmsDataSet3
-            // 
-            this.hrmsDataSet3.DataSetName = "hrmsDataSet3";
-            this.hrmsDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // positionBindingSource
-            // 
-            this.positionBindingSource.DataMember = "position";
-            this.positionBindingSource.DataSource = this.hrmsDataSet3;
-            // 
             // positionTableAdapter
             // 
             this.positionTableAdapter.ClearBeforeFill = true;
+            // 
+            // _newEmplBloodLB
+            // 
+            this._newEmplBloodLB.AutoSize = true;
+            this._newEmplBloodLB.Location = new System.Drawing.Point(875, 108);
+            this._newEmplBloodLB.Name = "_newEmplBloodLB";
+            this._newEmplBloodLB.Size = new System.Drawing.Size(70, 24);
+            this._newEmplBloodLB.TabIndex = 35;
+            this._newEmplBloodLB.Text = "Blood:";
+            // 
+            // _newEmplBloodCB
+            // 
+            this._newEmplBloodCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplBloodCB.FormattingEnabled = true;
+            this._newEmplBloodCB.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "O",
+            "AB"});
+            this._newEmplBloodCB.Location = new System.Drawing.Point(951, 100);
+            this._newEmplBloodCB.Name = "_newEmplBloodCB";
+            this._newEmplBloodCB.Size = new System.Drawing.Size(113, 32);
+            this._newEmplBloodCB.TabIndex = 36;
+            // 
+            // _insertButton
+            // 
+            this._insertButton.Location = new System.Drawing.Point(1220, 719);
+            this._insertButton.Name = "_insertButton";
+            this._insertButton.Size = new System.Drawing.Size(113, 53);
+            this._insertButton.TabIndex = 37;
+            this._insertButton.Text = "Insert";
+            this._insertButton.UseVisualStyleBackColor = true;
+            this._insertButton.Click += new System.EventHandler(this.ClickInsertButton);
+            // 
+            // _newEmplSexCB
+            // 
+            this._newEmplSexCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplSexCB.FormattingEnabled = true;
+            this._newEmplSexCB.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this._newEmplSexCB.Location = new System.Drawing.Point(726, 100);
+            this._newEmplSexCB.Name = "_newEmplSexCB";
+            this._newEmplSexCB.Size = new System.Drawing.Size(121, 32);
+            this._newEmplSexCB.TabIndex = 38;
             // 
             // _mainFunction
             // 
@@ -654,12 +670,10 @@
             this._employeePage.ResumeLayout(false);
             this._newEmployee.ResumeLayout(false);
             this._newEmployee.PerformLayout();
-            this._sexGroupBox.ResumeLayout(false);
-            this._sexGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -700,9 +714,6 @@
         private System.Windows.Forms.TextBox _newEmplNameTB;
         private System.Windows.Forms.DateTimePicker _newEmplBirthDP;
         private System.Windows.Forms.TextBox _newEmpllSsnTB;
-        private System.Windows.Forms.GroupBox _sexGroupBox;
-        private System.Windows.Forms.RadioButton _male;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label _dashLB;
         private System.Windows.Forms.TextBox _areaCodeTB;
         private System.Windows.Forms.TextBox _phoneTB;
@@ -722,5 +733,9 @@
         private hrmsDataSet3 hrmsDataSet3;
         private System.Windows.Forms.BindingSource positionBindingSource;
         private hrmsDataSet3TableAdapters.positionTableAdapter positionTableAdapter;
+        private System.Windows.Forms.Label _newEmplBloodLB;
+        private System.Windows.Forms.ComboBox _newEmplBloodCB;
+        private System.Windows.Forms.Button _insertButton;
+        private System.Windows.Forms.ComboBox _newEmplSexCB;
     }
 }

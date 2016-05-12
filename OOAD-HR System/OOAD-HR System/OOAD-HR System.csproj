@@ -64,17 +64,8 @@
     <Compile Include="Class\TraningClass.cs" />
     <Compile Include="Class\TraningCourseClass.cs" />
     <Compile Include="Class\WorkAttendanceClass.cs" />
+    <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
-    <Compile Include="hrmsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hrmsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="hrmsDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hrmsDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="hrmsDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,10 +88,13 @@
     <Compile Include="MainFunction.Designer.cs">
       <DependentUpon>MainFunction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\EmployeeModel.cs" />
     <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="PresentationModel\EmployeePresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AccountService.cs" />
+    <Compile Include="Service\EmployeeService.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,28 +110,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="hrmsDataSet.xsc">
-      <DependentUpon>hrmsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="hrmsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>hrmsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="hrmsDataSet.xss">
-      <DependentUpon>hrmsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="hrmsDataSet1.xsc">
-      <DependentUpon>hrmsDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="hrmsDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>hrmsDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="hrmsDataSet1.xss">
-      <DependentUpon>hrmsDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="hrmsDataSet2.xsc">
       <DependentUpon>hrmsDataSet2.xsd</DependentUpon>
     </None>
@@ -173,6 +145,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -47,10 +47,11 @@ namespace OOAD_HR_System.Service
                 try {
                     DataTable dataSet = new DataTable();
 
-                    MySqlCommand search = new MySqlCommand("SELECT * FROM `account` WHERE `account` = '" + account + "'", myConnection);
-                    search.ExecuteNonQuery();
+                    String searchString = String.Format("SELECT * FROM `account` WHERE `account` = '" + account + "'");
+                    MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
+                    searchCommand.ExecuteNonQuery();
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(search);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(searchCommand);
                     adapter.Fill(dataSet);
 
                     foreach (DataRow searchDr in dataSet.Rows)
@@ -61,7 +62,7 @@ namespace OOAD_HR_System.Service
                 }
                 catch (MySqlException ex)
                 {
-
+                    
                 }
             }
 

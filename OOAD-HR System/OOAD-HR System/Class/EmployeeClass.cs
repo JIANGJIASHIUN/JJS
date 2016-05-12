@@ -9,8 +9,8 @@ namespace OOAD_HR_System.Class
     public class EmployeeClass
     {
    
-        private String _emplID = null;                 // 編號
-        private String _emplName = null;               // 姓名
+        private String _emplID = null;             // 編號
+        private String _emplName = null;           // 姓名
         private String _ssn = null;                // 身分證字號
         private String _sex = null;                // 性別
         private String _blood = null;              // 血型
@@ -36,205 +36,205 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置id---------------------------------------------
-        public void setId(String emplID, String newEmplID)
+        public void SetId( String newEmplID)
         {
             this._emplID = newEmplID;
         }
 
         // ---------------------------------------------取得id---------------------------------------------
-        public String getId()
+        public String GetId()
         {
             return this._emplID;
         }
 
         // ---------------------------------------------設置姓名---------------------------------------------
-        public void setName(String emplName)
+        public void SetName(String emplName)
         {
             this._emplName = emplName;
         }
 
         // ---------------------------------------------取得姓名---------------------------------------------
-        public String getName(String emplID)
+        public String GetName()
         {
             return this._emplName;
         }
 
         // ---------------------------------------------設置身分證字號---------------------------------------------
-        public void setSsn(String emplID, String ssn)
+        public void SetSsn(String ssn)
         {
             this._ssn = ssn;
         }
 
         // ---------------------------------------------取得身分證字號---------------------------------------------
-        public String getSsn(String emplID)
+        public String GetSsn()
         {
             return this._ssn;
         }
 
         // ---------------------------------------------設置性別---------------------------------------------
-        public void setSex(String emplID, String sex)
+        public void SetSex(String sex)
         {
             this._sex = sex;
         }
 
         // ---------------------------------------------取得性別---------------------------------------------
-        public String getSex(String emplID)
+        public String GetSex()
         {
             return this._sex;
         }
 
         // ---------------------------------------------設置血型---------------------------------------------
-        public void setBlood(String emplID, String blood)
+        public void SetBlood(String blood)
         {
             this._blood = blood;
         }
 
         // ---------------------------------------------取得血型---------------------------------------------
-        public String getBlood(String emplID)
+        public String GetBlood()
         {
             return this._blood;
         }
 
         // ---------------------------------------------取得聯絡電話---------------------------------------------
-        public void setPhone(String emplID, String phone)
+        public void SetPhone(String phone)
         {
             this._phone = phone;
         }
 
         // ---------------------------------------------這連絡電話---------------------------------------------
-        public String getPhone(String emplID)
+        public String GetPhone()
         {
             return this._phone;
         }
 
         // ---------------------------------------------設置住址---------------------------------------------
-        public void setAddress(String emplID, String addr)
+        public void SetAddress(String addr)
         {
             this._addr = addr;
         }
 
         // ---------------------------------------------取得住址---------------------------------------------
-        public String getAddress(String emplID)
+        public String GetAddress()
         {
             return this._addr;
         }
 
         // ---------------------------------------------取得緊急聯絡人---------------------------------------------
-        public void setEmerPerson(String emplID, String emerPerson)
+        public void SetEmerPerson(String emerPerson)
         {
             this._emerPerson = emerPerson;
         }
 
         // ---------------------------------------------設置緊急聯絡人---------------------------------------------
-        public String getEmerPerson(String emplID)
+        public String GetEmerPerson()
         {
             return this._emerPerson;
         }
 
         // ---------------------------------------------設置緊急連絡電話---------------------------------------------
-        public void setEmerPhone(String emplID, String emerPhone)
+        public void SetEmerPhone(String emerPhone)
         {
             this._emerPhone = emerPhone;
         }
 
         // ---------------------------------------------取得緊急連絡電話---------------------------------------------
-        public String getEmerPhone(String emplID)
+        public String GetEmerPhone()
         {
             return this._emerPhone;
         }
 
         // ---------------------------------------------設置兵役狀態---------------------------------------------
-        public void setMilitary(String emplID, String military)
+        public void SetMilitary(String military)
         {
             this._military = military;
         }
 
         // ---------------------------------------------取得兵役狀態---------------------------------------------
-        public String getMilitary(String emplID)
+        public String GetMilitary()
         {
             return this._military;
         }
 
         // ---------------------------------------------設置工作狀態---------------------------------------------
-        public void setJobState(String emplID, String jobState)
+        public void SetJobState(String jobState)
         {
             this._jobState = jobState;
         }
 
         // ---------------------------------------------取得工作狀態---------------------------------------------
-        public String getJobState(String emplID)
+        public String GetJobState()
         {
             return this._jobState;
         }
 
         // ---------------------------------------------設置婚姻狀態---------------------------------------------
-        public void setMarriedState(String emplID, String marriedState)
+        public void SetMarriedState(String marriedState)
         {
             this._marriedState = marriedState;
         }
 
         // ---------------------------------------------取得婚姻狀態---------------------------------------------
-        public String getMarriedState(String emplID)
+        public String GetMarriedState()
         {
             return this._marriedState;
         }
 
         // ---------------------------------------------設置配偶---------------------------------------------
-        public void setSpouse(String emplID, String spouse)
+        public void SetSpouse(String spouse)
         {
             this._spouse = spouse;
         }
 
         // ---------------------------------------------取得配偶---------------------------------------------
-        public String getSpouse(String emplID)
+        public String GetSpouse()
         {
             return this._spouse;
         }
 
         // ---------------------------------------------設置出生日期---------------------------------------------
-        public void setBirth(String emplID, DateTime birth)
+        public void SetBirth(DateTime birth)
         {
             this._birth = birth;
         }
 
         // ---------------------------------------------取得出生日期---------------------------------------------
-        public DateTime getBirth(String emplID)
+        public DateTime GetBirth()
         {
             return this._birth;
         }
 
         // ---------------------------------------------設置底薪---------------------------------------------
-        public void setBasicSalary(String emplID, float basicSalary)
+        public void SetBasicSalary(float basicSalary)
         {
             this._basicSalary = basicSalary;
         }
 
         // ---------------------------------------------取得底薪---------------------------------------------
-        public float getBasicSalary(String emplID)
+        public float GetBasicSalary()
         {
             return this._basicSalary;
         }
 
         // ---------------------------------------------設置所屬部門編號---------------------------------------------
-        public void setDeptId(String emplID, String deptId)
+        public void SetDeptId(String deptId)
         {
             this._deptId = deptId;
         }
 
         // ---------------------------------------------取得所屬部門編號---------------------------------------------
-        public String getDeptId(String emplID)
+        public String GetDeptId()
         {
             return this._deptId;
         }
 
         // ---------------------------------------------設置職位編號---------------------------------------------
-        public void setPositionId(String emplID, String positionId)
+        public void SetPositionId(String positionId)
         {
             this._positionId = positionId;
         }
 
         // ---------------------------------------------取得職位編號---------------------------------------------
-        public String getPositionId(String emplID)
+        public String GetPositionId()
         {
             return this._positionId;
         }

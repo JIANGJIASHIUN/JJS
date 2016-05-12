@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OOAD_HR_System.PresentationModel;
+using OOAD_HR_System.Controller;
 
 namespace OOAD_HR_System
 {
@@ -14,6 +16,8 @@ namespace OOAD_HR_System
     {
 
         private Form _login = new Form();
+        private EmployeePresentationModel _employeePresentationModel = new EmployeePresentationModel();
+        private EmployeeController _employeeController;
 
         public _mainFunction(Form login)
         {
@@ -34,6 +38,8 @@ namespace OOAD_HR_System
             _newEmplJobStatCB.SelectedIndex = 0;
             _newEmplMarriedStatCB.SelectedIndex = 0;
             _newEmplMilitaryStatCB.SelectedIndex = 0;
+            _newEmplBloodCB.SelectedIndex = 0;
+            _newEmplSexCB.SelectedIndex = 0;
         }
 
         // 按下登出鍵
@@ -61,14 +67,56 @@ namespace OOAD_HR_System
             else if (_newEmplMarriedStatCB.SelectedIndex == 0)
             {
                 _newEmplSpouseTB.ReadOnly = true;
-                _newEmplSpouseTB.Text = "";
+                _newEmplSpouseTB.Text = null;
             }
         }
 
         // 根據選取職位 顯示職位底薪
         private void ChangedNewEmplPositionCBSelectedIndex(object sender, EventArgs e)
         {
+            
+        }
 
+        private void ClickInsertButton(object sender, EventArgs e)
+        {
+            String emplID = _newEmplIDTB.Text;             
+            String emplName = _newEmplNameTB.Text;
+            String ssn = _newEmpllSsnTB.Text;                
+            String sex = _newEmplSexCB.SelectedItem.ToString();               
+            String blood = _newEmplBloodCB.SelectedItem.ToString();              
+            String phone = String.Format(_areaCodeTB.Text + _phoneTB.Text);              
+            String addr = _newEmplAddrTB.Text;              
+            String emerPerson = _newEmplEmerPersonTB.Text;        
+            String emerPhone = _newEmplEmerPhoneTB.Text;         
+            String military = _newEmplMilitaryStatCB.SelectedItem.ToString();           
+            String jobState = _newEmplJobStatCB.SelectedItem.ToString();         
+            String marriedState = _newEmplMarriedStatCB.SelectedItem.ToString();       
+            String spouse = _newEmplSpouseTB.Text;            
+            DateTime birth = _newEmplBirthDP.Value;
+            float basicSalary = System.Convert.ToSingle(_newEmplBasicSalaryTB.Text);
+            String deptID = _newEmplDeptCB.SelectedValue.ToString();
+            String positionID = _newEmplPositionCB.SelectedValue.ToString();
+
+            _employeePresentationModel.SetEmplID(emplID);
+            _employeePresentationModel.SetName(emplName);
+            _employeePresentationModel.SetSsn(ssn);
+            _employeePresentationModel.SetSex(sex);
+            _employeePresentationModel.SetBlood(blood);
+            _employeePresentationModel.SetPhone(phone);
+            _employeePresentationModel.SetAddress(addr);
+            _employeePresentationModel.SetEmerPerson(emerPerson);
+            _employeePresentationModel.SetEmerPhone(emerPhone);
+            _employeePresentationModel.SetMilitaryStatus(military);
+            _employeePresentationModel.SetJobStatus(jobState);
+            _employeePresentationModel.SetMarriedStatus(marriedState);
+            _employeePresentationModel.SetSpouse(spouse);
+            _employeePresentationModel.SetBirth(birth);
+            _employeePresentationModel.SetBasicSalary(basicSalary);
+            _employeePresentationModel.SetDeptID(deptID);
+            _employeePresentationModel.SetPositoinID(positionID);
+
+            _employeeController = new EmployeeController(_employeePresentationModel);
+            _employeeController.InsertEmployee();
         }
 
     }
