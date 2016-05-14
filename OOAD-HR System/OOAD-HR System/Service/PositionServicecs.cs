@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 using MySql.Data.MySqlClient;
+using System.Data;
 using OOAD_HR_System.Model;
 
 namespace OOAD_HR_System.Service
 {
-    public class AccountService
+    public class PositionServicecs
     {
-
         private MySqlConnection myConnection = new MySqlConnection("server=118.166.192.62;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
-        private LoginModel _loginModel = new LoginModel();
+        private PositionModel _positionModel = new PositionModel();
 
-        public AccountService()
+        public PositionServicecs(PositionModel positionModel)
         {
-
+            this._positionModel = positionModel;
         }
 
         // 建立與資料庫連線
@@ -39,15 +38,16 @@ namespace OOAD_HR_System.Service
             myConnection.Close();
         }
 
-        // 以輸入員工ID搜尋帳號密碼
-        public LoginModel searchByAccount(String account)
+        // 根據職位ID搜尋該職位的底薪
+        public PositionModel SearchBsicSalaryByPositionID()
         {
             if (this.connectToDB())
             {
-                try {
+                try
+                {
                     DataTable dataSet = new DataTable();
 
-                    String searchString = String.Format("SELECT * FROM account WHERE account = '" + account + "'");
+                    String searchString = String.Format("SELECT * FROM position WHERE positionID = '" + this._positionModel.GetId() + "'");
                     MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
                     searchCommand.ExecuteNonQuery();
 
@@ -56,19 +56,18 @@ namespace OOAD_HR_System.Service
 
                     foreach (DataRow searchDr in dataSet.Rows)
                     {
-                        _loginModel.SetAccount(searchDr["account"].ToString());
-                        _loginModel.SetPassword(searchDr["password"].ToString());
+                        this._positionModel.SetBasicSalary(System.Convert.ToSingle(searchDr["positionBasicSalary"]));
                     }
                 }
                 catch (MySqlException ex)
                 {
-                    
+
                 }
             }
 
             this.closeConnextion();
 
-            return this._loginModel;
+            return this._positionModel;
         }
 
     }

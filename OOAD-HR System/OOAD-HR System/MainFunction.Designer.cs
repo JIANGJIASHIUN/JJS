@@ -33,12 +33,12 @@
             this._employee = new System.Windows.Forms.TabPage();
             this._employeePage = new System.Windows.Forms.TabControl();
             this._newEmployee = new System.Windows.Forms.TabPage();
+            this._newEmplSexCB = new System.Windows.Forms.ComboBox();
+            this._insertButton = new System.Windows.Forms.Button();
+            this._newEmplBloodCB = new System.Windows.Forms.ComboBox();
+            this._newEmplBloodLB = new System.Windows.Forms.Label();
             this._newEmplPositionCB = new System.Windows.Forms.ComboBox();
-            this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hrmsDataSet3 = new OOAD_HR_System.hrmsDataSet3();
             this._newEmplDeptCB = new System.Windows.Forms.ComboBox();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hrmsDataSet2 = new OOAD_HR_System.hrmsDataSet2();
             this._newEmplBasicSalaryTB = new System.Windows.Forms.TextBox();
             this._newEmplJobStatCB = new System.Windows.Forms.ComboBox();
             this._newEmplSpouseTB = new System.Windows.Forms.TextBox();
@@ -47,9 +47,7 @@
             this._newEmplEmerPhoneTB = new System.Windows.Forms.TextBox();
             this._newEmplEmerPersonTB = new System.Windows.Forms.TextBox();
             this._newEmplAddrTB = new System.Windows.Forms.TextBox();
-            this._phoneTB = new System.Windows.Forms.TextBox();
-            this._dashLB = new System.Windows.Forms.Label();
-            this._areaCodeTB = new System.Windows.Forms.TextBox();
+            this._newEmplPhoneTB = new System.Windows.Forms.TextBox();
             this._newEmpllSsnTB = new System.Windows.Forms.TextBox();
             this._newEmplBirthDP = new System.Windows.Forms.DateTimePicker();
             this._newEmplNameTB = new System.Windows.Forms.TextBox();
@@ -80,20 +78,20 @@
             this._report = new System.Windows.Forms.TabPage();
             this._authorization = new System.Windows.Forms.TabPage();
             this._logoutButton = new System.Windows.Forms.Button();
-            this.departmentTableAdapter = new OOAD_HR_System.hrmsDataSet2TableAdapters.departmentTableAdapter();
-            this.positionTableAdapter = new OOAD_HR_System.hrmsDataSet3TableAdapters.positionTableAdapter();
-            this._newEmplBloodLB = new System.Windows.Forms.Label();
-            this._newEmplBloodCB = new System.Windows.Forms.ComboBox();
-            this._insertButton = new System.Windows.Forms.Button();
-            this._newEmplSexCB = new System.Windows.Forms.ComboBox();
+            this.deptDataSet = new OOAD_HR_System.deptDataSet();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
+            this.positionDataSet = new OOAD_HR_System.positionDataSet();
+            this.positionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this._employeePage.SuspendLayout();
             this._newEmployee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deptDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainFunctionPage
@@ -153,9 +151,7 @@
             this._newEmployee.Controls.Add(this._newEmplEmerPhoneTB);
             this._newEmployee.Controls.Add(this._newEmplEmerPersonTB);
             this._newEmployee.Controls.Add(this._newEmplAddrTB);
-            this._newEmployee.Controls.Add(this._phoneTB);
-            this._newEmployee.Controls.Add(this._dashLB);
-            this._newEmployee.Controls.Add(this._areaCodeTB);
+            this._newEmployee.Controls.Add(this._newEmplPhoneTB);
             this._newEmployee.Controls.Add(this._newEmpllSsnTB);
             this._newEmployee.Controls.Add(this._newEmplBirthDP);
             this._newEmployee.Controls.Add(this._newEmplNameTB);
@@ -182,8 +178,53 @@
             this._newEmployee.Padding = new System.Windows.Forms.Padding(3);
             this._newEmployee.Size = new System.Drawing.Size(1537, 821);
             this._newEmployee.TabIndex = 0;
-            this._newEmployee.Text = "Insert";
+            this._newEmployee.Text = "Add";
             this._newEmployee.UseVisualStyleBackColor = true;
+            // 
+            // _newEmplSexCB
+            // 
+            this._newEmplSexCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplSexCB.FormattingEnabled = true;
+            this._newEmplSexCB.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this._newEmplSexCB.Location = new System.Drawing.Point(726, 100);
+            this._newEmplSexCB.Name = "_newEmplSexCB";
+            this._newEmplSexCB.Size = new System.Drawing.Size(121, 32);
+            this._newEmplSexCB.TabIndex = 38;
+            // 
+            // _insertButton
+            // 
+            this._insertButton.Location = new System.Drawing.Point(1220, 719);
+            this._insertButton.Name = "_insertButton";
+            this._insertButton.Size = new System.Drawing.Size(113, 53);
+            this._insertButton.TabIndex = 37;
+            this._insertButton.Text = "Add";
+            this._insertButton.UseVisualStyleBackColor = true;
+            this._insertButton.Click += new System.EventHandler(this.ClickAddButton);
+            // 
+            // _newEmplBloodCB
+            // 
+            this._newEmplBloodCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._newEmplBloodCB.FormattingEnabled = true;
+            this._newEmplBloodCB.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "O",
+            "AB"});
+            this._newEmplBloodCB.Location = new System.Drawing.Point(951, 100);
+            this._newEmplBloodCB.Name = "_newEmplBloodCB";
+            this._newEmplBloodCB.Size = new System.Drawing.Size(113, 32);
+            this._newEmplBloodCB.TabIndex = 36;
+            // 
+            // _newEmplBloodLB
+            // 
+            this._newEmplBloodLB.AutoSize = true;
+            this._newEmplBloodLB.Location = new System.Drawing.Point(875, 108);
+            this._newEmplBloodLB.Name = "_newEmplBloodLB";
+            this._newEmplBloodLB.Size = new System.Drawing.Size(70, 24);
+            this._newEmplBloodLB.TabIndex = 35;
+            this._newEmplBloodLB.Text = "Blood:";
             // 
             // _newEmplPositionCB
             // 
@@ -198,16 +239,6 @@
             this._newEmplPositionCB.ValueMember = "positionID";
             this._newEmplPositionCB.SelectedIndexChanged += new System.EventHandler(this.ChangedNewEmplPositionCBSelectedIndex);
             // 
-            // positionBindingSource
-            // 
-            this.positionBindingSource.DataMember = "position";
-            this.positionBindingSource.DataSource = this.hrmsDataSet3;
-            // 
-            // hrmsDataSet3
-            // 
-            this.hrmsDataSet3.DataSetName = "hrmsDataSet3";
-            this.hrmsDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // _newEmplDeptCB
             // 
             this._newEmplDeptCB.DataSource = this.departmentBindingSource;
@@ -220,22 +251,13 @@
             this._newEmplDeptCB.TabIndex = 33;
             this._newEmplDeptCB.ValueMember = "departmentID";
             // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "department";
-            this.departmentBindingSource.DataSource = this.hrmsDataSet2;
-            // 
-            // hrmsDataSet2
-            // 
-            this.hrmsDataSet2.DataSetName = "hrmsDataSet2";
-            this.hrmsDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // _newEmplBasicSalaryTB
             // 
             this._newEmplBasicSalaryTB.Location = new System.Drawing.Point(185, 694);
             this._newEmplBasicSalaryTB.Name = "_newEmplBasicSalaryTB";
             this._newEmplBasicSalaryTB.Size = new System.Drawing.Size(299, 36);
             this._newEmplBasicSalaryTB.TabIndex = 32;
+            this._newEmplBasicSalaryTB.Text = "0";
             // 
             // _newEmplJobStatCB
             // 
@@ -306,28 +328,12 @@
             this._newEmplAddrTB.Size = new System.Drawing.Size(1018, 36);
             this._newEmplAddrTB.TabIndex = 25;
             // 
-            // _phoneTB
+            // _newEmplPhoneTB
             // 
-            this._phoneTB.Location = new System.Drawing.Point(939, 181);
-            this._phoneTB.Name = "_phoneTB";
-            this._phoneTB.Size = new System.Drawing.Size(224, 36);
-            this._phoneTB.TabIndex = 24;
-            // 
-            // _dashLB
-            // 
-            this._dashLB.AutoSize = true;
-            this._dashLB.Location = new System.Drawing.Point(914, 187);
-            this._dashLB.Name = "_dashLB";
-            this._dashLB.Size = new System.Drawing.Size(18, 24);
-            this._dashLB.TabIndex = 23;
-            this._dashLB.Text = "-";
-            // 
-            // _areaCodeTB
-            // 
-            this._areaCodeTB.Location = new System.Drawing.Point(828, 181);
-            this._areaCodeTB.Name = "_areaCodeTB";
-            this._areaCodeTB.Size = new System.Drawing.Size(78, 36);
-            this._areaCodeTB.TabIndex = 22;
+            this._newEmplPhoneTB.Location = new System.Drawing.Point(828, 181);
+            this._newEmplPhoneTB.Name = "_newEmplPhoneTB";
+            this._newEmplPhoneTB.Size = new System.Drawing.Size(335, 36);
+            this._newEmplPhoneTB.TabIndex = 24;
             // 
             // _newEmpllSsnTB
             // 
@@ -601,58 +607,33 @@
             this._logoutButton.UseVisualStyleBackColor = true;
             this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
             // 
+            // deptDataSet
+            // 
+            this.deptDataSet.DataSetName = "deptDataSet";
+            this.deptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "department";
+            this.departmentBindingSource.DataSource = this.deptDataSet;
+            // 
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
             // 
+            // positionDataSet
+            // 
+            this.positionDataSet.DataSetName = "positionDataSet";
+            this.positionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // positionBindingSource
+            // 
+            this.positionBindingSource.DataMember = "position";
+            this.positionBindingSource.DataSource = this.positionDataSet;
+            // 
             // positionTableAdapter
             // 
             this.positionTableAdapter.ClearBeforeFill = true;
-            // 
-            // _newEmplBloodLB
-            // 
-            this._newEmplBloodLB.AutoSize = true;
-            this._newEmplBloodLB.Location = new System.Drawing.Point(875, 108);
-            this._newEmplBloodLB.Name = "_newEmplBloodLB";
-            this._newEmplBloodLB.Size = new System.Drawing.Size(70, 24);
-            this._newEmplBloodLB.TabIndex = 35;
-            this._newEmplBloodLB.Text = "Blood:";
-            // 
-            // _newEmplBloodCB
-            // 
-            this._newEmplBloodCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._newEmplBloodCB.FormattingEnabled = true;
-            this._newEmplBloodCB.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "O",
-            "AB"});
-            this._newEmplBloodCB.Location = new System.Drawing.Point(951, 100);
-            this._newEmplBloodCB.Name = "_newEmplBloodCB";
-            this._newEmplBloodCB.Size = new System.Drawing.Size(113, 32);
-            this._newEmplBloodCB.TabIndex = 36;
-            // 
-            // _insertButton
-            // 
-            this._insertButton.Location = new System.Drawing.Point(1220, 719);
-            this._insertButton.Name = "_insertButton";
-            this._insertButton.Size = new System.Drawing.Size(113, 53);
-            this._insertButton.TabIndex = 37;
-            this._insertButton.Text = "Insert";
-            this._insertButton.UseVisualStyleBackColor = true;
-            this._insertButton.Click += new System.EventHandler(this.ClickInsertButton);
-            // 
-            // _newEmplSexCB
-            // 
-            this._newEmplSexCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._newEmplSexCB.FormattingEnabled = true;
-            this._newEmplSexCB.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this._newEmplSexCB.Location = new System.Drawing.Point(726, 100);
-            this._newEmplSexCB.Name = "_newEmplSexCB";
-            this._newEmplSexCB.Size = new System.Drawing.Size(121, 32);
-            this._newEmplSexCB.TabIndex = 38;
             // 
             // _mainFunction
             // 
@@ -670,10 +651,10 @@
             this._employeePage.ResumeLayout(false);
             this._newEmployee.ResumeLayout(false);
             this._newEmployee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deptDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hrmsDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -714,9 +695,7 @@
         private System.Windows.Forms.TextBox _newEmplNameTB;
         private System.Windows.Forms.DateTimePicker _newEmplBirthDP;
         private System.Windows.Forms.TextBox _newEmpllSsnTB;
-        private System.Windows.Forms.Label _dashLB;
-        private System.Windows.Forms.TextBox _areaCodeTB;
-        private System.Windows.Forms.TextBox _phoneTB;
+        private System.Windows.Forms.TextBox _newEmplPhoneTB;
         private System.Windows.Forms.TextBox _newEmplAddrTB;
         private System.Windows.Forms.TextBox _newEmplEmerPhoneTB;
         private System.Windows.Forms.TextBox _newEmplEmerPersonTB;
@@ -727,15 +706,15 @@
         private System.Windows.Forms.TextBox _newEmplBasicSalaryTB;
         private System.Windows.Forms.ComboBox _newEmplDeptCB;
         private System.Windows.Forms.ComboBox _newEmplPositionCB;
-        private hrmsDataSet2 hrmsDataSet2;
-        private System.Windows.Forms.BindingSource departmentBindingSource;
-        private hrmsDataSet2TableAdapters.departmentTableAdapter departmentTableAdapter;
-        private hrmsDataSet3 hrmsDataSet3;
-        private System.Windows.Forms.BindingSource positionBindingSource;
-        private hrmsDataSet3TableAdapters.positionTableAdapter positionTableAdapter;
         private System.Windows.Forms.Label _newEmplBloodLB;
         private System.Windows.Forms.ComboBox _newEmplBloodCB;
         private System.Windows.Forms.Button _insertButton;
         private System.Windows.Forms.ComboBox _newEmplSexCB;
+        private deptDataSet deptDataSet;
+        private System.Windows.Forms.BindingSource departmentBindingSource;
+        private deptDataSetTableAdapters.departmentTableAdapter departmentTableAdapter;
+        private positionDataSet positionDataSet;
+        private System.Windows.Forms.BindingSource positionBindingSource;
+        private positionDataSetTableAdapters.positionTableAdapter positionTableAdapter;
     }
 }

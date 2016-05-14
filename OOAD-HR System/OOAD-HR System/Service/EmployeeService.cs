@@ -12,7 +12,7 @@ namespace OOAD_HR_System.Service
     public class EmployeeService
     {
 
-        private MySqlConnection myConnection = new MySqlConnection("server=118.166.192.4;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
+        private MySqlConnection myConnection = new MySqlConnection("server=118.166.192.62;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
         private EmployeeModel _employeeModel = new EmployeeModel();
 
         public EmployeeService(EmployeeModel employeeModel)
@@ -54,12 +54,12 @@ namespace OOAD_HR_System.Service
                         _employeeModel.GetBlood(), _employeeModel.GetAddress(), _employeeModel.GetBirth(), _employeeModel.GetEmerPerson(), _employeeModel.GetEmerPhone(),
                         _employeeModel.GetMilitaryStatus(), _employeeModel.GetJobStatus(), _employeeModel.GetMarriedStatus(), _employeeModel.GetSpouse(),
                         _employeeModel.GetDeptID(), _employeeModel.GetPositionID(), _employeeModel.GetBasicSalary().ToString());*/
-                    String addString = String.Format("INSERT INTO employee(emplID,emplName,ssn,sex,phone,blood,address,birth,emerPerson,emerPhoneNum,military,jobStat,marriedStat,spouse,deptID,positionID,basicSalary) VALUES('" + 
-                        _employeeModel.GetEmplID() + "','" + _employeeModel.GetName() + "','" + _employeeModel.GetSsn() + "','" + _employeeModel.GetSex() + "','" + 
-                        _employeeModel.GetPhone() + "','" + _employeeModel.GetBlood() + "','" + _employeeModel.GetAddress() + "','" + _employeeModel.GetBirth() + "','" +
-                        _employeeModel.GetEmerPerson() + "','" + _employeeModel.GetEmerPhone() + "','" + _employeeModel.GetMilitaryStatus() + "','" +
-                        _employeeModel.GetJobStatus() + "','" + _employeeModel.GetMarriedStatus() + "','" + _employeeModel.GetSpouse() + "','" +
-                        _employeeModel.GetDeptID() + "','" + _employeeModel.GetPositionID() + "','" + _employeeModel.GetBasicSalary() + "');" );
+                    String addString = String.Format("INSERT INTO employee(emplID,emplName,ssn,sex,phone,blood,address,birth,emerPerson,emerPhoneNum,military,jobStat,marriedStat,spouse,deptID,positionID,basicSalary) VALUES('" +
+                        this._employeeModel.GetEmplID() + "','" + this._employeeModel.GetName() + "','" + this._employeeModel.GetSsn() + "','" + this._employeeModel.GetSex() + "','" +
+                        this._employeeModel.GetPhone() + "','" + this._employeeModel.GetBlood() + "','" + this._employeeModel.GetAddress() + "','" + this._employeeModel.GetBirth() + "','" +
+                        this._employeeModel.GetEmerPerson() + "','" + this._employeeModel.GetEmerPhone() + "','" + this._employeeModel.GetMilitaryStatus() + "','" +
+                        this._employeeModel.GetJobStatus() + "','" + this._employeeModel.GetMarriedStatus() + "','" + this._employeeModel.GetSpouse() + "','" +
+                        this._employeeModel.GetDeptID() + "','" + this._employeeModel.GetPositionID() + "','" + this._employeeModel.GetBasicSalary() + "');");
                     MySqlCommand addCommand = new MySqlCommand(addString, myConnection);
                     addCommand.Connection = myConnection;
                     addCommand.ExecuteNonQuery();

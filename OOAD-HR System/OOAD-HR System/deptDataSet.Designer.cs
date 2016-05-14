@@ -20,17 +20,17 @@ namespace OOAD_HR_System {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("hrmsDataSet3")]
+    [global::System.Xml.Serialization.XmlRootAttribute("deptDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class hrmsDataSet3 : global::System.Data.DataSet {
+    public partial class deptDataSet : global::System.Data.DataSet {
         
-        private positionDataTable tableposition;
+        private departmentDataTable tabledepartment;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public hrmsDataSet3() {
+        public deptDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace OOAD_HR_System {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected hrmsDataSet3(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected deptDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace OOAD_HR_System {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["position"] != null)) {
-                    base.Tables.Add(new positionDataTable(ds.Tables["position"]));
+                if ((ds.Tables["department"] != null)) {
+                    base.Tables.Add(new departmentDataTable(ds.Tables["department"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace OOAD_HR_System {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public positionDataTable position {
+        public departmentDataTable department {
             get {
-                return this.tableposition;
+                return this.tabledepartment;
             }
         }
         
@@ -127,7 +127,7 @@ namespace OOAD_HR_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            hrmsDataSet3 cln = ((hrmsDataSet3)(base.Clone()));
+            deptDataSet cln = ((deptDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace OOAD_HR_System {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["position"] != null)) {
-                    base.Tables.Add(new positionDataTable(ds.Tables["position"]));
+                if ((ds.Tables["department"] != null)) {
+                    base.Tables.Add(new departmentDataTable(ds.Tables["department"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace OOAD_HR_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableposition = ((positionDataTable)(base.Tables["position"]));
+            this.tabledepartment = ((departmentDataTable)(base.Tables["department"]));
             if ((initTable == true)) {
-                if ((this.tableposition != null)) {
-                    this.tableposition.InitVars();
+                if ((this.tabledepartment != null)) {
+                    this.tabledepartment.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace OOAD_HR_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "hrmsDataSet3";
+            this.DataSetName = "deptDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/hrmsDataSet3.xsd";
+            this.Namespace = "http://tempuri.org/deptDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableposition = new positionDataTable();
-            base.Tables.Add(this.tableposition);
+            this.tabledepartment = new departmentDataTable();
+            base.Tables.Add(this.tabledepartment);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeposition() {
+        private bool ShouldSerializedepartment() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace OOAD_HR_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            hrmsDataSet3 ds = new hrmsDataSet3();
+            deptDataSet ds = new deptDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,29 @@ namespace OOAD_HR_System {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void positionRowChangeEventHandler(object sender, positionRowChangeEvent e);
+        public delegate void departmentRowChangeEventHandler(object sender, departmentRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class positionDataTable : global::System.Data.TypedTableBase<positionRow> {
+        public partial class departmentDataTable : global::System.Data.TypedTableBase<departmentRow> {
             
-            private global::System.Data.DataColumn columnpositionID;
+            private global::System.Data.DataColumn columndepartmentID;
             
-            private global::System.Data.DataColumn columnpositionName;
+            private global::System.Data.DataColumn columndepartmentName;
             
-            private global::System.Data.DataColumn columnpositionBasicSalary;
+            private global::System.Data.DataColumn columndepartmentStartTime;
             
-            private global::System.Data.DataColumn columnauthoID;
+            private global::System.Data.DataColumn columndepartmentEndTime;
+            
+            private global::System.Data.DataColumn columndepartmentManager;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public positionDataTable() {
-                this.TableName = "position";
+            public departmentDataTable() {
+                this.TableName = "department";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +300,7 @@ namespace OOAD_HR_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal positionDataTable(global::System.Data.DataTable table) {
+            internal departmentDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,40 +317,48 @@ namespace OOAD_HR_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected positionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected departmentDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn positionIDColumn {
+            public global::System.Data.DataColumn departmentIDColumn {
                 get {
-                    return this.columnpositionID;
+                    return this.columndepartmentID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn positionNameColumn {
+            public global::System.Data.DataColumn departmentNameColumn {
                 get {
-                    return this.columnpositionName;
+                    return this.columndepartmentName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn positionBasicSalaryColumn {
+            public global::System.Data.DataColumn departmentStartTimeColumn {
                 get {
-                    return this.columnpositionBasicSalary;
+                    return this.columndepartmentStartTime;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn authoIDColumn {
+            public global::System.Data.DataColumn departmentEndTimeColumn {
                 get {
-                    return this.columnauthoID;
+                    return this.columndepartmentEndTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn departmentManagerColumn {
+                get {
+                    return this.columndepartmentManager;
                 }
             }
             
@@ -363,55 +373,56 @@ namespace OOAD_HR_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public positionRow this[int index] {
+            public departmentRow this[int index] {
                 get {
-                    return ((positionRow)(this.Rows[index]));
+                    return ((departmentRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event positionRowChangeEventHandler positionRowChanging;
+            public event departmentRowChangeEventHandler departmentRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event positionRowChangeEventHandler positionRowChanged;
+            public event departmentRowChangeEventHandler departmentRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event positionRowChangeEventHandler positionRowDeleting;
+            public event departmentRowChangeEventHandler departmentRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event positionRowChangeEventHandler positionRowDeleted;
+            public event departmentRowChangeEventHandler departmentRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddpositionRow(positionRow row) {
+            public void AdddepartmentRow(departmentRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public positionRow AddpositionRow(string positionID, string positionName, int positionBasicSalary, string authoID) {
-                positionRow rowpositionRow = ((positionRow)(this.NewRow()));
+            public departmentRow AdddepartmentRow(string departmentID, string departmentName, System.DateTime departmentStartTime, System.DateTime departmentEndTime, string departmentManager) {
+                departmentRow rowdepartmentRow = ((departmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        positionID,
-                        positionName,
-                        positionBasicSalary,
-                        authoID};
-                rowpositionRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowpositionRow);
-                return rowpositionRow;
+                        departmentID,
+                        departmentName,
+                        departmentStartTime,
+                        departmentEndTime,
+                        departmentManager};
+                rowdepartmentRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdepartmentRow);
+                return rowdepartmentRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public positionRow FindBypositionID(string positionID) {
-                return ((positionRow)(this.Rows.Find(new object[] {
-                            positionID})));
+            public departmentRow FindBydepartmentID(string departmentID) {
+                return ((departmentRow)(this.Rows.Find(new object[] {
+                            departmentID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                positionDataTable cln = ((positionDataTable)(base.Clone()));
+                departmentDataTable cln = ((departmentDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -419,62 +430,65 @@ namespace OOAD_HR_System {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new positionDataTable();
+                return new departmentDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnpositionID = base.Columns["positionID"];
-                this.columnpositionName = base.Columns["positionName"];
-                this.columnpositionBasicSalary = base.Columns["positionBasicSalary"];
-                this.columnauthoID = base.Columns["authoID"];
+                this.columndepartmentID = base.Columns["departmentID"];
+                this.columndepartmentName = base.Columns["departmentName"];
+                this.columndepartmentStartTime = base.Columns["departmentStartTime"];
+                this.columndepartmentEndTime = base.Columns["departmentEndTime"];
+                this.columndepartmentManager = base.Columns["departmentManager"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnpositionID = new global::System.Data.DataColumn("positionID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpositionID);
-                this.columnpositionName = new global::System.Data.DataColumn("positionName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpositionName);
-                this.columnpositionBasicSalary = new global::System.Data.DataColumn("positionBasicSalary", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpositionBasicSalary);
-                this.columnauthoID = new global::System.Data.DataColumn("authoID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnauthoID);
+                this.columndepartmentID = new global::System.Data.DataColumn("departmentID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartmentID);
+                this.columndepartmentName = new global::System.Data.DataColumn("departmentName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartmentName);
+                this.columndepartmentStartTime = new global::System.Data.DataColumn("departmentStartTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartmentStartTime);
+                this.columndepartmentEndTime = new global::System.Data.DataColumn("departmentEndTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartmentEndTime);
+                this.columndepartmentManager = new global::System.Data.DataColumn("departmentManager", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartmentManager);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnpositionID}, true));
-                this.columnpositionID.AllowDBNull = false;
-                this.columnpositionID.Unique = true;
-                this.columnpositionID.MaxLength = 255;
-                this.columnpositionName.MaxLength = 255;
-                this.columnauthoID.MaxLength = 255;
+                                this.columndepartmentID}, true));
+                this.columndepartmentID.AllowDBNull = false;
+                this.columndepartmentID.Unique = true;
+                this.columndepartmentID.MaxLength = 255;
+                this.columndepartmentName.MaxLength = 255;
+                this.columndepartmentManager.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public positionRow NewpositionRow() {
-                return ((positionRow)(this.NewRow()));
+            public departmentRow NewdepartmentRow() {
+                return ((departmentRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new positionRow(builder);
+                return new departmentRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(positionRow);
+                return typeof(departmentRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.positionRowChanged != null)) {
-                    this.positionRowChanged(this, new positionRowChangeEvent(((positionRow)(e.Row)), e.Action));
+                if ((this.departmentRowChanged != null)) {
+                    this.departmentRowChanged(this, new departmentRowChangeEvent(((departmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -482,8 +496,8 @@ namespace OOAD_HR_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.positionRowChanging != null)) {
-                    this.positionRowChanging(this, new positionRowChangeEvent(((positionRow)(e.Row)), e.Action));
+                if ((this.departmentRowChanging != null)) {
+                    this.departmentRowChanging(this, new departmentRowChangeEvent(((departmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,8 +505,8 @@ namespace OOAD_HR_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.positionRowDeleted != null)) {
-                    this.positionRowDeleted(this, new positionRowChangeEvent(((positionRow)(e.Row)), e.Action));
+                if ((this.departmentRowDeleted != null)) {
+                    this.departmentRowDeleted(this, new departmentRowChangeEvent(((departmentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -500,14 +514,14 @@ namespace OOAD_HR_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.positionRowDeleting != null)) {
-                    this.positionRowDeleting(this, new positionRowChangeEvent(((positionRow)(e.Row)), e.Action));
+                if ((this.departmentRowDeleting != null)) {
+                    this.departmentRowDeleting(this, new departmentRowChangeEvent(((departmentRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovepositionRow(positionRow row) {
+            public void RemovedepartmentRow(departmentRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -516,7 +530,7 @@ namespace OOAD_HR_System {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                hrmsDataSet3 ds = new hrmsDataSet3();
+                deptDataSet ds = new deptDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -534,7 +548,7 @@ namespace OOAD_HR_System {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "positionDataTable";
+                attribute2.FixedValue = "departmentDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -578,110 +592,138 @@ namespace OOAD_HR_System {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class positionRow : global::System.Data.DataRow {
+        public partial class departmentRow : global::System.Data.DataRow {
             
-            private positionDataTable tableposition;
+            private departmentDataTable tabledepartment;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal positionRow(global::System.Data.DataRowBuilder rb) : 
+            internal departmentRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableposition = ((positionDataTable)(this.Table));
+                this.tabledepartment = ((departmentDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string positionID {
+            public string departmentID {
                 get {
-                    return ((string)(this[this.tableposition.positionIDColumn]));
+                    return ((string)(this[this.tabledepartment.departmentIDColumn]));
                 }
                 set {
-                    this[this.tableposition.positionIDColumn] = value;
+                    this[this.tabledepartment.departmentIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string positionName {
-                get {
-                    try {
-                        return ((string)(this[this.tableposition.positionNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'position\' 中資料行 \'positionName\' 的值是 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableposition.positionNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int positionBasicSalary {
+            public string departmentName {
                 get {
                     try {
-                        return ((int)(this[this.tableposition.positionBasicSalaryColumn]));
+                        return ((string)(this[this.tabledepartment.departmentNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'position\' 中資料行 \'positionBasicSalary\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'department\' 中資料行 \'departmentName\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableposition.positionBasicSalaryColumn] = value;
+                    this[this.tabledepartment.departmentNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string authoID {
+            public System.DateTime departmentStartTime {
                 get {
                     try {
-                        return ((string)(this[this.tableposition.authoIDColumn]));
+                        return ((global::System.DateTime)(this[this.tabledepartment.departmentStartTimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'position\' 中資料行 \'authoID\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'department\' 中資料行 \'departmentStartTime\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableposition.authoIDColumn] = value;
+                    this[this.tabledepartment.departmentStartTimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IspositionNameNull() {
-                return this.IsNull(this.tableposition.positionNameColumn);
+            public System.DateTime departmentEndTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabledepartment.departmentEndTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'department\' 中資料行 \'departmentEndTime\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tabledepartment.departmentEndTimeColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetpositionNameNull() {
-                this[this.tableposition.positionNameColumn] = global::System.Convert.DBNull;
+            public string departmentManager {
+                get {
+                    try {
+                        return ((string)(this[this.tabledepartment.departmentManagerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'department\' 中資料行 \'departmentManager\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tabledepartment.departmentManagerColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IspositionBasicSalaryNull() {
-                return this.IsNull(this.tableposition.positionBasicSalaryColumn);
+            public bool IsdepartmentNameNull() {
+                return this.IsNull(this.tabledepartment.departmentNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetpositionBasicSalaryNull() {
-                this[this.tableposition.positionBasicSalaryColumn] = global::System.Convert.DBNull;
+            public void SetdepartmentNameNull() {
+                this[this.tabledepartment.departmentNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsauthoIDNull() {
-                return this.IsNull(this.tableposition.authoIDColumn);
+            public bool IsdepartmentStartTimeNull() {
+                return this.IsNull(this.tabledepartment.departmentStartTimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetauthoIDNull() {
-                this[this.tableposition.authoIDColumn] = global::System.Convert.DBNull;
+            public void SetdepartmentStartTimeNull() {
+                this[this.tabledepartment.departmentStartTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdepartmentEndTimeNull() {
+                return this.IsNull(this.tabledepartment.departmentEndTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdepartmentEndTimeNull() {
+                this[this.tabledepartment.departmentEndTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdepartmentManagerNull() {
+                return this.IsNull(this.tabledepartment.departmentManagerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdepartmentManagerNull() {
+                this[this.tabledepartment.departmentManagerColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -689,22 +731,22 @@ namespace OOAD_HR_System {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class positionRowChangeEvent : global::System.EventArgs {
+        public class departmentRowChangeEvent : global::System.EventArgs {
             
-            private positionRow eventRow;
+            private departmentRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public positionRowChangeEvent(positionRow row, global::System.Data.DataRowAction action) {
+            public departmentRowChangeEvent(departmentRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public positionRow Row {
+            public departmentRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -720,7 +762,7 @@ namespace OOAD_HR_System {
         }
     }
 }
-namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
+namespace OOAD_HR_System.deptDataSetTableAdapters {
     
     
     /// <summary>
@@ -732,7 +774,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class positionTableAdapter : global::System.ComponentModel.Component {
+    public partial class departmentTableAdapter : global::System.ComponentModel.Component {
         
         private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
         
@@ -746,7 +788,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public positionTableAdapter() {
+        public departmentTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -843,22 +885,23 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
             this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "position";
-            tableMapping.ColumnMappings.Add("positionID", "positionID");
-            tableMapping.ColumnMappings.Add("positionName", "positionName");
-            tableMapping.ColumnMappings.Add("positionBasicSalary", "positionBasicSalary");
-            tableMapping.ColumnMappings.Add("authoID", "authoID");
+            tableMapping.DataSetTable = "department";
+            tableMapping.ColumnMappings.Add("departmentID", "departmentID");
+            tableMapping.ColumnMappings.Add("departmentName", "departmentName");
+            tableMapping.ColumnMappings.Add("departmentStartTime", "departmentStartTime");
+            tableMapping.ColumnMappings.Add("departmentEndTime", "departmentEndTime");
+            tableMapping.ColumnMappings.Add("departmentManager", "departmentManager");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `position` WHERE ((`positionID` = @p1) AND ((@p2 = 1 AND `positionName` IS NULL) OR (`positionName` = @p3)) AND ((@p4 = 1 AND `positionBasicSalary` IS NULL) OR (`positionBasicSalary` = @p5)) AND ((@p6 = 1 AND `authoID` IS NULL) OR (`authoID` = @p7)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `department` WHERE ((`departmentID` = @p1) AND ((@p2 = 1 AND `departmentName` IS NULL) OR (`departmentName` = @p3)) AND ((@p4 = 1 AND `departmentStartTime` IS NULL) OR (`departmentStartTime` = @p5)) AND ((@p6 = 1 AND `departmentEndTime` IS NULL) OR (`departmentEndTime` = @p7)) AND ((@p8 = 1 AND `departmentManager` IS NULL) OR (`departmentManager` = @p9)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "positionID";
+            param.SourceColumn = "departmentID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -866,7 +909,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "positionName";
+            param.SourceColumn = "departmentName";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -875,7 +918,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "positionName";
+            param.SourceColumn = "departmentName";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -883,16 +926,16 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "positionBasicSalary";
+            param.SourceColumn = "departmentStartTime";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "positionBasicSalary";
+            param.SourceColumn = "departmentStartTime";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -900,140 +943,188 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "authoID";
+            param.SourceColumn = "departmentEndTime";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "departmentEndTime";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "departmentManager";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "authoID";
+            param.SourceColumn = "departmentManager";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `position` (`positionID`, `positionName`, `positionBasicSalary`, `aut" +
-                "hoID`) VALUES (@p1, @p2, @p3, @p4)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `department` (`departmentID`, `departmentName`, `departmentStartTime`" +
+                ", `departmentEndTime`, `departmentManager`) VALUES (@p1, @p2, @p3, @p4, @p5)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "positionID";
+            param.SourceColumn = "departmentID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "positionName";
+            param.SourceColumn = "departmentName";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "positionBasicSalary";
+            param.SourceColumn = "departmentStartTime";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "departmentEndTime";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "authoID";
+            param.SourceColumn = "departmentManager";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `position` SET `positionID` = @p1, `positionName` = @p2, `positionBasicSalary` = @p3, `authoID` = @p4 WHERE ((`positionID` = @p5) AND ((@p6 = 1 AND `positionName` IS NULL) OR (`positionName` = @p7)) AND ((@p8 = 1 AND `positionBasicSalary` IS NULL) OR (`positionBasicSalary` = @p9)) AND ((@p10 = 1 AND `authoID` IS NULL) OR (`authoID` = @p11)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `department` SET `departmentID` = @p1, `departmentName` = @p2, `departmentStartTime` = @p3, `departmentEndTime` = @p4, `departmentManager` = @p5 WHERE ((`departmentID` = @p6) AND ((@p7 = 1 AND `departmentName` IS NULL) OR (`departmentName` = @p8)) AND ((@p9 = 1 AND `departmentStartTime` IS NULL) OR (`departmentStartTime` = @p10)) AND ((@p11 = 1 AND `departmentEndTime` IS NULL) OR (`departmentEndTime` = @p12)) AND ((@p13 = 1 AND `departmentManager` IS NULL) OR (`departmentManager` = @p14)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "positionID";
+            param.SourceColumn = "departmentID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "positionName";
+            param.SourceColumn = "departmentName";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "positionBasicSalary";
+            param.SourceColumn = "departmentStartTime";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
-            param.SourceColumn = "authoID";
+            param.SourceColumn = "departmentEndTime";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "positionID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumn = "departmentManager";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "positionName";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "positionName";
+            param.SourceColumn = "departmentID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "positionBasicSalary";
+            param.SourceColumn = "departmentName";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "departmentName";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "positionBasicSalary";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "authoID";
+            param.SourceColumn = "departmentStartTime";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "departmentStartTime";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "departmentEndTime";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p12";
+            param.DbType = global::System.Data.DbType.Date;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.IsNullable = true;
+            param.SourceColumn = "departmentEndTime";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p13";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "departmentManager";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p14";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "authoID";
+            param.SourceColumn = "departmentManager";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -1042,7 +1133,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::OOAD_HR_System.Properties.Settings.Default.hrmsConnectionString;
+            this._connection.ConnectionString = global::OOAD_HR_System.Properties.Settings.Default.deptConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1051,8 +1142,8 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `positionID`, `positionName`, `positionBasicSalary`, `authoID` FROM `posit" +
-                "ion`";
+            this._commandCollection[0].CommandText = "SELECT `departmentID`, `departmentName`, `departmentStartTime`, `departmentEndTim" +
+                "e`, `departmentManager` FROM `department`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1060,7 +1151,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(hrmsDataSet3.positionDataTable dataTable) {
+        public virtual int Fill(deptDataSet.departmentDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1073,9 +1164,9 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual hrmsDataSet3.positionDataTable GetData() {
+        public virtual deptDataSet.departmentDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            hrmsDataSet3.positionDataTable dataTable = new hrmsDataSet3.positionDataTable();
+            deptDataSet.departmentDataTable dataTable = new deptDataSet.departmentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1083,15 +1174,15 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(hrmsDataSet3.positionDataTable dataTable) {
+        public virtual int Update(deptDataSet.departmentDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(hrmsDataSet3 dataSet) {
-            return this.Adapter.Update(dataSet, "position");
+        public virtual int Update(deptDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "department");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1113,7 +1204,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string p1, string p3, global::System.Nullable<int> p5, string p7) {
+        public virtual int Delete(string p1, string p3, global::System.Nullable<global::System.DateTime> p5, global::System.Nullable<global::System.DateTime> p7, string p9) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -1130,19 +1221,27 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
             }
             if ((p5.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(p5.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(p5.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((p7 == null)) {
+            if ((p7.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(p7.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((p9 == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(p7));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(p9));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1164,7 +1263,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2, global::System.Nullable<int> p3, string p4) {
+        public virtual int Insert(string p1, string p2, global::System.Nullable<global::System.DateTime> p3, global::System.Nullable<global::System.DateTime> p4, string p5) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -1178,16 +1277,22 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p2));
             }
             if ((p3.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(p3.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((p4 == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((p4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(p4.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((p5 == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1209,7 +1314,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string p1, string p2, global::System.Nullable<int> p3, string p4, string p5, string p7, global::System.Nullable<int> p9, string p11) {
+        public virtual int Update(string p1, string p2, global::System.Nullable<global::System.DateTime> p3, global::System.Nullable<global::System.DateTime> p4, string p5, string p6, string p8, global::System.Nullable<global::System.DateTime> p10, global::System.Nullable<global::System.DateTime> p12, string p14) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -1223,46 +1328,60 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p2));
             }
             if ((p3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3.Value));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(p3.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((p4 == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((p4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(p4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((p5 == null)) {
-                throw new global::System.ArgumentNullException("p5");
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
             }
-            if ((p7 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(p7));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
             }
-            if ((p9.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((p11 == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((p8 == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(p11));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(p8));
+            }
+            if ((p10.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(p10.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((p12.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(p12.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((p14 == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(p14));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1284,8 +1403,8 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string p2, global::System.Nullable<int> p3, string p4, string p5, string p7, global::System.Nullable<int> p9, string p11) {
-            return this.Update(p5, p2, p3, p4, p5, p7, p9, p11);
+        public virtual int Update(string p2, global::System.Nullable<global::System.DateTime> p3, global::System.Nullable<global::System.DateTime> p4, string p5, string p6, string p8, global::System.Nullable<global::System.DateTime> p10, global::System.Nullable<global::System.DateTime> p12, string p14) {
+            return this.Update(p6, p2, p3, p4, p5, p6, p8, p10, p12, p14);
         }
     }
     
@@ -1301,7 +1420,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private positionTableAdapter _positionTableAdapter;
+        private departmentTableAdapter _departmentTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1323,12 +1442,12 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public positionTableAdapter positionTableAdapter {
+        public departmentTableAdapter departmentTableAdapter {
             get {
-                return this._positionTableAdapter;
+                return this._departmentTableAdapter;
             }
             set {
-                this._positionTableAdapter = value;
+                this._departmentTableAdapter = value;
             }
         }
         
@@ -1351,9 +1470,9 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._positionTableAdapter != null) 
-                            && (this._positionTableAdapter.Connection != null))) {
-                    return this._positionTableAdapter.Connection;
+                if (((this._departmentTableAdapter != null) 
+                            && (this._departmentTableAdapter.Connection != null))) {
+                    return this._departmentTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1368,7 +1487,7 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._positionTableAdapter != null)) {
+                if ((this._departmentTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1380,14 +1499,14 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(hrmsDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(deptDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._positionTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.position.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._departmentTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.department.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._positionTableAdapter.Update(updatedRows));
+                    result = (result + this._departmentTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1399,13 +1518,13 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(hrmsDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(deptDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._positionTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.position.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._departmentTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.department.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._positionTableAdapter.Update(addedRows));
+                    result = (result + this._departmentTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1417,13 +1536,13 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(hrmsDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(deptDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._positionTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.position.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._departmentTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.department.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._positionTableAdapter.Update(deletedRows));
+                    result = (result + this._departmentTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1459,15 +1578,15 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(hrmsDataSet3 dataSet) {
+        public virtual int UpdateAll(deptDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._positionTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._positionTableAdapter.Connection) == false))) {
+            if (((this._departmentTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._departmentTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("所有以 TableAdapterManager 管理的 TableAdapters 必須使用相同的連接字串。");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -1501,13 +1620,13 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._positionTableAdapter != null)) {
-                    revertConnections.Add(this._positionTableAdapter, this._positionTableAdapter.Connection);
-                    this._positionTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
-                    this._positionTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
-                    if (this._positionTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._positionTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._positionTableAdapter.Adapter);
+                if ((this._departmentTableAdapter != null)) {
+                    revertConnections.Add(this._departmentTableAdapter, this._departmentTableAdapter.Connection);
+                    this._departmentTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
+                    this._departmentTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
+                    if (this._departmentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._departmentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._departmentTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1568,9 +1687,9 @@ namespace OOAD_HR_System.hrmsDataSet3TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._positionTableAdapter != null)) {
-                    this._positionTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._positionTableAdapter]));
-                    this._positionTableAdapter.Transaction = null;
+                if ((this._departmentTableAdapter != null)) {
+                    this._departmentTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._departmentTableAdapter]));
+                    this._departmentTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -66,15 +66,10 @@
     <Compile Include="Class\WorkAttendanceClass.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
-    <Compile Include="hrmsDataSet2.Designer.cs">
+    <Compile Include="deptDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>hrmsDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="hrmsDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>hrmsDataSet3.xsd</DependentUpon>
+      <DependentUpon>deptDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -90,11 +85,18 @@
     </Compile>
     <Compile Include="Model\EmployeeModel.cs" />
     <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="Model\PositionModel.cs" />
+    <Compile Include="positionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>positionDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PresentationModel\EmployeePresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
+    <Compile Include="Service\PositionServicecs.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,27 +112,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="hrmsDataSet2.xsc">
-      <DependentUpon>hrmsDataSet2.xsd</DependentUpon>
+    <None Include="deptDataSet.xsc">
+      <DependentUpon>deptDataSet.xsd</DependentUpon>
     </None>
-    <None Include="hrmsDataSet2.xsd">
+    <None Include="deptDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>hrmsDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>deptDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="hrmsDataSet2.xss">
-      <DependentUpon>hrmsDataSet2.xsd</DependentUpon>
+    <None Include="deptDataSet.xss">
+      <DependentUpon>deptDataSet.xsd</DependentUpon>
     </None>
-    <None Include="hrmsDataSet3.xsc">
-      <DependentUpon>hrmsDataSet3.xsd</DependentUpon>
+    <None Include="positionDataSet.xsc">
+      <DependentUpon>positionDataSet.xsd</DependentUpon>
     </None>
-    <None Include="hrmsDataSet3.xsd">
+    <None Include="positionDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>hrmsDataSet3.Designer.cs</LastGenOutput>
+      <LastGenOutput>positionDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="hrmsDataSet3.xss">
-      <DependentUpon>hrmsDataSet3.xsd</DependentUpon>
+    <None Include="positionDataSet.xss">
+      <DependentUpon>positionDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

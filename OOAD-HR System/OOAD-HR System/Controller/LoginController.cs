@@ -42,7 +42,7 @@ namespace OOAD_HR_System.Controller
             }
 
             _loginModel = _accountService.searchByAccount(account);
-            if (account == _loginModel.getAccount() && password == _loginModel.getPassword())
+            if (account == _loginModel.GetAccount() && password == _loginModel.GetPassword())
                 return true;
             else
             {

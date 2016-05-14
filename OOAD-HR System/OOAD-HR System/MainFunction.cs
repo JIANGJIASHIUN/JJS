@@ -29,17 +29,27 @@ namespace OOAD_HR_System
         // form load
         private void LoadMainFunction(object sender, EventArgs e)
         {
-            // TODO:  這行程式碼會將資料載入 'hrmsDataSet3.position' 資料表。您可以視需要進行移動或移除。
-            this.positionTableAdapter.Fill(this.hrmsDataSet3.position);
-            // TODO:  這行程式碼會將資料載入 'hrmsDataSet2.department' 資料表。您可以視需要進行移動或移除。
-            this.departmentTableAdapter.Fill(this.hrmsDataSet2.department);
+            // TODO:  這行程式碼會將資料載入 'positionDataSet.position' 資料表。您可以視需要進行移動或移除。
+            this.positionTableAdapter.Fill(this.positionDataSet.position);
+            // TODO:  這行程式碼會將資料載入 'deptDataSet.department' 資料表。您可以視需要進行移動或移除。
+            this.departmentTableAdapter.Fill(this.deptDataSet.department);
 
-            // 設置所有combobox的預設值
+            // 設置所有UI的預設值
+            this.ResetUI();
+        }
+
+        // reset all UI 預設值
+        private void ResetUI() 
+        {
             _newEmplJobStatCB.SelectedIndex = 0;
             _newEmplMarriedStatCB.SelectedIndex = 0;
             _newEmplMilitaryStatCB.SelectedIndex = 0;
             _newEmplBloodCB.SelectedIndex = 0;
             _newEmplSexCB.SelectedIndex = 0;
+            this.SetAllVariableToPM();
+
+            _employeeController = new EmployeeController(_employeePresentationModel);
+            _newEmplBasicSalaryTB.Text = _employeeController.SearchBasicSalaryByPositionID();
         }
 
         // 按下登出鍵
@@ -74,24 +84,28 @@ namespace OOAD_HR_System
         // 根據選取職位 顯示職位底薪
         private void ChangedNewEmplPositionCBSelectedIndex(object sender, EventArgs e)
         {
-            
+            this.SetAllVariableToPM();
+
+            _employeeController = new EmployeeController(_employeePresentationModel);
+            _newEmplBasicSalaryTB.Text = _employeeController.SearchBasicSalaryByPositionID();
         }
 
-        private void ClickInsertButton(object sender, EventArgs e)
+        // 將UI上的變數存入presentationModel中
+        private void SetAllVariableToPM()
         {
-            String emplID = _newEmplIDTB.Text;             
+            String emplID = _newEmplIDTB.Text;  
             String emplName = _newEmplNameTB.Text;
-            String ssn = _newEmpllSsnTB.Text;                
-            String sex = _newEmplSexCB.SelectedItem.ToString();               
-            String blood = _newEmplBloodCB.SelectedItem.ToString();              
-            String phone = String.Format(_areaCodeTB.Text + _phoneTB.Text);              
-            String addr = _newEmplAddrTB.Text;              
-            String emerPerson = _newEmplEmerPersonTB.Text;        
-            String emerPhone = _newEmplEmerPhoneTB.Text;         
-            String military = _newEmplMilitaryStatCB.SelectedItem.ToString();           
-            String jobState = _newEmplJobStatCB.SelectedItem.ToString();         
-            String marriedState = _newEmplMarriedStatCB.SelectedItem.ToString();       
-            String spouse = _newEmplSpouseTB.Text;            
+            String ssn = _newEmpllSsnTB.Text;
+            String sex = _newEmplSexCB.SelectedItem.ToString();
+            String blood = _newEmplBloodCB.SelectedItem.ToString();
+            String phone = _newEmplPhoneTB.Text;
+            String addr = _newEmplAddrTB.Text;
+            String emerPerson = _newEmplEmerPersonTB.Text;
+            String emerPhone = _newEmplEmerPhoneTB.Text;
+            String military = _newEmplMilitaryStatCB.SelectedItem.ToString();
+            String jobState = _newEmplJobStatCB.SelectedItem.ToString();
+            String marriedState = _newEmplMarriedStatCB.SelectedItem.ToString();
+            String spouse = _newEmplSpouseTB.Text;
             DateTime birth = _newEmplBirthDP.Value;
             float basicSalary = System.Convert.ToSingle(_newEmplBasicSalaryTB.Text);
             String deptID = _newEmplDeptCB.SelectedValue.ToString();
@@ -114,6 +128,12 @@ namespace OOAD_HR_System
             _employeePresentationModel.SetBasicSalary(basicSalary);
             _employeePresentationModel.SetDeptID(deptID);
             _employeePresentationModel.SetPositoinID(positionID);
+        }
+        
+        // 按下新增員工按鈕
+        private void ClickAddButton(object sender, EventArgs e)
+        {
+            this.SetAllVariableToPM();
 
             _employeeController = new EmployeeController(_employeePresentationModel);
             _employeeController.InsertEmployee();

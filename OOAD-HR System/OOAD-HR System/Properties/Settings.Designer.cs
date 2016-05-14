@@ -33,5 +33,37 @@ namespace OOAD_HR_System.Properties {
                 return ((string)(this["hrmsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=118.166.192.62;user id=hrms;database=hrms;persistsecurityinfo=True")]
+        public string EmplDeptConnString {
+            get {
+                return ((string)(this["EmplDeptConnString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=118.166.192.62;user id=hrms;database=hrms;persistsecurityinfo=True;passwor" +
+            "d=hrms")]
+        public string deptConnectionString {
+            get {
+                return ((string)(this["deptConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=118.166.192.62;user id=hrms;password=hrms;persistsecurityinfo=True;databas" +
+            "e=hrms")]
+        public string positionConnectionString {
+            get {
+                return ((string)(this["positionConnectionString"]));
+            }
+        }
     }
 }
