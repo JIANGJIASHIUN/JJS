@@ -43,18 +43,50 @@ namespace OOAD_HR_System.Controller
         }
 
         // 呼叫service, 將資料新增至資料庫
-        public void InsertEmployee()
+        public void AddEmployee()
         {
             this._employeeService = new EmployeeService(this._employeeModel);
-            if (this.JudgeSsnValid(this._employeeModel.GetSsn()) == false)
-                MessageBox.Show("Ssn格式錯誤!");
+
+            int errorFlag = 0;
+
+            if (this._employeeModel.GetEmplID() == "" || this._employeeModel.GetName() == "" || this._employeeModel.GetSsn() == "" || this._employeeModel.GetPhone() == "" ||
+                this._employeeModel.GetAddress() == "" || this._employeeModel.GetEmerPerson() == "" || this._employeeModel.GetEmerPhone() == "" ||
+                (this._employeeModel.GetMarriedStatus() == "已婚" && this._employeeModel.GetSpouse() == ""))
+            {
+                MessageBox.Show("尚有欄位為空白, 請重新確認是否填寫完畢!");
+                return;
+            }
             else
             {
-                //if (_employeeService.AddEmployee())
-                  //  MessageBox.Show("新增成功!");
-                //else
-                 //   MessageBox.Show("新增失敗!");
+                if (this.JudgeSsnValid(this._employeeModel.GetSsn()) == false)
+                {
+                    MessageBox.Show("Ssn格式錯誤!");
+                    errorFlag = 1;
+                }
+                if (this.JudgePhoneFormat(this._employeeModel.GetPhone()) == false)
+                {
+                    MessageBox.Show("連絡電話格式錯誤!");
+                    errorFlag = 1;
+                }
+                if (this.JudgePhoneFormat(this._employeeModel.GetEmerPhone()) == false)
+                {
+                    MessageBox.Show("緊急連絡電話格式錯誤!");
+                    errorFlag = 1;
+                }
+                if (this.JudgeBasicSalaryRange(this._employeeModel.GetPositionID(), this._employeeModel.GetBasicSalary()) == false)
+                {
+                    MessageBox.Show("輸入底薪範圍超過該職位底薪之正負5000");
+                    errorFlag = 1;
+                }   
             }
+
+            if (errorFlag == 1)
+                return;
+
+            if (_employeeService.AddEmployee())
+                MessageBox.Show("新增成功!");
+            else
+                MessageBox.Show("新增失敗!");
         }
 
         // 呼叫position service利用所選取之職位查詢該職位底薪
@@ -233,6 +265,34 @@ namespace OOAD_HR_System.Controller
             }
 
             return false;
+        }
+
+        // 判斷電話號碼格式是否正確
+        private Boolean JudgePhoneFormat(String phone)
+        {
+            if (phone.Length != 10)
+                return false;
+
+            return true;
+        }
+
+        // 判斷底薪範圍 -5000~+5000
+        private Boolean JudgeBasicSalaryRange(String positionID, float basicSalary)
+        {
+            const int RANGE = 5000;
+
+            this._positionModel.SetId(positionID);
+
+            this._positionService = new PositionServicecs(this._positionModel);
+
+            this._positionModel = _positionService.SearchBsicSalaryByPositionID();
+
+            float positionBasicSalary = this._positionModel.GetBasicSalary();
+
+            if (Math.Abs(basicSalary - positionBasicSalary) > 5000)
+                return false;
+
+            return true;
         }
 
     }

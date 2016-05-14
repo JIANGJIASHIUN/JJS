@@ -107,6 +107,8 @@ namespace OOAD_HR_System
             String marriedState = _newEmplMarriedStatCB.SelectedItem.ToString();
             String spouse = _newEmplSpouseTB.Text;
             DateTime birth = _newEmplBirthDP.Value;
+            if (_newEmplBasicSalaryTB.Text == "")
+                _newEmplBasicSalaryTB.Text = "0";
             float basicSalary = System.Convert.ToSingle(_newEmplBasicSalaryTB.Text);
             String deptID = _newEmplDeptCB.SelectedValue.ToString();
             String positionID = _newEmplPositionCB.SelectedValue.ToString();
@@ -136,7 +138,7 @@ namespace OOAD_HR_System
             this.SetAllVariableToPM();
 
             _employeeController = new EmployeeController(_employeePresentationModel);
-            _employeeController.InsertEmployee();
+            _employeeController.AddEmployee();
         }
 
     }
