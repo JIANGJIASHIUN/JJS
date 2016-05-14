@@ -37,3 +37,12 @@ C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_H
 C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_HR_System.Properties.Resources.resources
 C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.csproj.GenerateResource.Cache
 C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_HR_System._mainFunction.resources
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\bin\Debug\OOAD-HR System.exe.config
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\bin\Debug\OOAD-HR System.exe
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\bin\Debug\OOAD-HR System.pdb
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_HR_System._login.resources
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_HR_System._mainFunction.resources
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_HR_System.Properties.Resources.resources
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.csproj.GenerateResource.Cache
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.exe
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.pdb

@@ -5,3 +5,10 @@ C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD
 C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.csprojResolveAssemblyReference.cache
 C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.dll
 C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.pdb
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR SystemTests.dll
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR SystemTests.pdb
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR System.exe
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR System.pdb
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.csprojResolveAssemblyReference.cache
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.dll
+C:\Users\Genius\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.pdb

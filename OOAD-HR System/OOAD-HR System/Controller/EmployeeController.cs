@@ -289,7 +289,7 @@ namespace OOAD_HR_System.Controller
 
             float positionBasicSalary = this._positionModel.GetBasicSalary();
 
-            if (Math.Abs(basicSalary - positionBasicSalary) > 5000)
+            if (Math.Abs(basicSalary - positionBasicSalary) > RANGE)
                 return false;
 
             return true;
