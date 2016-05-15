@@ -33,7 +33,7 @@ namespace OOAD_HR_System.Service
         }
 
         // 關閉資料庫連線
-        private void closeConnextion()
+        private void closeConnection()
         {
             myConnection.Close();
         }
@@ -65,7 +65,7 @@ namespace OOAD_HR_System.Service
                 }
             }
 
-            this.closeConnextion();
+            this.closeConnection();
 
             return this._positionModel;
         }

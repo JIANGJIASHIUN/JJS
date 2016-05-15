@@ -22,8 +22,8 @@ namespace OOAD_HR_System.Class
         private String _jobState = null;           // 工作狀態(在職, 離職... etc)
         private String _marriedState = null;       // 婚姻狀態
         private String _spouse = null;             // 配偶
-        private DateTime _birth;                   // 出生日期
-        private float _basicSalary;                // 底薪
+        private DateTime _birth = DateTime.Now;                   // 出生日期
+        private float _basicSalary = 0;                // 底薪
         private String _deptId = null;             // 所屬部門編號
         private String _positionId = null;         // 職位編號
 

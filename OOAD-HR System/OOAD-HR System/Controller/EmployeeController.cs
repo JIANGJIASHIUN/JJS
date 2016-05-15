@@ -42,11 +42,9 @@ namespace OOAD_HR_System.Controller
             this._employeeModel.SetBasicSalary(employeePresentationModel.GetBasicSalary());
         }
 
-        // 呼叫service, 將資料新增至資料庫
-        public void AddEmployee()
+        // 判斷各個員工資料格式是否錯誤
+        private int JudgeEmplDataFormat()
         {
-            this._employeeService = new EmployeeService(this._employeeModel);
-
             int errorFlag = 0;
 
             if (this._employeeModel.GetEmplID() == "" || this._employeeModel.GetName() == "" || this._employeeModel.GetSsn() == "" || this._employeeModel.GetPhone() == "" ||
@@ -54,7 +52,7 @@ namespace OOAD_HR_System.Controller
                 (this._employeeModel.GetMarriedStatus() == "已婚" && this._employeeModel.GetSpouse() == ""))
             {
                 MessageBox.Show("尚有欄位為空白, 請重新確認是否填寫完畢!");
-                return;
+                errorFlag = 1;
             }
             else
             {
@@ -77,8 +75,20 @@ namespace OOAD_HR_System.Controller
                 {
                     MessageBox.Show("輸入底薪範圍超過該職位底薪之正負5000");
                     errorFlag = 1;
-                }   
+                }
             }
+
+            return errorFlag;
+        }
+
+        // 呼叫service, 將資料新增至資料庫
+        public void AddEmployee()
+        {
+            this._employeeService = new EmployeeService(this._employeeModel);
+
+            int errorFlag = 0;
+
+            errorFlag = JudgeEmplDataFormat();
 
             if (errorFlag == 1)
                 return;
@@ -87,6 +97,29 @@ namespace OOAD_HR_System.Controller
                 MessageBox.Show("新增成功!");
             else
                 MessageBox.Show("新增失敗!");
+        }
+
+        // 呼叫service, 將資料更新制資料庫(edit)
+        public Boolean EditEmployee()
+        {
+            this._employeeService = new EmployeeService(this._employeeModel);
+
+            int errorFlag = 0;
+
+            errorFlag = JudgeEmplDataFormat();
+
+            if (errorFlag == 1)
+                return false;
+
+            if (_employeeService.EditEmployee())
+                MessageBox.Show("修改成功!");
+            else
+            {
+                MessageBox.Show("修改失敗!");
+                return false;
+            }
+
+            return true;
         }
 
         // 呼叫position service利用所選取之職位查詢該職位底薪
@@ -293,6 +326,46 @@ namespace OOAD_HR_System.Controller
                 return false;
 
             return true;
+        }
+
+        // 呼叫service 利用員工ID查詢員工資料
+        public EmployeePresentationModel SearchDataByEmplID()
+        {
+            EmployeePresentationModel emplPresentationModel = new EmployeePresentationModel();
+
+            if (this._employeeModel.GetEmplID() == null || this._employeeModel.GetEmplID() == "")
+                MessageBox.Show("請輸入員工ID");
+            else
+            {
+                _employeeService = new EmployeeService(this._employeeModel);
+                _employeeModel = _employeeService.searchByEmplID();
+
+                emplPresentationModel.SetEmplID(_employeeModel.GetEmplID());
+                emplPresentationModel.SetName(_employeeModel.GetName());
+                emplPresentationModel.SetSsn(_employeeModel.GetSsn());
+                emplPresentationModel.SetSex(_employeeModel.GetSex());
+                emplPresentationModel.SetPhone(_employeeModel.GetPhone());
+                emplPresentationModel.SetAddress(_employeeModel.GetAddress());
+                emplPresentationModel.SetBlood(_employeeModel.GetBlood());
+                emplPresentationModel.SetBirth(_employeeModel.GetBirth());
+                emplPresentationModel.SetEmerPerson(_employeeModel.GetEmerPerson());
+                emplPresentationModel.SetEmerPhone(_employeeModel.GetEmerPhone());
+                emplPresentationModel.SetMilitaryStatus(_employeeModel.GetMilitaryStatus());
+                emplPresentationModel.SetJobStatus(_employeeModel.GetJobStatus());
+                emplPresentationModel.SetMarriedStatus(_employeeModel.GetMarriedStatus());
+                emplPresentationModel.SetSpouse(_employeeModel.GetSpouse());
+                emplPresentationModel.SetDeptID(_employeeModel.GetDeptID());
+                emplPresentationModel.SetPositoinID(_employeeModel.GetPositionID());
+                emplPresentationModel.SetBasicSalary(_employeeModel.GetBasicSalary());
+
+                if (_employeeModel.GetName() == null || _employeeModel.GetName() == "")
+                {
+                    MessageBox.Show("此員工ID不存在!");
+                    emplPresentationModel.SetEmplID(null);
+                }
+            }        
+
+            return emplPresentationModel;
         }
 
     }
