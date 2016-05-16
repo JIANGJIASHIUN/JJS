@@ -26,8 +26,8 @@ namespace OOAD_HR_System.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=118.166.197.125;user id=hrms;database=hrms;persistsecurityinfo=True;passwo" +
-            "rd=hrms")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=csie-noip.ddns.net;user id=hrms;database=hrms;persistsecurityinfo=True;pas" +
+            "sword=hrms")]
         public string hrmsConnectionString {
             get {
                 return ((string)(this["hrmsConnectionString"]));
@@ -37,7 +37,7 @@ namespace OOAD_HR_System.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=118.166.197.125;user id=hrms;database=hrms;persistsecurityinfo=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=csie-noip.ddns.net;user id=hrms;database=hrms;persistsecurityinfo=True")]
         public string EmplDeptConnString {
             get {
                 return ((string)(this["EmplDeptConnString"]));
@@ -47,8 +47,8 @@ namespace OOAD_HR_System.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=118.166.197.125;user id=hrms;database=hrms;persistsecurityinfo=True;passwo" +
-            "rd=hrms")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=csie-noip.ddns.net;user id=hrms;database=hrms;persistsecurityinfo=True;pas" +
+            "sword=hrms")]
         public string deptConnectionString {
             get {
                 return ((string)(this["deptConnectionString"]));
@@ -58,8 +58,8 @@ namespace OOAD_HR_System.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=118.166.197.125;user id=hrms;password=hrms;persistsecurityinfo=True;databa" +
-            "se=hrms")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=csie-noip.ddns.net;user id=hrms;password=hrms;persistsecurityinfo=True;dat" +
+            "abase=hrms")]
         public string positionConnectionString {
             get {
                 return ((string)(this["positionConnectionString"]));

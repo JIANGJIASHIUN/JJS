@@ -11,7 +11,7 @@ namespace OOAD_HR_System.Service
 {
     public class PositionServicecs
     {
-        private MySqlConnection myConnection = new MySqlConnection("server=118.166.197.125;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
+        private MySqlConnection myConnection = new MySqlConnection("server=csie-noip.ddns.net;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
         private PositionModel _positionModel = new PositionModel();
 
         public PositionServicecs(PositionModel positionModel)

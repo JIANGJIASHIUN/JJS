@@ -12,7 +12,7 @@ namespace OOAD_HR_System.Service
     public class EmployeeService
     {
 
-        private MySqlConnection myConnection = new MySqlConnection("server=118.166.197.125;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
+        private MySqlConnection myConnection = new MySqlConnection("server=csie-noip.ddns.net;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
         private EmployeeModel _employeeModel = new EmployeeModel();
 
         public EmployeeService(EmployeeModel employeeModel)
