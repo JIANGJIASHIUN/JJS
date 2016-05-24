@@ -73,17 +73,7 @@
             this._newEmplNameLB = new System.Windows.Forms.Label();
             this._newEmplIDLB = new System.Windows.Forms.Label();
             this._editEmployee = new System.Windows.Forms.TabPage();
-            this._workAttendance = new System.Windows.Forms.TabPage();
-            this._reimburse = new System.Windows.Forms.TabPage();
-            this._bonus = new System.Windows.Forms.TabPage();
-            this._salary = new System.Windows.Forms.TabPage();
-            this._traning = new System.Windows.Forms.TabPage();
-            this._careerPlanning = new System.Windows.Forms.TabPage();
-            this._report = new System.Windows.Forms.TabPage();
-            this._authorization = new System.Windows.Forms.TabPage();
-            this._logoutButton = new System.Windows.Forms.Button();
-            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
-            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
+            this._searchEmplButtom = new System.Windows.Forms.Button();
             this._editEmplPositionCB = new System.Windows.Forms.ComboBox();
             this._editEmplSexCB = new System.Windows.Forms.ComboBox();
             this._editEmplButton = new System.Windows.Forms.Button();
@@ -119,7 +109,35 @@
             this._editEmplSsnLB = new System.Windows.Forms.Label();
             this._editEmplNameLB = new System.Windows.Forms.Label();
             this.editEmplIDLB = new System.Windows.Forms.Label();
-            this._searchEmplButtom = new System.Windows.Forms.Button();
+            this._workAttendance = new System.Windows.Forms.TabPage();
+            this._reimburse = new System.Windows.Forms.TabPage();
+            this._bonus = new System.Windows.Forms.TabPage();
+            this._salary = new System.Windows.Forms.TabPage();
+            this._traning = new System.Windows.Forms.TabPage();
+            this._careerPlanning = new System.Windows.Forms.TabPage();
+            this._report = new System.Windows.Forms.TabPage();
+            this._authorization = new System.Windows.Forms.TabPage();
+            this._logoutButton = new System.Windows.Forms.Button();
+            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
+            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
+            this._authorizationPage = new System.Windows.Forms.TabControl();
+            this._newAuthorization = new System.Windows.Forms.TabPage();
+            this._editAuthorization = new System.Windows.Forms.TabPage();
+            this._newAuthoIDLB = new System.Windows.Forms.Label();
+            this._newAuthoNameLB = new System.Windows.Forms.Label();
+            this._newAuthoLevelLB = new System.Windows.Forms.Label();
+            this._newAuthoIDTB = new System.Windows.Forms.TextBox();
+            this._newAuthoNameTB = new System.Windows.Forms.TextBox();
+            this._newAuthoLevelCB = new System.Windows.Forms.ComboBox();
+            this._editAuthoLevelCB = new System.Windows.Forms.ComboBox();
+            this._editAuthoNameTB = new System.Windows.Forms.TextBox();
+            this._editAuthoIDTB = new System.Windows.Forms.TextBox();
+            this._editAuthoLevelLB = new System.Windows.Forms.Label();
+            this._editAuthoNameLB = new System.Windows.Forms.Label();
+            this._editAuthoIDLB = new System.Windows.Forms.Label();
+            this._insertAuthoButton = new System.Windows.Forms.Button();
+            this._searchAuthoButton = new System.Windows.Forms.Button();
+            this._editAuthoButton = new System.Windows.Forms.Button();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this._employeePage.SuspendLayout();
@@ -129,6 +147,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deptDataSet)).BeginInit();
             this._editEmployee.SuspendLayout();
+            this._authorization.SuspendLayout();
+            this._authorizationPage.SuspendLayout();
+            this._newAuthorization.SuspendLayout();
+            this._editAuthorization.SuspendLayout();
             this.SuspendLayout();
             // 
             // _mainFunctionPage
@@ -155,7 +177,7 @@
             this._employee.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._employee.Location = new System.Drawing.Point(4, 34);
             this._employee.Name = "_employee";
-            this._employee.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._employee.Padding = new System.Windows.Forms.Padding(3);
             this._employee.Size = new System.Drawing.Size(1558, 872);
             this._employee.TabIndex = 0;
             this._employee.Text = "Employee";
@@ -212,7 +234,7 @@
             this._newEmployee.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._newEmployee.Location = new System.Drawing.Point(4, 34);
             this._newEmployee.Name = "_newEmployee";
-            this._newEmployee.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._newEmployee.Padding = new System.Windows.Forms.Padding(3);
             this._newEmployee.Size = new System.Drawing.Size(1537, 822);
             this._newEmployee.TabIndex = 0;
             this._newEmployee.Text = "Add";
@@ -604,109 +626,21 @@
             this._editEmployee.Controls.Add(this.editEmplIDLB);
             this._editEmployee.Location = new System.Drawing.Point(4, 34);
             this._editEmployee.Name = "_editEmployee";
-            this._editEmployee.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._editEmployee.Padding = new System.Windows.Forms.Padding(3);
             this._editEmployee.Size = new System.Drawing.Size(1537, 822);
             this._editEmployee.TabIndex = 1;
             this._editEmployee.Text = "Edit";
             this._editEmployee.UseVisualStyleBackColor = true;
             // 
-            // _workAttendance
+            // _searchEmplButtom
             // 
-            this._workAttendance.Location = new System.Drawing.Point(4, 34);
-            this._workAttendance.Name = "_workAttendance";
-            this._workAttendance.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._workAttendance.Size = new System.Drawing.Size(1558, 872);
-            this._workAttendance.TabIndex = 1;
-            this._workAttendance.Text = "Work Attendance";
-            this._workAttendance.UseVisualStyleBackColor = true;
-            // 
-            // _reimburse
-            // 
-            this._reimburse.Location = new System.Drawing.Point(4, 34);
-            this._reimburse.Name = "_reimburse";
-            this._reimburse.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._reimburse.Size = new System.Drawing.Size(1558, 872);
-            this._reimburse.TabIndex = 2;
-            this._reimburse.Text = "Reimburse";
-            this._reimburse.UseVisualStyleBackColor = true;
-            // 
-            // _bonus
-            // 
-            this._bonus.Location = new System.Drawing.Point(4, 34);
-            this._bonus.Name = "_bonus";
-            this._bonus.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._bonus.Size = new System.Drawing.Size(1558, 872);
-            this._bonus.TabIndex = 3;
-            this._bonus.Text = "Bonus";
-            this._bonus.UseVisualStyleBackColor = true;
-            // 
-            // _salary
-            // 
-            this._salary.Location = new System.Drawing.Point(4, 34);
-            this._salary.Name = "_salary";
-            this._salary.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._salary.Size = new System.Drawing.Size(1558, 872);
-            this._salary.TabIndex = 4;
-            this._salary.Text = "Salary";
-            this._salary.UseVisualStyleBackColor = true;
-            // 
-            // _traning
-            // 
-            this._traning.Location = new System.Drawing.Point(4, 34);
-            this._traning.Name = "_traning";
-            this._traning.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._traning.Size = new System.Drawing.Size(1558, 872);
-            this._traning.TabIndex = 5;
-            this._traning.Text = "Traning";
-            this._traning.UseVisualStyleBackColor = true;
-            // 
-            // _careerPlanning
-            // 
-            this._careerPlanning.Location = new System.Drawing.Point(4, 34);
-            this._careerPlanning.Name = "_careerPlanning";
-            this._careerPlanning.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._careerPlanning.Size = new System.Drawing.Size(1558, 872);
-            this._careerPlanning.TabIndex = 6;
-            this._careerPlanning.Text = "Career Plainning";
-            this._careerPlanning.UseVisualStyleBackColor = true;
-            // 
-            // _report
-            // 
-            this._report.Location = new System.Drawing.Point(4, 34);
-            this._report.Name = "_report";
-            this._report.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._report.Size = new System.Drawing.Size(1558, 872);
-            this._report.TabIndex = 7;
-            this._report.Text = "Report";
-            this._report.UseVisualStyleBackColor = true;
-            // 
-            // _authorization
-            // 
-            this._authorization.Location = new System.Drawing.Point(4, 34);
-            this._authorization.Name = "_authorization";
-            this._authorization.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._authorization.Size = new System.Drawing.Size(1558, 872);
-            this._authorization.TabIndex = 8;
-            this._authorization.Text = "Authorization";
-            this._authorization.UseVisualStyleBackColor = true;
-            // 
-            // _logoutButton
-            // 
-            this._logoutButton.Location = new System.Drawing.Point(1318, 14);
-            this._logoutButton.Name = "_logoutButton";
-            this._logoutButton.Size = new System.Drawing.Size(75, 28);
-            this._logoutButton.TabIndex = 1;
-            this._logoutButton.Text = "Logout";
-            this._logoutButton.UseVisualStyleBackColor = true;
-            this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
-            // 
-            // departmentTableAdapter
-            // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // positionTableAdapter
-            // 
-            this.positionTableAdapter.ClearBeforeFill = true;
+            this._searchEmplButtom.Location = new System.Drawing.Point(1078, 726);
+            this._searchEmplButtom.Name = "_searchEmplButtom";
+            this._searchEmplButtom.Size = new System.Drawing.Size(112, 52);
+            this._searchEmplButtom.TabIndex = 75;
+            this._searchEmplButtom.Text = "Search";
+            this._searchEmplButtom.UseVisualStyleBackColor = true;
+            this._searchEmplButtom.Click += new System.EventHandler(this.ClickSearchEmplButtom);
             // 
             // _editEmplPositionCB
             // 
@@ -1050,15 +984,296 @@
             this.editEmplIDLB.TabIndex = 40;
             this.editEmplIDLB.Text = "Employee ID:";
             // 
-            // _searchEmplButtom
+            // _workAttendance
             // 
-            this._searchEmplButtom.Location = new System.Drawing.Point(1078, 726);
-            this._searchEmplButtom.Name = "_searchEmplButtom";
-            this._searchEmplButtom.Size = new System.Drawing.Size(112, 52);
-            this._searchEmplButtom.TabIndex = 75;
-            this._searchEmplButtom.Text = "Search";
-            this._searchEmplButtom.UseVisualStyleBackColor = true;
-            this._searchEmplButtom.Click += new System.EventHandler(this.ClickSearchEmplButtom);
+            this._workAttendance.Location = new System.Drawing.Point(4, 34);
+            this._workAttendance.Name = "_workAttendance";
+            this._workAttendance.Padding = new System.Windows.Forms.Padding(3);
+            this._workAttendance.Size = new System.Drawing.Size(1558, 872);
+            this._workAttendance.TabIndex = 1;
+            this._workAttendance.Text = "Work Attendance";
+            this._workAttendance.UseVisualStyleBackColor = true;
+            // 
+            // _reimburse
+            // 
+            this._reimburse.Location = new System.Drawing.Point(4, 34);
+            this._reimburse.Name = "_reimburse";
+            this._reimburse.Padding = new System.Windows.Forms.Padding(3);
+            this._reimburse.Size = new System.Drawing.Size(1558, 872);
+            this._reimburse.TabIndex = 2;
+            this._reimburse.Text = "Reimburse";
+            this._reimburse.UseVisualStyleBackColor = true;
+            // 
+            // _bonus
+            // 
+            this._bonus.Location = new System.Drawing.Point(4, 34);
+            this._bonus.Name = "_bonus";
+            this._bonus.Padding = new System.Windows.Forms.Padding(3);
+            this._bonus.Size = new System.Drawing.Size(1558, 872);
+            this._bonus.TabIndex = 3;
+            this._bonus.Text = "Bonus";
+            this._bonus.UseVisualStyleBackColor = true;
+            // 
+            // _salary
+            // 
+            this._salary.Location = new System.Drawing.Point(4, 34);
+            this._salary.Name = "_salary";
+            this._salary.Padding = new System.Windows.Forms.Padding(3);
+            this._salary.Size = new System.Drawing.Size(1558, 872);
+            this._salary.TabIndex = 4;
+            this._salary.Text = "Salary";
+            this._salary.UseVisualStyleBackColor = true;
+            // 
+            // _traning
+            // 
+            this._traning.Location = new System.Drawing.Point(4, 34);
+            this._traning.Name = "_traning";
+            this._traning.Padding = new System.Windows.Forms.Padding(3);
+            this._traning.Size = new System.Drawing.Size(1558, 872);
+            this._traning.TabIndex = 5;
+            this._traning.Text = "Traning";
+            this._traning.UseVisualStyleBackColor = true;
+            // 
+            // _careerPlanning
+            // 
+            this._careerPlanning.Location = new System.Drawing.Point(4, 34);
+            this._careerPlanning.Name = "_careerPlanning";
+            this._careerPlanning.Padding = new System.Windows.Forms.Padding(3);
+            this._careerPlanning.Size = new System.Drawing.Size(1558, 872);
+            this._careerPlanning.TabIndex = 6;
+            this._careerPlanning.Text = "Career Plainning";
+            this._careerPlanning.UseVisualStyleBackColor = true;
+            // 
+            // _report
+            // 
+            this._report.Location = new System.Drawing.Point(4, 34);
+            this._report.Name = "_report";
+            this._report.Padding = new System.Windows.Forms.Padding(3);
+            this._report.Size = new System.Drawing.Size(1558, 872);
+            this._report.TabIndex = 7;
+            this._report.Text = "Report";
+            this._report.UseVisualStyleBackColor = true;
+            // 
+            // _authorization
+            // 
+            this._authorization.Controls.Add(this._authorizationPage);
+            this._authorization.Location = new System.Drawing.Point(4, 34);
+            this._authorization.Name = "_authorization";
+            this._authorization.Padding = new System.Windows.Forms.Padding(3);
+            this._authorization.Size = new System.Drawing.Size(1558, 872);
+            this._authorization.TabIndex = 8;
+            this._authorization.Text = "Authorization";
+            this._authorization.UseVisualStyleBackColor = true;
+            // 
+            // _logoutButton
+            // 
+            this._logoutButton.Location = new System.Drawing.Point(1318, 14);
+            this._logoutButton.Name = "_logoutButton";
+            this._logoutButton.Size = new System.Drawing.Size(75, 28);
+            this._logoutButton.TabIndex = 1;
+            this._logoutButton.Text = "Logout";
+            this._logoutButton.UseVisualStyleBackColor = true;
+            this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
+            // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // positionTableAdapter
+            // 
+            this.positionTableAdapter.ClearBeforeFill = true;
+            // 
+            // _authorizationPage
+            // 
+            this._authorizationPage.Controls.Add(this._newAuthorization);
+            this._authorizationPage.Controls.Add(this._editAuthorization);
+            this._authorizationPage.Location = new System.Drawing.Point(6, 7);
+            this._authorizationPage.Name = "_authorizationPage";
+            this._authorizationPage.SelectedIndex = 0;
+            this._authorizationPage.Size = new System.Drawing.Size(1546, 859);
+            this._authorizationPage.TabIndex = 0;
+            // 
+            // _newAuthorization
+            // 
+            this._newAuthorization.Controls.Add(this._insertAuthoButton);
+            this._newAuthorization.Controls.Add(this._newAuthoLevelCB);
+            this._newAuthorization.Controls.Add(this._newAuthoNameTB);
+            this._newAuthorization.Controls.Add(this._newAuthoIDTB);
+            this._newAuthorization.Controls.Add(this._newAuthoLevelLB);
+            this._newAuthorization.Controls.Add(this._newAuthoNameLB);
+            this._newAuthorization.Controls.Add(this._newAuthoIDLB);
+            this._newAuthorization.Location = new System.Drawing.Point(4, 34);
+            this._newAuthorization.Name = "_newAuthorization";
+            this._newAuthorization.Padding = new System.Windows.Forms.Padding(3);
+            this._newAuthorization.Size = new System.Drawing.Size(1538, 821);
+            this._newAuthorization.TabIndex = 0;
+            this._newAuthorization.Text = "Add";
+            this._newAuthorization.UseVisualStyleBackColor = true;
+            // 
+            // _editAuthorization
+            // 
+            this._editAuthorization.Controls.Add(this._editAuthoButton);
+            this._editAuthorization.Controls.Add(this._searchAuthoButton);
+            this._editAuthorization.Controls.Add(this._editAuthoLevelCB);
+            this._editAuthorization.Controls.Add(this._editAuthoNameTB);
+            this._editAuthorization.Controls.Add(this._editAuthoIDTB);
+            this._editAuthorization.Controls.Add(this._editAuthoLevelLB);
+            this._editAuthorization.Controls.Add(this._editAuthoNameLB);
+            this._editAuthorization.Controls.Add(this._editAuthoIDLB);
+            this._editAuthorization.Location = new System.Drawing.Point(4, 34);
+            this._editAuthorization.Name = "_editAuthorization";
+            this._editAuthorization.Padding = new System.Windows.Forms.Padding(3);
+            this._editAuthorization.Size = new System.Drawing.Size(1538, 821);
+            this._editAuthorization.TabIndex = 1;
+            this._editAuthorization.Text = "Edit";
+            this._editAuthorization.UseVisualStyleBackColor = true;
+            // 
+            // _newAuthoIDLB
+            // 
+            this._newAuthoIDLB.AutoSize = true;
+            this._newAuthoIDLB.Location = new System.Drawing.Point(49, 41);
+            this._newAuthoIDLB.Name = "_newAuthoIDLB";
+            this._newAuthoIDLB.Size = new System.Drawing.Size(169, 24);
+            this._newAuthoIDLB.TabIndex = 0;
+            this._newAuthoIDLB.Text = "Authorization ID:";
+            // 
+            // _newAuthoNameLB
+            // 
+            this._newAuthoNameLB.AutoSize = true;
+            this._newAuthoNameLB.Location = new System.Drawing.Point(49, 143);
+            this._newAuthoNameLB.Name = "_newAuthoNameLB";
+            this._newAuthoNameLB.Size = new System.Drawing.Size(199, 24);
+            this._newAuthoNameLB.TabIndex = 1;
+            this._newAuthoNameLB.Text = "Authorization Name:";
+            // 
+            // _newAuthoLevelLB
+            // 
+            this._newAuthoLevelLB.AutoSize = true;
+            this._newAuthoLevelLB.Location = new System.Drawing.Point(49, 251);
+            this._newAuthoLevelLB.Name = "_newAuthoLevelLB";
+            this._newAuthoLevelLB.Size = new System.Drawing.Size(196, 24);
+            this._newAuthoLevelLB.TabIndex = 2;
+            this._newAuthoLevelLB.Text = "Authorization Level:";
+            // 
+            // _newAuthoIDTB
+            // 
+            this._newAuthoIDTB.Location = new System.Drawing.Point(225, 29);
+            this._newAuthoIDTB.Name = "_newAuthoIDTB";
+            this._newAuthoIDTB.Size = new System.Drawing.Size(300, 36);
+            this._newAuthoIDTB.TabIndex = 3;
+            // 
+            // _newAuthoNameTB
+            // 
+            this._newAuthoNameTB.Location = new System.Drawing.Point(255, 131);
+            this._newAuthoNameTB.Name = "_newAuthoNameTB";
+            this._newAuthoNameTB.Size = new System.Drawing.Size(270, 36);
+            this._newAuthoNameTB.TabIndex = 4;
+            // 
+            // _newAuthoLevelCB
+            // 
+            this._newAuthoLevelCB.FormattingEnabled = true;
+            this._newAuthoLevelCB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this._newAuthoLevelCB.Location = new System.Drawing.Point(251, 243);
+            this._newAuthoLevelCB.Name = "_newAuthoLevelCB";
+            this._newAuthoLevelCB.Size = new System.Drawing.Size(135, 32);
+            this._newAuthoLevelCB.TabIndex = 5;
+            // 
+            // _editAuthoLevelCB
+            // 
+            this._editAuthoLevelCB.FormattingEnabled = true;
+            this._editAuthoLevelCB.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this._editAuthoLevelCB.Location = new System.Drawing.Point(263, 261);
+            this._editAuthoLevelCB.Name = "_editAuthoLevelCB";
+            this._editAuthoLevelCB.Size = new System.Drawing.Size(135, 32);
+            this._editAuthoLevelCB.TabIndex = 11;
+            // 
+            // _editAuthoNameTB
+            // 
+            this._editAuthoNameTB.Location = new System.Drawing.Point(267, 149);
+            this._editAuthoNameTB.Name = "_editAuthoNameTB";
+            this._editAuthoNameTB.Size = new System.Drawing.Size(270, 36);
+            this._editAuthoNameTB.TabIndex = 10;
+            // 
+            // _editAuthoIDTB
+            // 
+            this._editAuthoIDTB.Location = new System.Drawing.Point(237, 47);
+            this._editAuthoIDTB.Name = "_editAuthoIDTB";
+            this._editAuthoIDTB.Size = new System.Drawing.Size(300, 36);
+            this._editAuthoIDTB.TabIndex = 9;
+            // 
+            // _editAuthoLevelLB
+            // 
+            this._editAuthoLevelLB.AutoSize = true;
+            this._editAuthoLevelLB.Location = new System.Drawing.Point(61, 269);
+            this._editAuthoLevelLB.Name = "_editAuthoLevelLB";
+            this._editAuthoLevelLB.Size = new System.Drawing.Size(196, 24);
+            this._editAuthoLevelLB.TabIndex = 8;
+            this._editAuthoLevelLB.Text = "Authorization Level:";
+            // 
+            // _editAuthoNameLB
+            // 
+            this._editAuthoNameLB.AutoSize = true;
+            this._editAuthoNameLB.Location = new System.Drawing.Point(61, 161);
+            this._editAuthoNameLB.Name = "_editAuthoNameLB";
+            this._editAuthoNameLB.Size = new System.Drawing.Size(199, 24);
+            this._editAuthoNameLB.TabIndex = 7;
+            this._editAuthoNameLB.Text = "Authorization Name:";
+            // 
+            // _editAuthoIDLB
+            // 
+            this._editAuthoIDLB.AutoSize = true;
+            this._editAuthoIDLB.Location = new System.Drawing.Point(61, 59);
+            this._editAuthoIDLB.Name = "_editAuthoIDLB";
+            this._editAuthoIDLB.Size = new System.Drawing.Size(169, 24);
+            this._editAuthoIDLB.TabIndex = 6;
+            this._editAuthoIDLB.Text = "Authorization ID:";
+            // 
+            // _insertAuthoButton
+            // 
+            this._insertAuthoButton.Location = new System.Drawing.Point(547, 415);
+            this._insertAuthoButton.Name = "_insertAuthoButton";
+            this._insertAuthoButton.Size = new System.Drawing.Size(103, 45);
+            this._insertAuthoButton.TabIndex = 6;
+            this._insertAuthoButton.Text = "Add";
+            this._insertAuthoButton.UseVisualStyleBackColor = true;
+            // 
+            // _searchAuthoButton
+            // 
+            this._searchAuthoButton.Location = new System.Drawing.Point(565, 455);
+            this._searchAuthoButton.Name = "_searchAuthoButton";
+            this._searchAuthoButton.Size = new System.Drawing.Size(111, 55);
+            this._searchAuthoButton.TabIndex = 12;
+            this._searchAuthoButton.Text = "Search";
+            this._searchAuthoButton.UseVisualStyleBackColor = true;
+            // 
+            // _editAuthoButton
+            // 
+            this._editAuthoButton.Location = new System.Drawing.Point(743, 455);
+            this._editAuthoButton.Name = "_editAuthoButton";
+            this._editAuthoButton.Size = new System.Drawing.Size(118, 55);
+            this._editAuthoButton.TabIndex = 13;
+            this._editAuthoButton.Text = "Edit";
+            this._editAuthoButton.UseVisualStyleBackColor = true;
             // 
             // _mainFunction
             // 
@@ -1082,6 +1297,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.deptDataSet)).EndInit();
             this._editEmployee.ResumeLayout(false);
             this._editEmployee.PerformLayout();
+            this._authorization.ResumeLayout(false);
+            this._authorizationPage.ResumeLayout(false);
+            this._newAuthorization.ResumeLayout(false);
+            this._newAuthorization.PerformLayout();
+            this._editAuthorization.ResumeLayout(false);
+            this._editAuthorization.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1179,5 +1400,23 @@
         private System.Windows.Forms.Label _editEmplNameLB;
         private System.Windows.Forms.Label editEmplIDLB;
         private System.Windows.Forms.Button _searchEmplButtom;
+        private System.Windows.Forms.TabControl _authorizationPage;
+        private System.Windows.Forms.TabPage _newAuthorization;
+        private System.Windows.Forms.TabPage _editAuthorization;
+        private System.Windows.Forms.Label _newAuthoNameLB;
+        private System.Windows.Forms.Label _newAuthoIDLB;
+        private System.Windows.Forms.Label _newAuthoLevelLB;
+        private System.Windows.Forms.TextBox _newAuthoIDTB;
+        private System.Windows.Forms.TextBox _newAuthoNameTB;
+        private System.Windows.Forms.ComboBox _newAuthoLevelCB;
+        private System.Windows.Forms.Button _insertAuthoButton;
+        private System.Windows.Forms.ComboBox _editAuthoLevelCB;
+        private System.Windows.Forms.TextBox _editAuthoNameTB;
+        private System.Windows.Forms.TextBox _editAuthoIDTB;
+        private System.Windows.Forms.Label _editAuthoLevelLB;
+        private System.Windows.Forms.Label _editAuthoNameLB;
+        private System.Windows.Forms.Label _editAuthoIDLB;
+        private System.Windows.Forms.Button _editAuthoButton;
+        private System.Windows.Forms.Button _searchAuthoButton;
     }
 }
