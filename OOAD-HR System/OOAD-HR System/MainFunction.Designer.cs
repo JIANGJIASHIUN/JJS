@@ -117,27 +117,27 @@
             this._careerPlanning = new System.Windows.Forms.TabPage();
             this._report = new System.Windows.Forms.TabPage();
             this._authorization = new System.Windows.Forms.TabPage();
-            this._logoutButton = new System.Windows.Forms.Button();
-            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
-            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
             this._authorizationPage = new System.Windows.Forms.TabControl();
             this._newAuthorization = new System.Windows.Forms.TabPage();
-            this._editAuthorization = new System.Windows.Forms.TabPage();
-            this._newAuthoIDLB = new System.Windows.Forms.Label();
-            this._newAuthoNameLB = new System.Windows.Forms.Label();
-            this._newAuthoLevelLB = new System.Windows.Forms.Label();
-            this._newAuthoIDTB = new System.Windows.Forms.TextBox();
-            this._newAuthoNameTB = new System.Windows.Forms.TextBox();
+            this._insertAuthoButton = new System.Windows.Forms.Button();
             this._newAuthoLevelCB = new System.Windows.Forms.ComboBox();
+            this._newAuthoNameTB = new System.Windows.Forms.TextBox();
+            this._newAuthoIDTB = new System.Windows.Forms.TextBox();
+            this._newAuthoLevelLB = new System.Windows.Forms.Label();
+            this._newAuthoNameLB = new System.Windows.Forms.Label();
+            this._newAuthoIDLB = new System.Windows.Forms.Label();
+            this._editAuthorization = new System.Windows.Forms.TabPage();
+            this._editAuthoButton = new System.Windows.Forms.Button();
+            this._searchAuthoButton = new System.Windows.Forms.Button();
             this._editAuthoLevelCB = new System.Windows.Forms.ComboBox();
             this._editAuthoNameTB = new System.Windows.Forms.TextBox();
             this._editAuthoIDTB = new System.Windows.Forms.TextBox();
             this._editAuthoLevelLB = new System.Windows.Forms.Label();
             this._editAuthoNameLB = new System.Windows.Forms.Label();
             this._editAuthoIDLB = new System.Windows.Forms.Label();
-            this._insertAuthoButton = new System.Windows.Forms.Button();
-            this._searchAuthoButton = new System.Windows.Forms.Button();
-            this._editAuthoButton = new System.Windows.Forms.Button();
+            this._logoutButton = new System.Windows.Forms.Button();
+            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
+            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this._employeePage.SuspendLayout();
@@ -1065,24 +1065,6 @@
             this._authorization.Text = "Authorization";
             this._authorization.UseVisualStyleBackColor = true;
             // 
-            // _logoutButton
-            // 
-            this._logoutButton.Location = new System.Drawing.Point(1318, 14);
-            this._logoutButton.Name = "_logoutButton";
-            this._logoutButton.Size = new System.Drawing.Size(75, 28);
-            this._logoutButton.TabIndex = 1;
-            this._logoutButton.Text = "Logout";
-            this._logoutButton.UseVisualStyleBackColor = true;
-            this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
-            // 
-            // departmentTableAdapter
-            // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // positionTableAdapter
-            // 
-            this.positionTableAdapter.ClearBeforeFill = true;
-            // 
             // _authorizationPage
             // 
             this._authorizationPage.Controls.Add(this._newAuthorization);
@@ -1110,64 +1092,15 @@
             this._newAuthorization.Text = "Add";
             this._newAuthorization.UseVisualStyleBackColor = true;
             // 
-            // _editAuthorization
+            // _insertAuthoButton
             // 
-            this._editAuthorization.Controls.Add(this._editAuthoButton);
-            this._editAuthorization.Controls.Add(this._searchAuthoButton);
-            this._editAuthorization.Controls.Add(this._editAuthoLevelCB);
-            this._editAuthorization.Controls.Add(this._editAuthoNameTB);
-            this._editAuthorization.Controls.Add(this._editAuthoIDTB);
-            this._editAuthorization.Controls.Add(this._editAuthoLevelLB);
-            this._editAuthorization.Controls.Add(this._editAuthoNameLB);
-            this._editAuthorization.Controls.Add(this._editAuthoIDLB);
-            this._editAuthorization.Location = new System.Drawing.Point(4, 34);
-            this._editAuthorization.Name = "_editAuthorization";
-            this._editAuthorization.Padding = new System.Windows.Forms.Padding(3);
-            this._editAuthorization.Size = new System.Drawing.Size(1538, 821);
-            this._editAuthorization.TabIndex = 1;
-            this._editAuthorization.Text = "Edit";
-            this._editAuthorization.UseVisualStyleBackColor = true;
-            // 
-            // _newAuthoIDLB
-            // 
-            this._newAuthoIDLB.AutoSize = true;
-            this._newAuthoIDLB.Location = new System.Drawing.Point(49, 41);
-            this._newAuthoIDLB.Name = "_newAuthoIDLB";
-            this._newAuthoIDLB.Size = new System.Drawing.Size(169, 24);
-            this._newAuthoIDLB.TabIndex = 0;
-            this._newAuthoIDLB.Text = "Authorization ID:";
-            // 
-            // _newAuthoNameLB
-            // 
-            this._newAuthoNameLB.AutoSize = true;
-            this._newAuthoNameLB.Location = new System.Drawing.Point(49, 143);
-            this._newAuthoNameLB.Name = "_newAuthoNameLB";
-            this._newAuthoNameLB.Size = new System.Drawing.Size(199, 24);
-            this._newAuthoNameLB.TabIndex = 1;
-            this._newAuthoNameLB.Text = "Authorization Name:";
-            // 
-            // _newAuthoLevelLB
-            // 
-            this._newAuthoLevelLB.AutoSize = true;
-            this._newAuthoLevelLB.Location = new System.Drawing.Point(49, 251);
-            this._newAuthoLevelLB.Name = "_newAuthoLevelLB";
-            this._newAuthoLevelLB.Size = new System.Drawing.Size(196, 24);
-            this._newAuthoLevelLB.TabIndex = 2;
-            this._newAuthoLevelLB.Text = "Authorization Level:";
-            // 
-            // _newAuthoIDTB
-            // 
-            this._newAuthoIDTB.Location = new System.Drawing.Point(225, 29);
-            this._newAuthoIDTB.Name = "_newAuthoIDTB";
-            this._newAuthoIDTB.Size = new System.Drawing.Size(300, 36);
-            this._newAuthoIDTB.TabIndex = 3;
-            // 
-            // _newAuthoNameTB
-            // 
-            this._newAuthoNameTB.Location = new System.Drawing.Point(255, 131);
-            this._newAuthoNameTB.Name = "_newAuthoNameTB";
-            this._newAuthoNameTB.Size = new System.Drawing.Size(270, 36);
-            this._newAuthoNameTB.TabIndex = 4;
+            this._insertAuthoButton.Location = new System.Drawing.Point(547, 415);
+            this._insertAuthoButton.Name = "_insertAuthoButton";
+            this._insertAuthoButton.Size = new System.Drawing.Size(103, 45);
+            this._insertAuthoButton.TabIndex = 6;
+            this._insertAuthoButton.Text = "Add";
+            this._insertAuthoButton.UseVisualStyleBackColor = true;
+            this._insertAuthoButton.Click += new System.EventHandler(this.ClickAddAuthoButton);
             // 
             // _newAuthoLevelCB
             // 
@@ -1187,6 +1120,83 @@
             this._newAuthoLevelCB.Name = "_newAuthoLevelCB";
             this._newAuthoLevelCB.Size = new System.Drawing.Size(135, 32);
             this._newAuthoLevelCB.TabIndex = 5;
+            // 
+            // _newAuthoNameTB
+            // 
+            this._newAuthoNameTB.Location = new System.Drawing.Point(255, 131);
+            this._newAuthoNameTB.Name = "_newAuthoNameTB";
+            this._newAuthoNameTB.Size = new System.Drawing.Size(270, 36);
+            this._newAuthoNameTB.TabIndex = 4;
+            // 
+            // _newAuthoIDTB
+            // 
+            this._newAuthoIDTB.Location = new System.Drawing.Point(225, 29);
+            this._newAuthoIDTB.Name = "_newAuthoIDTB";
+            this._newAuthoIDTB.Size = new System.Drawing.Size(300, 36);
+            this._newAuthoIDTB.TabIndex = 3;
+            // 
+            // _newAuthoLevelLB
+            // 
+            this._newAuthoLevelLB.AutoSize = true;
+            this._newAuthoLevelLB.Location = new System.Drawing.Point(49, 251);
+            this._newAuthoLevelLB.Name = "_newAuthoLevelLB";
+            this._newAuthoLevelLB.Size = new System.Drawing.Size(196, 24);
+            this._newAuthoLevelLB.TabIndex = 2;
+            this._newAuthoLevelLB.Text = "Authorization Level:";
+            // 
+            // _newAuthoNameLB
+            // 
+            this._newAuthoNameLB.AutoSize = true;
+            this._newAuthoNameLB.Location = new System.Drawing.Point(49, 143);
+            this._newAuthoNameLB.Name = "_newAuthoNameLB";
+            this._newAuthoNameLB.Size = new System.Drawing.Size(199, 24);
+            this._newAuthoNameLB.TabIndex = 1;
+            this._newAuthoNameLB.Text = "Authorization Name:";
+            // 
+            // _newAuthoIDLB
+            // 
+            this._newAuthoIDLB.AutoSize = true;
+            this._newAuthoIDLB.Location = new System.Drawing.Point(49, 41);
+            this._newAuthoIDLB.Name = "_newAuthoIDLB";
+            this._newAuthoIDLB.Size = new System.Drawing.Size(169, 24);
+            this._newAuthoIDLB.TabIndex = 0;
+            this._newAuthoIDLB.Text = "Authorization ID:";
+            // 
+            // _editAuthorization
+            // 
+            this._editAuthorization.Controls.Add(this._editAuthoButton);
+            this._editAuthorization.Controls.Add(this._searchAuthoButton);
+            this._editAuthorization.Controls.Add(this._editAuthoLevelCB);
+            this._editAuthorization.Controls.Add(this._editAuthoNameTB);
+            this._editAuthorization.Controls.Add(this._editAuthoIDTB);
+            this._editAuthorization.Controls.Add(this._editAuthoLevelLB);
+            this._editAuthorization.Controls.Add(this._editAuthoNameLB);
+            this._editAuthorization.Controls.Add(this._editAuthoIDLB);
+            this._editAuthorization.Location = new System.Drawing.Point(4, 34);
+            this._editAuthorization.Name = "_editAuthorization";
+            this._editAuthorization.Padding = new System.Windows.Forms.Padding(3);
+            this._editAuthorization.Size = new System.Drawing.Size(1538, 821);
+            this._editAuthorization.TabIndex = 1;
+            this._editAuthorization.Text = "Edit";
+            this._editAuthorization.UseVisualStyleBackColor = true;
+            // 
+            // _editAuthoButton
+            // 
+            this._editAuthoButton.Location = new System.Drawing.Point(743, 455);
+            this._editAuthoButton.Name = "_editAuthoButton";
+            this._editAuthoButton.Size = new System.Drawing.Size(118, 55);
+            this._editAuthoButton.TabIndex = 13;
+            this._editAuthoButton.Text = "Edit";
+            this._editAuthoButton.UseVisualStyleBackColor = true;
+            // 
+            // _searchAuthoButton
+            // 
+            this._searchAuthoButton.Location = new System.Drawing.Point(565, 455);
+            this._searchAuthoButton.Name = "_searchAuthoButton";
+            this._searchAuthoButton.Size = new System.Drawing.Size(111, 55);
+            this._searchAuthoButton.TabIndex = 12;
+            this._searchAuthoButton.Text = "Search";
+            this._searchAuthoButton.UseVisualStyleBackColor = true;
             // 
             // _editAuthoLevelCB
             // 
@@ -1248,32 +1258,23 @@
             this._editAuthoIDLB.TabIndex = 6;
             this._editAuthoIDLB.Text = "Authorization ID:";
             // 
-            // _insertAuthoButton
+            // _logoutButton
             // 
-            this._insertAuthoButton.Location = new System.Drawing.Point(547, 415);
-            this._insertAuthoButton.Name = "_insertAuthoButton";
-            this._insertAuthoButton.Size = new System.Drawing.Size(103, 45);
-            this._insertAuthoButton.TabIndex = 6;
-            this._insertAuthoButton.Text = "Add";
-            this._insertAuthoButton.UseVisualStyleBackColor = true;
+            this._logoutButton.Location = new System.Drawing.Point(1318, 14);
+            this._logoutButton.Name = "_logoutButton";
+            this._logoutButton.Size = new System.Drawing.Size(75, 28);
+            this._logoutButton.TabIndex = 1;
+            this._logoutButton.Text = "Logout";
+            this._logoutButton.UseVisualStyleBackColor = true;
+            this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
             // 
-            // _searchAuthoButton
+            // departmentTableAdapter
             // 
-            this._searchAuthoButton.Location = new System.Drawing.Point(565, 455);
-            this._searchAuthoButton.Name = "_searchAuthoButton";
-            this._searchAuthoButton.Size = new System.Drawing.Size(111, 55);
-            this._searchAuthoButton.TabIndex = 12;
-            this._searchAuthoButton.Text = "Search";
-            this._searchAuthoButton.UseVisualStyleBackColor = true;
+            this.departmentTableAdapter.ClearBeforeFill = true;
             // 
-            // _editAuthoButton
+            // positionTableAdapter
             // 
-            this._editAuthoButton.Location = new System.Drawing.Point(743, 455);
-            this._editAuthoButton.Name = "_editAuthoButton";
-            this._editAuthoButton.Size = new System.Drawing.Size(118, 55);
-            this._editAuthoButton.TabIndex = 13;
-            this._editAuthoButton.Text = "Edit";
-            this._editAuthoButton.UseVisualStyleBackColor = true;
+            this.positionTableAdapter.ClearBeforeFill = true;
             // 
             // _mainFunction
             // 

@@ -19,6 +19,9 @@ namespace OOAD_HR_System
         private EmployeePresentationModel _employeePresentationModel = new EmployeePresentationModel();
         private EmployeeController _employeeController;
 
+        private AuthorizatoinPresentationModel _authoPresentationModel = new AuthorizatoinPresentationModel();
+        private AuthorizationController _authoController;
+
         public _mainFunction(Form login)
         {
             _login = login;
@@ -37,6 +40,13 @@ namespace OOAD_HR_System
             // 設置所有UI的預設值
             this.ResetNewEmplUI();
             this.ResetEditEmplUI();
+            this.ResetNewAuthoUI();
+        }
+
+        // reset all add authorization UI 預設值
+        private void ResetNewAuthoUI()
+        {
+            _newAuthoLevelCB.SelectedIndex = 0;
         }
 
         // reset all add employee UI 預設值
@@ -352,6 +362,27 @@ namespace OOAD_HR_System
 
             this.SetAllEditToEnable();
             this.ResetSearchEditEmplUI();
+        }
+
+        // 將新增權限的所有變數存至presentation model
+        private void SetAllNewAuthoVariableToPM()
+        {
+            String authoID = _newAuthoIDTB.Text;
+            String authoName = _newAuthoNameTB.Text;
+            String authoLevel = _newAuthoLevelCB.SelectedItem.ToString();
+
+            this._authoPresentationModel.SetAuthoID(authoID);
+            this._authoPresentationModel.SetAuthoName(authoName);
+            this._authoPresentationModel.SetAuthoValue(authoLevel);
+        }
+
+        // 按下加入權限
+        private void ClickAddAuthoButton(object sender, EventArgs e)
+        {
+            this.SetAllNewAuthoVariableToPM();
+
+            _authoController = new AuthorizationController(_authoPresentationModel);
+            _authoController.AddAuthorization();
         }
 
     }

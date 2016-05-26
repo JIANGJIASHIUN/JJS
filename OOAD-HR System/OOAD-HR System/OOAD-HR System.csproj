@@ -67,6 +67,7 @@
     <Compile Include="Class\TraningClass.cs" />
     <Compile Include="Class\TraningCourseClass.cs" />
     <Compile Include="Class\WorkAttendanceClass.cs" />
+    <Compile Include="Controller\AuthorizationController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="deptDataSet.Designer.cs">
@@ -86,6 +87,7 @@
     <Compile Include="MainFunction.Designer.cs">
       <DependentUpon>MainFunction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\AuthorizationModel.cs" />
     <Compile Include="Model\EmployeeModel.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\PositionModel.cs" />
@@ -94,10 +96,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>positionDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PresentationModel\AuthorizatoinPresentationModel.cs" />
     <Compile Include="PresentationModel\EmployeePresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AccountService.cs" />
+    <Compile Include="Service\AuthorizationService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\PositionServicecs.cs" />
     <EmbeddedResource Include="Login.resx">
