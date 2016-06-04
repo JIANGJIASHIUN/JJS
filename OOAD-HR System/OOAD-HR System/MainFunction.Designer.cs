@@ -135,22 +135,20 @@
             this._editAuthoLevelLB = new System.Windows.Forms.Label();
             this._editAuthoNameLB = new System.Windows.Forms.Label();
             this._editAuthoIDLB = new System.Windows.Forms.Label();
-            this._logoutButton = new System.Windows.Forms.Button();
-            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
-            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
             this._position = new System.Windows.Forms.TabPage();
             this._positionPage = new System.Windows.Forms.TabControl();
             this._addPosition = new System.Windows.Forms.TabPage();
-            this._editPosition = new System.Windows.Forms.TabPage();
-            this._addPositionIDLB = new System.Windows.Forms.Label();
-            this._addPositionNameLB = new System.Windows.Forms.Label();
-            this._addPositionBSLB = new System.Windows.Forms.Label();
-            this._addPositionAuthoLB = new System.Windows.Forms.Label();
-            this._addPositionAuthoCB = new System.Windows.Forms.ComboBox();
-            this._addPositionBSTB = new System.Windows.Forms.TextBox();
-            this._addPositionNameTB = new System.Windows.Forms.TextBox();
-            this._addPositionIDTB = new System.Windows.Forms.TextBox();
             this._addPositionButton = new System.Windows.Forms.Button();
+            this._addPositionIDTB = new System.Windows.Forms.TextBox();
+            this._addPositionNameTB = new System.Windows.Forms.TextBox();
+            this._addPositionBSTB = new System.Windows.Forms.TextBox();
+            this._addPositionAuthoCB = new System.Windows.Forms.ComboBox();
+            this._addPositionAuthoLB = new System.Windows.Forms.Label();
+            this._addPositionBSLB = new System.Windows.Forms.Label();
+            this._addPositionNameLB = new System.Windows.Forms.Label();
+            this._addPositionIDLB = new System.Windows.Forms.Label();
+            this._editPosition = new System.Windows.Forms.TabPage();
+            this._editPositionButton = new System.Windows.Forms.Button();
             this._searchPositionButton = new System.Windows.Forms.Button();
             this._editPositionIDTB = new System.Windows.Forms.TextBox();
             this._editPositionNameTB = new System.Windows.Forms.TextBox();
@@ -160,7 +158,12 @@
             this._editPositionBSLB = new System.Windows.Forms.Label();
             this._editPositionNameLB = new System.Windows.Forms.Label();
             this._editPositionIDLB = new System.Windows.Forms.Label();
-            this._editPositionButton = new System.Windows.Forms.Button();
+            this._logoutButton = new System.Windows.Forms.Button();
+            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
+            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
+            this.authoDataSet = new OOAD_HR_System.authoDataSet();
+            this.authorizationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.authorizationTableAdapter = new OOAD_HR_System.authoDataSetTableAdapters.authorizationTableAdapter();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this._employeePage.SuspendLayout();
@@ -178,6 +181,8 @@
             this._positionPage.SuspendLayout();
             this._addPosition.SuspendLayout();
             this._editPosition.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.authoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authorizationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainFunctionPage
@@ -1286,24 +1291,6 @@
             this._editAuthoIDLB.TabIndex = 6;
             this._editAuthoIDLB.Text = "Authorization ID:";
             // 
-            // _logoutButton
-            // 
-            this._logoutButton.Location = new System.Drawing.Point(1318, 14);
-            this._logoutButton.Name = "_logoutButton";
-            this._logoutButton.Size = new System.Drawing.Size(75, 28);
-            this._logoutButton.TabIndex = 1;
-            this._logoutButton.Text = "Logout";
-            this._logoutButton.UseVisualStyleBackColor = true;
-            this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
-            // 
-            // departmentTableAdapter
-            // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // positionTableAdapter
-            // 
-            this.positionTableAdapter.ClearBeforeFill = true;
-            // 
             // _position
             // 
             this._position.Controls.Add(this._positionPage);
@@ -1344,6 +1331,85 @@
             this._addPosition.Text = "Add";
             this._addPosition.UseVisualStyleBackColor = true;
             // 
+            // _addPositionButton
+            // 
+            this._addPositionButton.Location = new System.Drawing.Point(502, 462);
+            this._addPositionButton.Name = "_addPositionButton";
+            this._addPositionButton.Size = new System.Drawing.Size(113, 45);
+            this._addPositionButton.TabIndex = 8;
+            this._addPositionButton.Text = "Add";
+            this._addPositionButton.UseVisualStyleBackColor = true;
+            this._addPositionButton.Click += new System.EventHandler(this.ClickAddPositionButton);
+            // 
+            // _addPositionIDTB
+            // 
+            this._addPositionIDTB.Location = new System.Drawing.Point(179, 44);
+            this._addPositionIDTB.Name = "_addPositionIDTB";
+            this._addPositionIDTB.Size = new System.Drawing.Size(278, 36);
+            this._addPositionIDTB.TabIndex = 7;
+            // 
+            // _addPositionNameTB
+            // 
+            this._addPositionNameTB.Location = new System.Drawing.Point(209, 132);
+            this._addPositionNameTB.Name = "_addPositionNameTB";
+            this._addPositionNameTB.Size = new System.Drawing.Size(248, 36);
+            this._addPositionNameTB.TabIndex = 6;
+            // 
+            // _addPositionBSTB
+            // 
+            this._addPositionBSTB.Location = new System.Drawing.Point(270, 232);
+            this._addPositionBSTB.Name = "_addPositionBSTB";
+            this._addPositionBSTB.Size = new System.Drawing.Size(187, 36);
+            this._addPositionBSTB.TabIndex = 5;
+            this._addPositionBSTB.Text = "0";
+            // 
+            // _addPositionAuthoCB
+            // 
+            this._addPositionAuthoCB.DataSource = this.authorizationBindingSource;
+            this._addPositionAuthoCB.DisplayMember = "authoName";
+            this._addPositionAuthoCB.FormattingEnabled = true;
+            this._addPositionAuthoCB.Location = new System.Drawing.Point(278, 318);
+            this._addPositionAuthoCB.Name = "_addPositionAuthoCB";
+            this._addPositionAuthoCB.Size = new System.Drawing.Size(179, 32);
+            this._addPositionAuthoCB.TabIndex = 4;
+            this._addPositionAuthoCB.ValueMember = "authoID";
+            // 
+            // _addPositionAuthoLB
+            // 
+            this._addPositionAuthoLB.AutoSize = true;
+            this._addPositionAuthoLB.Location = new System.Drawing.Point(54, 326);
+            this._addPositionAuthoLB.Name = "_addPositionAuthoLB";
+            this._addPositionAuthoLB.Size = new System.Drawing.Size(218, 24);
+            this._addPositionAuthoLB.TabIndex = 3;
+            this._addPositionAuthoLB.Text = "Position Authorization:";
+            // 
+            // _addPositionBSLB
+            // 
+            this._addPositionBSLB.AutoSize = true;
+            this._addPositionBSLB.Location = new System.Drawing.Point(54, 238);
+            this._addPositionBSLB.Name = "_addPositionBSLB";
+            this._addPositionBSLB.Size = new System.Drawing.Size(209, 24);
+            this._addPositionBSLB.TabIndex = 2;
+            this._addPositionBSLB.Text = "Position Basic Salary:";
+            // 
+            // _addPositionNameLB
+            // 
+            this._addPositionNameLB.AutoSize = true;
+            this._addPositionNameLB.Location = new System.Drawing.Point(54, 144);
+            this._addPositionNameLB.Name = "_addPositionNameLB";
+            this._addPositionNameLB.Size = new System.Drawing.Size(149, 24);
+            this._addPositionNameLB.TabIndex = 1;
+            this._addPositionNameLB.Text = "Position Name:";
+            // 
+            // _addPositionIDLB
+            // 
+            this._addPositionIDLB.AutoSize = true;
+            this._addPositionIDLB.Location = new System.Drawing.Point(54, 56);
+            this._addPositionIDLB.Name = "_addPositionIDLB";
+            this._addPositionIDLB.Size = new System.Drawing.Size(119, 24);
+            this._addPositionIDLB.TabIndex = 0;
+            this._addPositionIDLB.Text = "Position ID:";
+            // 
             // _editPosition
             // 
             this._editPosition.Controls.Add(this._editPositionButton);
@@ -1364,79 +1430,14 @@
             this._editPosition.Text = "Edit";
             this._editPosition.UseVisualStyleBackColor = true;
             // 
-            // _addPositionIDLB
+            // _editPositionButton
             // 
-            this._addPositionIDLB.AutoSize = true;
-            this._addPositionIDLB.Location = new System.Drawing.Point(54, 56);
-            this._addPositionIDLB.Name = "_addPositionIDLB";
-            this._addPositionIDLB.Size = new System.Drawing.Size(119, 24);
-            this._addPositionIDLB.TabIndex = 0;
-            this._addPositionIDLB.Text = "Position ID:";
-            // 
-            // _addPositionNameLB
-            // 
-            this._addPositionNameLB.AutoSize = true;
-            this._addPositionNameLB.Location = new System.Drawing.Point(54, 144);
-            this._addPositionNameLB.Name = "_addPositionNameLB";
-            this._addPositionNameLB.Size = new System.Drawing.Size(149, 24);
-            this._addPositionNameLB.TabIndex = 1;
-            this._addPositionNameLB.Text = "Position Name:";
-            // 
-            // _addPositionBSLB
-            // 
-            this._addPositionBSLB.AutoSize = true;
-            this._addPositionBSLB.Location = new System.Drawing.Point(54, 238);
-            this._addPositionBSLB.Name = "_addPositionBSLB";
-            this._addPositionBSLB.Size = new System.Drawing.Size(209, 24);
-            this._addPositionBSLB.TabIndex = 2;
-            this._addPositionBSLB.Text = "Position Basic Salary:";
-            // 
-            // _addPositionAuthoLB
-            // 
-            this._addPositionAuthoLB.AutoSize = true;
-            this._addPositionAuthoLB.Location = new System.Drawing.Point(54, 326);
-            this._addPositionAuthoLB.Name = "_addPositionAuthoLB";
-            this._addPositionAuthoLB.Size = new System.Drawing.Size(218, 24);
-            this._addPositionAuthoLB.TabIndex = 3;
-            this._addPositionAuthoLB.Text = "Position Authorization:";
-            // 
-            // _addPositionAuthoCB
-            // 
-            this._addPositionAuthoCB.FormattingEnabled = true;
-            this._addPositionAuthoCB.Location = new System.Drawing.Point(278, 318);
-            this._addPositionAuthoCB.Name = "_addPositionAuthoCB";
-            this._addPositionAuthoCB.Size = new System.Drawing.Size(179, 32);
-            this._addPositionAuthoCB.TabIndex = 4;
-            // 
-            // _addPositionBSTB
-            // 
-            this._addPositionBSTB.Location = new System.Drawing.Point(270, 232);
-            this._addPositionBSTB.Name = "_addPositionBSTB";
-            this._addPositionBSTB.Size = new System.Drawing.Size(187, 36);
-            this._addPositionBSTB.TabIndex = 5;
-            // 
-            // _addPositionNameTB
-            // 
-            this._addPositionNameTB.Location = new System.Drawing.Point(209, 132);
-            this._addPositionNameTB.Name = "_addPositionNameTB";
-            this._addPositionNameTB.Size = new System.Drawing.Size(248, 36);
-            this._addPositionNameTB.TabIndex = 6;
-            // 
-            // _addPositionIDTB
-            // 
-            this._addPositionIDTB.Location = new System.Drawing.Point(179, 44);
-            this._addPositionIDTB.Name = "_addPositionIDTB";
-            this._addPositionIDTB.Size = new System.Drawing.Size(278, 36);
-            this._addPositionIDTB.TabIndex = 7;
-            // 
-            // _addPositionButton
-            // 
-            this._addPositionButton.Location = new System.Drawing.Point(502, 462);
-            this._addPositionButton.Name = "_addPositionButton";
-            this._addPositionButton.Size = new System.Drawing.Size(113, 45);
-            this._addPositionButton.TabIndex = 8;
-            this._addPositionButton.Text = "Add";
-            this._addPositionButton.UseVisualStyleBackColor = true;
+            this._editPositionButton.Location = new System.Drawing.Point(676, 476);
+            this._editPositionButton.Name = "_editPositionButton";
+            this._editPositionButton.Size = new System.Drawing.Size(113, 45);
+            this._editPositionButton.TabIndex = 18;
+            this._editPositionButton.Text = "Edit";
+            this._editPositionButton.UseVisualStyleBackColor = true;
             // 
             // _searchPositionButton
             // 
@@ -1512,14 +1513,37 @@
             this._editPositionIDLB.TabIndex = 9;
             this._editPositionIDLB.Text = "Position ID:";
             // 
-            // _editPositionButton
+            // _logoutButton
             // 
-            this._editPositionButton.Location = new System.Drawing.Point(676, 476);
-            this._editPositionButton.Name = "_editPositionButton";
-            this._editPositionButton.Size = new System.Drawing.Size(113, 45);
-            this._editPositionButton.TabIndex = 18;
-            this._editPositionButton.Text = "Edit";
-            this._editPositionButton.UseVisualStyleBackColor = true;
+            this._logoutButton.Location = new System.Drawing.Point(1318, 14);
+            this._logoutButton.Name = "_logoutButton";
+            this._logoutButton.Size = new System.Drawing.Size(75, 28);
+            this._logoutButton.TabIndex = 1;
+            this._logoutButton.Text = "Logout";
+            this._logoutButton.UseVisualStyleBackColor = true;
+            this._logoutButton.Click += new System.EventHandler(this.ClickLogoutButton);
+            // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // positionTableAdapter
+            // 
+            this.positionTableAdapter.ClearBeforeFill = true;
+            // 
+            // authoDataSet
+            // 
+            this.authoDataSet.DataSetName = "authoDataSet";
+            this.authoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // authorizationBindingSource
+            // 
+            this.authorizationBindingSource.DataMember = "authorization";
+            this.authorizationBindingSource.DataSource = this.authoDataSet;
+            // 
+            // authorizationTableAdapter
+            // 
+            this.authorizationTableAdapter.ClearBeforeFill = true;
             // 
             // _mainFunction
             // 
@@ -1555,6 +1579,8 @@
             this._addPosition.PerformLayout();
             this._editPosition.ResumeLayout(false);
             this._editPosition.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.authoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.authorizationBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1693,5 +1719,8 @@
         private System.Windows.Forms.Label _editPositionNameLB;
         private System.Windows.Forms.Label _editPositionIDLB;
         private System.Windows.Forms.Button _editPositionButton;
+        private authoDataSet authoDataSet;
+        private System.Windows.Forms.BindingSource authorizationBindingSource;
+        private authoDataSetTableAdapters.authorizationTableAdapter authorizationTableAdapter;
     }
 }

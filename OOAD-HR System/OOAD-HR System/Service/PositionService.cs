@@ -9,12 +9,12 @@ using OOAD_HR_System.Model;
 
 namespace OOAD_HR_System.Service
 {
-    public class PositionServicecs
+    public class PositionService
     {
         private MySqlConnection myConnection = new MySqlConnection("server=csie-noip.ddns.net;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
         private PositionModel _positionModel = new PositionModel();
 
-        public PositionServicecs(PositionModel positionModel)
+        public PositionService(PositionModel positionModel)
         {
             this._positionModel = positionModel;
         }
@@ -36,6 +36,30 @@ namespace OOAD_HR_System.Service
         private void closeConnection()
         {
             myConnection.Close();
+        }
+
+        // 新增職位資料至資料庫表單
+        public Boolean AddPosition()
+        {
+            if (this.connectToDB())
+            {
+                try
+                {
+                    String addString = String.Format("INSERT INTO position(positionID,positionName,positionBasicSalary,authoID) VALUES('" +
+                        this._positionModel.GetId() + "','" + this._positionModel.GetName() + "','" + this._positionModel.GetBasicSalary() + "','" + this._positionModel.GetAuthoId() + "');");
+                    MySqlCommand addCommand = new MySqlCommand(addString, myConnection);
+                    addCommand.Connection = myConnection;
+                    addCommand.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    return false;
+                }
+            }
+
+            this.closeConnection();
+
+            return true;
         }
 
         // 根據職位ID搜尋該職位的底薪
