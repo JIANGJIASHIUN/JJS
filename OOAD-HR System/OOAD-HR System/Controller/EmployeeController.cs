@@ -18,7 +18,7 @@ namespace OOAD_HR_System.Controller
         private EmployeeModel _employeeModel = new EmployeeModel();
         private PositionModel _positionModel = new PositionModel();
         private EmployeeService _employeeService;
-        private PositionServicecs _positionService;
+        private PositionService _positionService;
 
         // 建構子
         public EmployeeController(EmployeePresentationModel employeePresentationModel)
@@ -128,7 +128,7 @@ namespace OOAD_HR_System.Controller
             String positionID = this._employeeModel.GetPositionID();
             this._positionModel.SetId(positionID);
 
-            this._positionService = new PositionServicecs(this._positionModel);
+            this._positionService = new PositionService(this._positionModel);
 
             this._positionModel = _positionService.SearchBsicSalaryByPositionID();
 
@@ -316,7 +316,7 @@ namespace OOAD_HR_System.Controller
 
             this._positionModel.SetId(positionID);
 
-            this._positionService = new PositionServicecs(this._positionModel);
+            this._positionService = new PositionService(this._positionModel);
 
             this._positionModel = _positionService.SearchBsicSalaryByPositionID();
 

@@ -22,6 +22,9 @@ namespace OOAD_HR_System
         private AuthorizationPresentationModel _authoPresentationModel = new AuthorizationPresentationModel();
         private AuthorizationController _authoController;
 
+        private PositionPresentationModel _positionPresentationModel = new PositionPresentationModel();
+        private PositionController _positionController;
+
         public _mainFunction(Form login)
         {
             _login = login;
@@ -32,6 +35,8 @@ namespace OOAD_HR_System
         // form load
         private void LoadMainFunction(object sender, EventArgs e)
         {
+            // TODO:  這行程式碼會將資料載入 'authoDataSet.authorization' 資料表。您可以視需要進行移動或移除。
+            this.authorizationTableAdapter.Fill(this.authoDataSet.authorization);
             // TODO:  這行程式碼會將資料載入 'positionDataSet.position' 資料表。您可以視需要進行移動或移除。
             this.positionTableAdapter.Fill(this.positionDataSet.position);
             // TODO:  這行程式碼會將資料載入 'deptDataSet.department' 資料表。您可以視需要進行移動或移除。
@@ -435,6 +440,7 @@ namespace OOAD_HR_System
             _authoController.AddAuthorization();
         }
 
+<<<<<<< HEAD
         // 按下查詢權限按鈕
         private void ClickSearchAuthoButtom(object sender, EventArgs e)
         {
@@ -462,5 +468,43 @@ namespace OOAD_HR_System
                 this.ResetEditAuthoUI();
             }
         }
+=======
+        // 設置position UI變數至presentation model
+        private Boolean SetAllNewPositionVariableToPM()
+        {
+            String positionID = _addPositionIDTB.Text;
+            String positionName = _addPositionNameTB.Text;
+            float positionBS;
+            try
+            {
+                positionBS = System.Convert.ToSingle(_addPositionBSTB.Text);
+            }
+            catch
+            {
+                MessageBox.Show("輸入的職位底薪不為數字, 請重新輸入!");
+                return false;
+            }
+            String positionAuthoID = null;
+            if (_addPositionAuthoCB.SelectedValue != null)
+                positionAuthoID = _addPositionAuthoCB.SelectedValue.ToString();
+
+            this._positionPresentationModel.SetPositionID(positionID);
+            this._positionPresentationModel.SetPositionName(positionName);
+            this._positionPresentationModel.SetPositionBasicSalary(positionBS);
+            this._positionPresentationModel.SetPositionAuthoID(positionAuthoID);
+            return true;
+        }
+
+        // 按下加入職位
+        private void ClickAddPositionButton(object sender, EventArgs e)
+        {
+            if (this.SetAllNewPositionVariableToPM())
+            {
+                _positionController = new PositionController(_positionPresentationModel);
+                _positionController.AddPosition();
+            }         
+        }
+
+>>>>>>> origin/master
     }
 }
