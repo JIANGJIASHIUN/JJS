@@ -440,7 +440,7 @@ namespace OOAD_HR_System
             _authoController.AddAuthorization();
         }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
         // 按下查詢權限按鈕
         private void ClickSearchAuthoButtom(object sender, EventArgs e)
         {
@@ -468,7 +468,7 @@ namespace OOAD_HR_System
                 this.ResetEditAuthoUI();
             }
         }
-=======
+//=======
         // 設置position UI變數至presentation model
         private Boolean SetAllNewPositionVariableToPM()
         {
@@ -505,6 +505,6 @@ namespace OOAD_HR_System
             }         
         }
 
->>>>>>> origin/master
+//>>>>>>> origin/master
     }
 }
