@@ -19,7 +19,7 @@ namespace OOAD_HR_System
         private EmployeePresentationModel _employeePresentationModel = new EmployeePresentationModel();
         private EmployeeController _employeeController;
 
-        private AuthorizatoinPresentationModel _authoPresentationModel = new AuthorizatoinPresentationModel();
+        private AuthorizationPresentationModel _authoPresentationModel = new AuthorizationPresentationModel();
         private AuthorizationController _authoController;
 
         public _mainFunction(Form login)
@@ -41,12 +41,32 @@ namespace OOAD_HR_System
             this.ResetNewEmplUI();
             this.ResetEditEmplUI();
             this.ResetNewAuthoUI();
+            this.ResetEditAuthoUI();
         }
 
         // reset all add authorization UI 預設值
         private void ResetNewAuthoUI()
         {
             _newAuthoLevelCB.SelectedIndex = 0;
+        }
+
+        // reset all edit authorization UI 預設值
+        private void ResetEditAuthoUI()
+        {
+            _editAuthoNameTB.Text = "";
+            _editAuthoNameTB.ReadOnly = true;
+            _editAuthoLevelCB.Text = "";
+            _editAuthoLevelCB.Enabled = false;
+            _editAuthoButton.Enabled = false;
+        }
+
+        // 查詢後autho UI放入資料
+        private void ResetSearchEditAuthoUI()
+        {
+            _editAuthoNameTB.Text = _authoPresentationModel.GetAuthoName();
+            //_editAuthoLevelCB.Text = "";
+            _editAuthoLevelCB.Text = _authoPresentationModel.GetAuthoValue();
+            _editAuthoButton.Enabled = true;
         }
 
         // reset all add employee UI 預設值
@@ -283,13 +303,13 @@ namespace OOAD_HR_System
             _employeeController = new EmployeeController(_employeePresentationModel);
             if (_employeeController.EditEmployee())
             {
-                this.SetAllEditToNotEnable();
+                this.SetAllEmplEditToNotEnable();
                 this.ResetEditEmplUI();
             }
         }
 
         // 設置所有編輯的UI 可以更改
-        private void SetAllEditToNotEnable()
+        private void SetAllEmplEditToNotEnable()
         {
             _editEmplIDTB.ReadOnly = false;
             _editEmplIDTB.Text = "";
@@ -325,8 +345,8 @@ namespace OOAD_HR_System
             _editEmplBirthDTP.Enabled = false;
         }
 
-        // 設置所有編輯的UI 可以更改
-        private void SetAllEditToEnable()
+        // 設置所有編輯的Employee UI 可以更改
+        private void SetAllEmplEditToEnable()
         {
             _editEmplIDTB.ReadOnly = true;
             _editEmplNameTB.ReadOnly = false;
@@ -348,6 +368,24 @@ namespace OOAD_HR_System
             _editEmplBirthDTP.Enabled = true;
         }
 
+        // 權限編輯後將UI初始化
+        private void SetAllAuthoEditToNotEable()
+        {
+            _editAuthoIDTB.ReadOnly = false;
+            _editAuthoIDTB.Text = "";
+            _editAuthoNameTB.ReadOnly = true;
+            _editAuthoLevelCB.SelectedIndex = 0;
+            _editAuthoLevelCB.Enabled = false;
+        }
+
+        // 設置可編輯的Authorization欄位
+        private void SetAllAuthoEditToEnable()
+        {
+            _editAuthoIDTB.ReadOnly = true;
+            _editAuthoNameTB.ReadOnly = false;
+            _editAuthoLevelCB.Enabled = true;
+        }
+
         // 按下查詢員工按鈕
         private void ClickSearchEmplButtom(object sender, EventArgs e)
         {
@@ -360,7 +398,7 @@ namespace OOAD_HR_System
             if (_employeePresentationModel.GetEmplID() == null || _employeePresentationModel.GetEmplID() == "")
                 return;
 
-            this.SetAllEditToEnable();
+            this.SetAllEmplEditToEnable();
             this.ResetSearchEditEmplUI();
         }
 
@@ -376,6 +414,18 @@ namespace OOAD_HR_System
             this._authoPresentationModel.SetAuthoValue(authoLevel);
         }
 
+        // 將編輯權限的所有變數存至presentation model
+        private void SetAllEditAuthoVariableToPM()
+        {
+            String authoID = _editAuthoIDTB.Text;
+            String authoName = _editAuthoNameTB.Text;
+            String authoValue = _editAuthoLevelCB.SelectedItem.ToString();
+
+            this._authoPresentationModel.SetAuthoID(authoID);
+            this._authoPresentationModel.SetAuthoName(authoName);
+            this._authoPresentationModel.SetAuthoValue(authoValue);
+        }
+
         // 按下加入權限
         private void ClickAddAuthoButton(object sender, EventArgs e)
         {
@@ -385,5 +435,32 @@ namespace OOAD_HR_System
             _authoController.AddAuthorization();
         }
 
+        // 按下查詢權限按鈕
+        private void ClickSearchAuthoButtom(object sender, EventArgs e)
+        {
+            String authoID = _editAuthoIDTB.Text;
+            _authoPresentationModel.SetAuthoID(authoID);
+
+            _authoController = new AuthorizationController(_authoPresentationModel);
+            _authoPresentationModel = _authoController.SearchDataByAuthoID();
+
+            if (_authoPresentationModel.GetAuthoID() == null || _authoPresentationModel.GetAuthoID() == "")
+                return;
+
+            this.SetAllAuthoEditToEnable();
+            this.ResetSearchEditAuthoUI();
+        }
+
+        // 按下編輯權限按鈕
+        private void ClickEditAuthoButtom(object sender, EventArgs e)
+        {
+            this.SetAllEditAuthoVariableToPM();
+            _authoController = new AuthorizationController(_authoPresentationModel);
+            if(_authoController.editAuthorization())
+            {
+                this.SetAllAuthoEditToNotEable();
+                this.ResetEditAuthoUI();
+            }
+        }
     }
 }

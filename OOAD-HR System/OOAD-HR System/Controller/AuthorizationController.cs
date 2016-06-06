@@ -17,7 +17,7 @@ namespace OOAD_HR_System.Controller
         private AuthorizationService _authoService;
 
         // 建構子
-        public AuthorizationController(AuthorizatoinPresentationModel authoPresentationModel)
+        public AuthorizationController(AuthorizationPresentationModel authoPresentationModel)
         {
             _authoModel.SetAuthoID(authoPresentationModel.GetAuthoID());
             _authoModel.SetAuthoName(authoPresentationModel.GetAuthoName());
@@ -44,6 +44,61 @@ namespace OOAD_HR_System.Controller
                 MessageBox.Show("新增成功!");
             else
                 MessageBox.Show("新增失敗!");
+        }
+
+        // 呼叫service, 將資料新增至資料庫(edit)
+        public Boolean editAuthorization()
+        {
+            this._authoService = new AuthorizationService(this._authoModel);
+            int error_flag = 0;
+            if (this._authoModel.GetAuthoName() == "")
+            {
+                MessageBox.Show("請輸入權限名稱");
+                return false;
+            }
+            else if(this._authoModel.GetAuthoValue() == "")
+            {
+                MessageBox.Show("請輸入權限數值");
+                return false;
+            }
+
+            if (_authoService.EditAuthorization())
+                MessageBox.Show("修改成功！");
+            else
+            {
+                MessageBox.Show("修改失敗！");
+                return false;
+            }
+                
+            
+            return true;
+        }
+
+        //呼叫service 利用authoID查詢autho資料
+        public AuthorizationPresentationModel SearchDataByAuthoID()
+        {
+            AuthorizationPresentationModel authoPresentModel = new AuthorizationPresentationModel();
+
+            if (this._authoModel.GetAuthoID() == null || this._authoModel.GetAuthoID() == "")
+                MessageBox.Show("請輸入權限ID");
+            else
+            {
+                //MessageBox.Show("yes");
+                _authoService = new AuthorizationService(this._authoModel);
+                _authoModel = _authoService.searchByAuthoID();
+
+                authoPresentModel.SetAuthoID(_authoModel.GetAuthoID());
+                authoPresentModel.SetAuthoName(_authoModel.GetAuthoName());
+                authoPresentModel.SetAuthoValue(_authoModel.GetAuthoValue());
+
+                if(_authoModel.GetAuthoName() == null || _authoModel.GetAuthoName() == "")
+                {
+                    MessageBox.Show("此權限ID不存在!");
+                    //MessageBox.Show(_authoModel.GetAuthoID());
+                    authoPresentModel.SetAuthoID(null);
+                }
+            }
+            return authoPresentModel;
         }
 
     }

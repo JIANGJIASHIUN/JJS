@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using MySql.Data.MySqlClient;
 using OOAD_HR_System.Model;
 
@@ -61,6 +62,63 @@ namespace OOAD_HR_System.Service
             this.closeConnection();
 
             return true;
+        }
+
+        // 修改權限資料至資料庫表單
+        public Boolean EditAuthorization()
+        {
+            if(this.connectToDB())
+            {
+                try
+                {
+                    String addString = String.Format("UPDATE authorization SET authoName='" + this._authoModel.GetAuthoName() + 
+                        "',authoValue='" + this._authoModel.GetAuthoValue() + "' WHERE authoID='" + this._authoModel.GetAuthoID() + 
+                        "';");
+                    MySqlCommand updateCommand = new MySqlCommand(addString, myConnection);
+                    updateCommand.Connection = myConnection;
+                    updateCommand.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    return false;
+                }
+            }
+            this.closeConnection();
+            return true;
+        }
+
+        // 以輸入權限ID搜尋權限資料
+        public AuthorizationModel searchByAuthoID()
+        {
+            if (this.connectToDB())
+            {
+                try
+                {
+                    DataTable dataSet = new DataTable();
+
+                    String searchString = String.Format("SELECT * FROM authorization WHERE authoID = '" + this._authoModel.GetAuthoID() + "'");
+                    MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
+                    searchCommand.ExecuteNonQuery();
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(searchCommand);
+                    adapter.Fill(dataSet);
+
+                    foreach (DataRow searchDr in dataSet.Rows)
+                    {
+                        _authoModel.SetAuthoName( searchDr["authoName"].ToString());
+                        _authoModel.SetAuthoValue( searchDr["authoValue"].ToString());
+                    }
+                }
+                catch (MySqlException ex)
+                {
+
+                }
+
+                
+            }
+            this.closeConnection();
+
+            return this._authoModel;
         }
 
     }

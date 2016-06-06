@@ -7,13 +7,13 @@ using OOAD_HR_System.Class;
 
 namespace OOAD_HR_System.PresentationModel
 {
-    public class AuthorizatoinPresentationModel
+    public class AuthorizationPresentationModel
     {
 
         private AuthorizationClass _authorization = new AuthorizationClass();
 
         // 建構子
-        public AuthorizatoinPresentationModel()
+        public AuthorizationPresentationModel()
         {
 
         }

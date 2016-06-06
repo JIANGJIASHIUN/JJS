@@ -96,7 +96,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>positionDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="PresentationModel\AuthorizatoinPresentationModel.cs" />
+    <Compile Include="PresentationModel\AuthorizationPresentationModel.cs" />
     <Compile Include="PresentationModel\EmployeePresentationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
