@@ -47,5 +47,56 @@ namespace OOAD_HR_System.Controller
                 MessageBox.Show("新增失敗!");
         }
 
+        //呼叫service 利用positionID查詢position資料
+        public PositionPresentationModel SearchDataByPositionID()
+        {
+            PositionPresentationModel positionPresentationModel = new PositionPresentationModel();
+
+            if (this._positionModel.GetId() == null || this._positionModel.GetId() == "")
+                MessageBox.Show("請輸入職位ID");
+            else
+            {
+                //MessageBox.Show("yes");
+                _positionService = new PositionService(this._positionModel);
+                _positionModel = _positionService.searchByPositionID();
+
+                positionPresentationModel.SetPositionID(_positionModel.GetId());
+                positionPresentationModel.SetPositionName(_positionModel.GetName());
+                positionPresentationModel.SetPositionBasicSalary(_positionModel.GetBasicSalary());
+                positionPresentationModel.SetPositionAuthoID(_positionModel.GetAuthoId());
+
+                if (positionPresentationModel.GetPositionName() == null || positionPresentationModel.GetPositionName() == "")
+                {
+                    MessageBox.Show("此職位ID不存在!");
+                    //MessageBox.Show(_authoModel.GetAuthoID());
+                    positionPresentationModel.SetPositionID(null);
+                }
+            }
+            return positionPresentationModel;
+        }
+
+        // 呼叫service, 將資料新增至資料庫(edit)
+        public Boolean EditPosition()
+        {
+            this._positionService = new PositionService(this._positionModel);
+            int error_flag = 0;
+            if (this._positionModel.GetName() == "")
+            {
+                MessageBox.Show("請輸入職位名稱");
+                return false;
+            }
+
+            if (_positionService.EditPosition())
+                MessageBox.Show("修改成功！");
+            else
+            {
+                MessageBox.Show("修改失敗！");
+                return false;
+            }
+
+
+            return true;
+        }
+
     }
 }

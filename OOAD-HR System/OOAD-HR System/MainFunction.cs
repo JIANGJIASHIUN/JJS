@@ -105,6 +105,15 @@ namespace OOAD_HR_System
             _editEmplBasicSalaryTB.Text = _employeeController.SearchBasicSalaryByPositionID();
         }
 
+        // reset all edit position UI
+        private void ResetEditPositionUI()
+        {
+            _editPositionIDTB.Text = "";
+            _editPositionNameTB.Text = "";
+            _editPositionBSTB.Text = "";
+            _editPositionAuthoCB.SelectedIndex = 0;
+        }
+
         // 設置查詢後 all edit employee UI
         private void ResetSearchEditEmplUI()
         {
@@ -506,5 +515,86 @@ namespace OOAD_HR_System
         }
 
 //>>>>>>> origin/master
+
+        // 設置所有edit position UI to enable
+        private void SetAllPositionEditToEnable()
+        {
+            _editPositionNameTB.ReadOnly = false;
+            _editPositionBSTB.ReadOnly = false;
+            _editPositionAuthoCB.Enabled = true;
+            _editPositionButton.Enabled = true;
+        }
+
+        // 設置所有edit position UI to enable
+        private void SetAllPositionEditToNotEnable()
+        {
+            _editPositionNameTB.ReadOnly = true;
+            _editPositionBSTB.ReadOnly = true;
+            _editPositionAuthoCB.Enabled = false;
+            _editPositionButton.Enabled = false;
+        }
+
+        // 設置資料進edit position UI中
+        private void ResetSearchEditPositionUI()
+        {
+            _editPositionNameTB.Text = this._positionPresentationModel.GetPositionName();
+            _editPositionBSTB.Text = this._positionPresentationModel.GetPositionBasicSalary().ToString();
+            _editPositionAuthoCB.SelectedValue = this._positionPresentationModel.GetPositionAuthoID();
+        }
+
+        // 按下查詢職位按鈕
+        private void ClickSearchPositionButtom(object sender, EventArgs e)
+        {
+            String positionID = _editPositionIDTB.Text;
+            _positionPresentationModel.SetPositionID(positionID);
+
+            _positionController = new PositionController(_positionPresentationModel);
+            _positionPresentationModel = _positionController.SearchDataByPositionID();
+
+            if (_positionPresentationModel.GetPositionID() == null || _positionPresentationModel.GetPositionID() == "")
+                return;
+
+            this.SetAllPositionEditToEnable();
+            this.ResetSearchEditPositionUI();
+        }
+
+        // 設置position UI變數至presentation model
+        private Boolean SetAllEditPositionVariableToPM()
+        {
+            String positionID = _editPositionIDTB.Text;
+            String positionName = _editPositionNameTB.Text;
+            float positionBS;
+            try
+            {
+                positionBS = System.Convert.ToSingle(_editPositionBSTB.Text);
+            }
+            catch
+            {
+                MessageBox.Show("輸入的職位底薪不為數字, 請重新輸入!");
+                return false;
+            }
+            String positionAuthoID = null;
+            if (_addPositionAuthoCB.SelectedValue != null)
+                positionAuthoID = _editPositionAuthoCB.SelectedValue.ToString();
+
+            this._positionPresentationModel.SetPositionID(positionID);
+            this._positionPresentationModel.SetPositionName(positionName);
+            this._positionPresentationModel.SetPositionBasicSalary(positionBS);
+            this._positionPresentationModel.SetPositionAuthoID(positionAuthoID);
+            return true;
+        }
+
+        // 按下修改職位按鈕
+        private void ClickEditPositionButton(object sender, EventArgs e)
+        {
+            this.SetAllEditPositionVariableToPM();
+            _positionController = new PositionController(_positionPresentationModel);
+            if (_positionController.EditPosition())
+            {
+                this.SetAllPositionEditToNotEnable();
+                this.ResetEditPositionUI();
+            }
+        }
+
     }
 }

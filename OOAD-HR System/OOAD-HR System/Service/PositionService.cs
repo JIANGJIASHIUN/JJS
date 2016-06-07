@@ -45,7 +45,7 @@ namespace OOAD_HR_System.Service
             {
                 try
                 {
-                    String addString = String.Format("INSERT INTO position(positionID,positionName,positionBasicSalary,authoID) VALUES('" +
+                    String addString = String.Format("INSERT INTO position (positionID,positionName,positionBasicSalary,authoID) VALUES('" +
                         this._positionModel.GetId() + "','" + this._positionModel.GetName() + "','" + this._positionModel.GetBasicSalary() + "','" + this._positionModel.GetAuthoId() + "');");
                     MySqlCommand addCommand = new MySqlCommand(addString, myConnection);
                     addCommand.Connection = myConnection;
@@ -92,6 +92,64 @@ namespace OOAD_HR_System.Service
             this.closeConnection();
 
             return this._positionModel;
+        }
+
+        // 以輸入職位ID搜尋職位資料
+        public PositionModel searchByPositionID()
+        {
+            if (this.connectToDB())
+            {
+                try
+                {
+                    DataTable dataSet = new DataTable();
+
+                    String searchString = String.Format("SELECT * FROM position WHERE positionID = '" + this._positionModel.GetId() + "'");
+                    MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
+                    searchCommand.ExecuteNonQuery();
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(searchCommand);
+                    adapter.Fill(dataSet);
+
+                    foreach (DataRow searchDr in dataSet.Rows)
+                    {
+                        this._positionModel.SetName(System.Convert.ToString(searchDr["positionName"]));
+                        this._positionModel.SetBasicSalary(System.Convert.ToSingle(searchDr["positionBasicSalary"]));
+                        this._positionModel.SetAuthoId(System.Convert.ToString(searchDr["authoID"]));
+                    }
+                }
+                catch (MySqlException ex)
+                {
+
+                }
+
+
+            }
+            this.closeConnection();
+
+            return this._positionModel;
+        }
+
+        // 修改職位資料至資料庫表單
+        public Boolean EditPosition()
+        {
+            if (this.connectToDB())
+            {
+                try
+                {
+                    String addString = String.Format("UPDATE position SET positionName='" + this._positionModel.GetName() +
+                        "',positionBasicSalary='" + this._positionModel.GetBasicSalary() + "',authoID='" + this._positionModel.GetAuthoId() + "' WHERE positionID='" + this._positionModel.GetId() +
+                        "';");
+                    MySqlCommand updateCommand = new MySqlCommand(addString, myConnection);
+                    updateCommand.Connection = myConnection;
+                    updateCommand.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    return false;
+                }
+            }
+            this.closeConnection();
+            return true;
         }
 
     }
