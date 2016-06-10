@@ -160,6 +160,7 @@
             this._editEmplSsnLB = new System.Windows.Forms.Label();
             this._editEmplNameLB = new System.Windows.Forms.Label();
             this.editEmplIDLB = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this._mainFunctionPage = new System.Windows.Forms.TabControl();
             this._department = new System.Windows.Forms.TabPage();
             this._departmentPage = new System.Windows.Forms.TabControl();
@@ -174,12 +175,104 @@
             this._newDepartIDTB = new System.Windows.Forms.TextBox();
             this._newDepartIDLB = new System.Windows.Forms.Label();
             this._editDepartment = new System.Windows.Forms.TabPage();
+=======
+            this._workAttendance = new System.Windows.Forms.TabPage();
+            this._workAttendancePage = new System.Windows.Forms.TabControl();
+            this._addWorkAttendance = new System.Windows.Forms.TabPage();
+            this._addWAButton = new System.Windows.Forms.Button();
+            this._addWAEndOTDTP = new System.Windows.Forms.DateTimePicker();
+            this._addWAEndOverTimeLB = new System.Windows.Forms.Label();
+            this._addWAStartOTDTP = new System.Windows.Forms.DateTimePicker();
+            this._addWAStartOverTimeLB = new System.Windows.Forms.Label();
+            this._addWAIsOvertimeCB = new System.Windows.Forms.ComboBox();
+            this._addWAIsOvertime = new System.Windows.Forms.Label();
+            this._addWAEndWTDTP = new System.Windows.Forms.DateTimePicker();
+            this._addWAEndWTLB = new System.Windows.Forms.Label();
+            this._addWAStartWTDTP = new System.Windows.Forms.DateTimePicker();
+            this._addWAStartWTLB = new System.Windows.Forms.Label();
+            this._addWAWorkStatusCB = new System.Windows.Forms.ComboBox();
+            this._addWAStatusLB = new System.Windows.Forms.Label();
+            this._addWADateDTP = new System.Windows.Forms.DateTimePicker();
+            this._addWADate = new System.Windows.Forms.Label();
+            this._addWAEmplIDTB = new System.Windows.Forms.TextBox();
+            this._addWAEmplIDLB = new System.Windows.Forms.Label();
+            this._editWorkAttendance = new System.Windows.Forms.TabPage();
+            this._reimburse = new System.Windows.Forms.TabPage();
+            this._bonus = new System.Windows.Forms.TabPage();
+            this._salary = new System.Windows.Forms.TabPage();
+            this._traning = new System.Windows.Forms.TabPage();
+            this._careerPlanning = new System.Windows.Forms.TabPage();
+            this._report = new System.Windows.Forms.TabPage();
+            this._authorization = new System.Windows.Forms.TabPage();
+            this._authorizationPage = new System.Windows.Forms.TabControl();
+            this._newAuthorization = new System.Windows.Forms.TabPage();
+            this._insertAuthoButton = new System.Windows.Forms.Button();
+            this._newAuthoLevelCB = new System.Windows.Forms.ComboBox();
+            this._newAuthoNameTB = new System.Windows.Forms.TextBox();
+            this._newAuthoIDTB = new System.Windows.Forms.TextBox();
+            this._newAuthoLevelLB = new System.Windows.Forms.Label();
+            this._newAuthoNameLB = new System.Windows.Forms.Label();
+            this._newAuthoIDLB = new System.Windows.Forms.Label();
+            this._editAuthorization = new System.Windows.Forms.TabPage();
+            this._editAuthoButton = new System.Windows.Forms.Button();
+            this._searchAuthoButton = new System.Windows.Forms.Button();
+            this._editAuthoLevelCB = new System.Windows.Forms.ComboBox();
+            this._editAuthoNameTB = new System.Windows.Forms.TextBox();
+            this._editAuthoIDTB = new System.Windows.Forms.TextBox();
+            this._editAuthoLevelLB = new System.Windows.Forms.Label();
+            this._editAuthoNameLB = new System.Windows.Forms.Label();
+            this._editAuthoIDLB = new System.Windows.Forms.Label();
+            this._position = new System.Windows.Forms.TabPage();
+            this._positionPage = new System.Windows.Forms.TabControl();
+            this._addPosition = new System.Windows.Forms.TabPage();
+            this._addPositionButton = new System.Windows.Forms.Button();
+            this._addPositionIDTB = new System.Windows.Forms.TextBox();
+            this._addPositionNameTB = new System.Windows.Forms.TextBox();
+            this._addPositionBSTB = new System.Windows.Forms.TextBox();
+            this._addPositionAuthoCB = new System.Windows.Forms.ComboBox();
+            this.authorizationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.authoDataSet = new OOAD_HR_System.authoDataSet();
+            this._addPositionAuthoLB = new System.Windows.Forms.Label();
+            this._addPositionBSLB = new System.Windows.Forms.Label();
+            this._addPositionNameLB = new System.Windows.Forms.Label();
+            this._addPositionIDLB = new System.Windows.Forms.Label();
+            this._editPosition = new System.Windows.Forms.TabPage();
+            this._editPositionButton = new System.Windows.Forms.Button();
+            this._searchPositionButton = new System.Windows.Forms.Button();
+            this._editPositionIDTB = new System.Windows.Forms.TextBox();
+            this._editPositionNameTB = new System.Windows.Forms.TextBox();
+            this._editPositionBSTB = new System.Windows.Forms.TextBox();
+            this._editPositionAuthoCB = new System.Windows.Forms.ComboBox();
+            this._editPositionAuthoLB = new System.Windows.Forms.Label();
+            this._editPositionBSLB = new System.Windows.Forms.Label();
+            this._editPositionNameLB = new System.Windows.Forms.Label();
+            this._editPositionIDLB = new System.Windows.Forms.Label();
+            this._logoutButton = new System.Windows.Forms.Button();
+            this.departmentTableAdapter = new OOAD_HR_System.deptDataSetTableAdapters.departmentTableAdapter();
+            this.positionTableAdapter = new OOAD_HR_System.positionDataSetTableAdapters.positionTableAdapter();
+            this.authorizationTableAdapter = new OOAD_HR_System.authoDataSetTableAdapters.authorizationTableAdapter();
+            this._mainFunctionPage.SuspendLayout();
+            this._employee.SuspendLayout();
+            this._employeePage.SuspendLayout();
+            this._newEmployee.SuspendLayout();
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             ((System.ComponentModel.ISupportInitialize)(this.positionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deptDataSet)).BeginInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.authorizationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.authoDataSet)).BeginInit();
+=======
+            this._editEmployee.SuspendLayout();
+            this._workAttendance.SuspendLayout();
+            this._workAttendancePage.SuspendLayout();
+            this._addWorkAttendance.SuspendLayout();
+            this._authorization.SuspendLayout();
+            this._authorizationPage.SuspendLayout();
+            this._newAuthorization.SuspendLayout();
+            this._editAuthorization.SuspendLayout();
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             this._position.SuspendLayout();
             this._positionPage.SuspendLayout();
             this._addPosition.SuspendLayout();
@@ -205,8 +298,20 @@
             // 
             // positionDataSet
             // 
+<<<<<<< HEAD
             this.positionDataSet.DataSetName = "positionDataSet";
             this.positionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+=======
+            this._employee.Controls.Add(this._employeePage);
+            this._employee.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._employee.Location = new System.Drawing.Point(4, 34);
+            this._employee.Name = "_employee";
+            this._employee.Padding = new System.Windows.Forms.Padding(3);
+            this._employee.Size = new System.Drawing.Size(1558, 872);
+            this._employee.TabIndex = 0;
+            this._employee.Text = "Employee";
+            this._employee.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             // departmentBindingSource
             // 
@@ -215,8 +320,54 @@
             // 
             // deptDataSet
             // 
+<<<<<<< HEAD
             this.deptDataSet.DataSetName = "deptDataSet";
             this.deptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+=======
+            this._newEmployee.Controls.Add(this._newEmplPositionCB);
+            this._newEmployee.Controls.Add(this._newEmplSexCB);
+            this._newEmployee.Controls.Add(this._insertEmplButton);
+            this._newEmployee.Controls.Add(this._newEmplBloodCB);
+            this._newEmployee.Controls.Add(this._newEmplBloodLB);
+            this._newEmployee.Controls.Add(this._newEmplDeptCB);
+            this._newEmployee.Controls.Add(this._newEmplBasicSalaryTB);
+            this._newEmployee.Controls.Add(this._newEmplJobStatCB);
+            this._newEmployee.Controls.Add(this._newEmplSpouseTB);
+            this._newEmployee.Controls.Add(this._newEmplMarriedStatCB);
+            this._newEmployee.Controls.Add(this._newEmplMilitaryStatCB);
+            this._newEmployee.Controls.Add(this._newEmplEmerPhoneTB);
+            this._newEmployee.Controls.Add(this._newEmplEmerPersonTB);
+            this._newEmployee.Controls.Add(this._newEmplAddrTB);
+            this._newEmployee.Controls.Add(this._newEmplPhoneTB);
+            this._newEmployee.Controls.Add(this._newEmpllSsnTB);
+            this._newEmployee.Controls.Add(this._newEmplBirthDP);
+            this._newEmployee.Controls.Add(this._newEmplNameTB);
+            this._newEmployee.Controls.Add(this._newEmplIDTB);
+            this._newEmployee.Controls.Add(this._newEmplPositionIDLB);
+            this._newEmployee.Controls.Add(this._newEmplDeptIDLB);
+            this._newEmployee.Controls.Add(this._newEmplBasicSalaryLB);
+            this._newEmployee.Controls.Add(this._newEmplBirthLB);
+            this._newEmployee.Controls.Add(this._newEmplSpouseLB);
+            this._newEmployee.Controls.Add(this._newEmplMarriedStatLB);
+            this._newEmployee.Controls.Add(this._newEmplJobStatLB);
+            this._newEmployee.Controls.Add(this._newEmplMilitaryLB);
+            this._newEmployee.Controls.Add(this._newEmplEmerPhoneLB);
+            this._newEmployee.Controls.Add(this._newEmplEmerPersonLB);
+            this._newEmployee.Controls.Add(this._newEmplAddrLB);
+            this._newEmployee.Controls.Add(this._newEmplPhoneLB);
+            this._newEmployee.Controls.Add(this._newEmplSexLB);
+            this._newEmployee.Controls.Add(this._newEmplSsnLB);
+            this._newEmployee.Controls.Add(this._newEmplNameLB);
+            this._newEmployee.Controls.Add(this._newEmplIDLB);
+            this._newEmployee.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._newEmployee.Location = new System.Drawing.Point(4, 34);
+            this._newEmployee.Name = "_newEmployee";
+            this._newEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this._newEmployee.Size = new System.Drawing.Size(1537, 822);
+            this._newEmployee.TabIndex = 0;
+            this._newEmployee.Text = "Add";
+            this._newEmployee.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             // authorizationBindingSource
             // 
@@ -602,6 +753,7 @@
             // 
             // _editAuthorization
             // 
+<<<<<<< HEAD
             this._editAuthorization.Controls.Add(this._editAuthoButton);
             this._editAuthorization.Controls.Add(this._searchAuthoButton);
             this._editAuthorization.Controls.Add(this._editAuthoLevelCB);
@@ -618,6 +770,51 @@
             this._editAuthorization.TabIndex = 1;
             this._editAuthorization.Text = "Edit";
             this._editAuthorization.UseVisualStyleBackColor = true;
+=======
+            this._editEmployee.Controls.Add(this._searchEmplButtom);
+            this._editEmployee.Controls.Add(this._editEmplPositionCB);
+            this._editEmployee.Controls.Add(this._editEmplSexCB);
+            this._editEmployee.Controls.Add(this._editEmplButton);
+            this._editEmployee.Controls.Add(this._editEmplBloodCB);
+            this._editEmployee.Controls.Add(this._editEmplBloodLB);
+            this._editEmployee.Controls.Add(this._editEmplDeptCB);
+            this._editEmployee.Controls.Add(this._editEmplBasicSalaryTB);
+            this._editEmployee.Controls.Add(this._editEmplJobStatCB);
+            this._editEmployee.Controls.Add(this._editEmplSpouseTB);
+            this._editEmployee.Controls.Add(this._editEmplMarriedStatCB);
+            this._editEmployee.Controls.Add(this._editEmplMilitaryStatCB);
+            this._editEmployee.Controls.Add(this._editEmplEmerPhoneTB);
+            this._editEmployee.Controls.Add(this._editEmplEmerPersonTB);
+            this._editEmployee.Controls.Add(this._editEmplAddrTB);
+            this._editEmployee.Controls.Add(this._editEmplPhoneTB);
+            this._editEmployee.Controls.Add(this._editEmplSsnTB);
+            this._editEmployee.Controls.Add(this._editEmplBirthDTP);
+            this._editEmployee.Controls.Add(this._editEmplNameTB);
+            this._editEmployee.Controls.Add(this._editEmplIDTB);
+            this._editEmployee.Controls.Add(this._editEmplPositionLB);
+            this._editEmployee.Controls.Add(this._editEmplDeptLB);
+            this._editEmployee.Controls.Add(this._editEmplBasicSalaryLB);
+            this._editEmployee.Controls.Add(this._editEmplBirthLB);
+            this._editEmployee.Controls.Add(this._editEmplSpouseLB);
+            this._editEmployee.Controls.Add(this._editMarriedStatLB);
+            this._editEmployee.Controls.Add(this._editEmplJobStatLB);
+            this._editEmployee.Controls.Add(this._editEmplMilitaryStatLB);
+            this._editEmployee.Controls.Add(this._editEmplEmerPhone);
+            this._editEmployee.Controls.Add(this._editEmplEmerPersonLB);
+            this._editEmployee.Controls.Add(this._editEmplAddrLB);
+            this._editEmployee.Controls.Add(this._editEmplPhoneLB);
+            this._editEmployee.Controls.Add(this._editEmplSexLB);
+            this._editEmployee.Controls.Add(this._editEmplSsnLB);
+            this._editEmployee.Controls.Add(this._editEmplNameLB);
+            this._editEmployee.Controls.Add(this.editEmplIDLB);
+            this._editEmployee.Location = new System.Drawing.Point(4, 34);
+            this._editEmployee.Name = "_editEmployee";
+            this._editEmployee.Padding = new System.Windows.Forms.Padding(3);
+            this._editEmployee.Size = new System.Drawing.Size(1537, 822);
+            this._editEmployee.TabIndex = 1;
+            this._editEmployee.Text = "Edit";
+            this._editEmployee.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             // _editAuthoButton
             // 
@@ -1024,6 +1221,7 @@
             this._newEmplIDTB.Size = new System.Drawing.Size(197, 27);
             this._newEmplIDTB.TabIndex = 16;
             // 
+<<<<<<< HEAD
             // _newEmplPositionIDLB
             // 
             this._newEmplPositionIDLB.AutoSize = true;
@@ -1035,6 +1233,235 @@
             this._newEmplPositionIDLB.Text = "Position:";
             // 
             // _newEmplDeptIDLB
+=======
+            this._workAttendance.Controls.Add(this._workAttendancePage);
+            this._workAttendance.Location = new System.Drawing.Point(4, 34);
+            this._workAttendance.Name = "_workAttendance";
+            this._workAttendance.Padding = new System.Windows.Forms.Padding(3);
+            this._workAttendance.Size = new System.Drawing.Size(1558, 872);
+            this._workAttendance.TabIndex = 1;
+            this._workAttendance.Text = "Work Attendance";
+            this._workAttendance.UseVisualStyleBackColor = true;
+            // 
+            // _workAttendancePage
+            // 
+            this._workAttendancePage.Controls.Add(this._addWorkAttendance);
+            this._workAttendancePage.Controls.Add(this._editWorkAttendance);
+            this._workAttendancePage.Location = new System.Drawing.Point(7, 7);
+            this._workAttendancePage.Name = "_workAttendancePage";
+            this._workAttendancePage.SelectedIndex = 0;
+            this._workAttendancePage.Size = new System.Drawing.Size(1548, 862);
+            this._workAttendancePage.TabIndex = 0;
+            // 
+            // _addWorkAttendance
+            // 
+            this._addWorkAttendance.Controls.Add(this._addWAButton);
+            this._addWorkAttendance.Controls.Add(this._addWAEndOTDTP);
+            this._addWorkAttendance.Controls.Add(this._addWAEndOverTimeLB);
+            this._addWorkAttendance.Controls.Add(this._addWAStartOTDTP);
+            this._addWorkAttendance.Controls.Add(this._addWAStartOverTimeLB);
+            this._addWorkAttendance.Controls.Add(this._addWAIsOvertimeCB);
+            this._addWorkAttendance.Controls.Add(this._addWAIsOvertime);
+            this._addWorkAttendance.Controls.Add(this._addWAEndWTDTP);
+            this._addWorkAttendance.Controls.Add(this._addWAEndWTLB);
+            this._addWorkAttendance.Controls.Add(this._addWAStartWTDTP);
+            this._addWorkAttendance.Controls.Add(this._addWAStartWTLB);
+            this._addWorkAttendance.Controls.Add(this._addWAWorkStatusCB);
+            this._addWorkAttendance.Controls.Add(this._addWAStatusLB);
+            this._addWorkAttendance.Controls.Add(this._addWADateDTP);
+            this._addWorkAttendance.Controls.Add(this._addWADate);
+            this._addWorkAttendance.Controls.Add(this._addWAEmplIDTB);
+            this._addWorkAttendance.Controls.Add(this._addWAEmplIDLB);
+            this._addWorkAttendance.Location = new System.Drawing.Point(4, 34);
+            this._addWorkAttendance.Name = "_addWorkAttendance";
+            this._addWorkAttendance.Padding = new System.Windows.Forms.Padding(3);
+            this._addWorkAttendance.Size = new System.Drawing.Size(1540, 824);
+            this._addWorkAttendance.TabIndex = 0;
+            this._addWorkAttendance.Text = "Add";
+            this._addWorkAttendance.UseVisualStyleBackColor = true;
+            // 
+            // _addWAButton
+            // 
+            this._addWAButton.Location = new System.Drawing.Point(967, 598);
+            this._addWAButton.Name = "_addWAButton";
+            this._addWAButton.Size = new System.Drawing.Size(97, 41);
+            this._addWAButton.TabIndex = 16;
+            this._addWAButton.Text = "Add";
+            this._addWAButton.UseVisualStyleBackColor = true;
+            this._addWAButton.Click += new System.EventHandler(this.ClickAddWAButton);
+            // 
+            // _addWAEndOTDTP
+            // 
+            this._addWAEndOTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this._addWAEndOTDTP.Location = new System.Drawing.Point(820, 238);
+            this._addWAEndOTDTP.Name = "_addWAEndOTDTP";
+            this._addWAEndOTDTP.Size = new System.Drawing.Size(245, 36);
+            this._addWAEndOTDTP.TabIndex = 15;
+            // 
+            // _addWAEndOverTimeLB
+            // 
+            this._addWAEndOverTimeLB.AutoSize = true;
+            this._addWAEndOverTimeLB.Location = new System.Drawing.Point(651, 250);
+            this._addWAEndOverTimeLB.Name = "_addWAEndOverTimeLB";
+            this._addWAEndOverTimeLB.Size = new System.Drawing.Size(143, 24);
+            this._addWAEndOverTimeLB.TabIndex = 14;
+            this._addWAEndOverTimeLB.Text = "End Overtime:";
+            // 
+            // _addWAStartOTDTP
+            // 
+            this._addWAStartOTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this._addWAStartOTDTP.Location = new System.Drawing.Point(827, 142);
+            this._addWAStartOTDTP.Name = "_addWAStartOTDTP";
+            this._addWAStartOTDTP.Size = new System.Drawing.Size(238, 36);
+            this._addWAStartOTDTP.TabIndex = 13;
+            // 
+            // _addWAStartOverTimeLB
+            // 
+            this._addWAStartOverTimeLB.AutoSize = true;
+            this._addWAStartOverTimeLB.Location = new System.Drawing.Point(651, 154);
+            this._addWAStartOverTimeLB.Name = "_addWAStartOverTimeLB";
+            this._addWAStartOverTimeLB.Size = new System.Drawing.Size(150, 24);
+            this._addWAStartOverTimeLB.TabIndex = 12;
+            this._addWAStartOverTimeLB.Text = "Start Overtime:";
+            // 
+            // _addWAIsOvertimeCB
+            // 
+            this._addWAIsOvertimeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._addWAIsOvertimeCB.FormattingEnabled = true;
+            this._addWAIsOvertimeCB.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this._addWAIsOvertimeCB.Location = new System.Drawing.Point(782, 48);
+            this._addWAIsOvertimeCB.Name = "_addWAIsOvertimeCB";
+            this._addWAIsOvertimeCB.Size = new System.Drawing.Size(157, 32);
+            this._addWAIsOvertimeCB.TabIndex = 11;
+            this._addWAIsOvertimeCB.SelectedIndexChanged += new System.EventHandler(this.ChangeWAIsOvertimeSelectedIndex);
+            // 
+            // _addWAIsOvertime
+            // 
+            this._addWAIsOvertime.AutoSize = true;
+            this._addWAIsOvertime.Location = new System.Drawing.Point(652, 53);
+            this._addWAIsOvertime.Name = "_addWAIsOvertime";
+            this._addWAIsOvertime.Size = new System.Drawing.Size(124, 24);
+            this._addWAIsOvertime.TabIndex = 10;
+            this._addWAIsOvertime.Text = "Is Overtime:";
+            // 
+            // _addWAEndWTDTP
+            // 
+            this._addWAEndWTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this._addWAEndWTDTP.Location = new System.Drawing.Point(221, 434);
+            this._addWAEndWTDTP.Name = "_addWAEndWTDTP";
+            this._addWAEndWTDTP.Size = new System.Drawing.Size(245, 36);
+            this._addWAEndWTDTP.TabIndex = 9;
+            // 
+            // _addWAEndWTLB
+            // 
+            this._addWAEndWTLB.AutoSize = true;
+            this._addWAEndWTLB.Location = new System.Drawing.Point(52, 446);
+            this._addWAEndWTLB.Name = "_addWAEndWTLB";
+            this._addWAEndWTLB.Size = new System.Drawing.Size(163, 24);
+            this._addWAEndWTLB.TabIndex = 8;
+            this._addWAEndWTLB.Text = "End Work Time:";
+            // 
+            // _addWAStartWTDTP
+            // 
+            this._addWAStartWTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this._addWAStartWTDTP.Location = new System.Drawing.Point(228, 338);
+            this._addWAStartWTDTP.Name = "_addWAStartWTDTP";
+            this._addWAStartWTDTP.Size = new System.Drawing.Size(238, 36);
+            this._addWAStartWTDTP.TabIndex = 7;
+            // 
+            // _addWAStartWTLB
+            // 
+            this._addWAStartWTLB.AutoSize = true;
+            this._addWAStartWTLB.Location = new System.Drawing.Point(52, 350);
+            this._addWAStartWTLB.Name = "_addWAStartWTLB";
+            this._addWAStartWTLB.Size = new System.Drawing.Size(170, 24);
+            this._addWAStartWTLB.TabIndex = 6;
+            this._addWAStartWTLB.Text = "Start Work Time:";
+            // 
+            // _addWAWorkStatusCB
+            // 
+            this._addWAWorkStatusCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._addWAWorkStatusCB.FormattingEnabled = true;
+            this._addWAWorkStatusCB.Items.AddRange(new object[] {
+            "正常上下班",
+            "遲到",
+            "早退",
+            "無故未到",
+            "病假",
+            "婚假",
+            "產假",
+            "休假"});
+            this._addWAWorkStatusCB.Location = new System.Drawing.Point(187, 244);
+            this._addWAWorkStatusCB.Name = "_addWAWorkStatusCB";
+            this._addWAWorkStatusCB.Size = new System.Drawing.Size(279, 32);
+            this._addWAWorkStatusCB.TabIndex = 5;
+            this._addWAWorkStatusCB.SelectedIndexChanged += new System.EventHandler(this.ChangeWAStatusSelectedIndex);
+            // 
+            // _addWAStatusLB
+            // 
+            this._addWAStatusLB.AutoSize = true;
+            this._addWAStatusLB.Location = new System.Drawing.Point(52, 252);
+            this._addWAStatusLB.Name = "_addWAStatusLB";
+            this._addWAStatusLB.Size = new System.Drawing.Size(128, 24);
+            this._addWAStatusLB.TabIndex = 4;
+            this._addWAStatusLB.Text = "Work Status:";
+            // 
+            // _addWADateDTP
+            // 
+            this._addWADateDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this._addWADateDTP.Location = new System.Drawing.Point(120, 146);
+            this._addWADateDTP.Name = "_addWADateDTP";
+            this._addWADateDTP.Size = new System.Drawing.Size(346, 36);
+            this._addWADateDTP.TabIndex = 3;
+            this._addWADateDTP.Value = new System.DateTime(2016, 6, 10, 0, 0, 0, 0);
+            // 
+            // _addWADate
+            // 
+            this._addWADate.AutoSize = true;
+            this._addWADate.Location = new System.Drawing.Point(52, 154);
+            this._addWADate.Name = "_addWADate";
+            this._addWADate.Size = new System.Drawing.Size(58, 24);
+            this._addWADate.TabIndex = 2;
+            this._addWADate.Text = "Date:";
+            // 
+            // _addWAEmplIDTB
+            // 
+            this._addWAEmplIDTB.Location = new System.Drawing.Point(196, 50);
+            this._addWAEmplIDTB.Name = "_addWAEmplIDTB";
+            this._addWAEmplIDTB.Size = new System.Drawing.Size(270, 36);
+            this._addWAEmplIDTB.TabIndex = 1;
+            // 
+            // _addWAEmplIDLB
+            // 
+            this._addWAEmplIDLB.AutoSize = true;
+            this._addWAEmplIDLB.Location = new System.Drawing.Point(52, 56);
+            this._addWAEmplIDLB.Name = "_addWAEmplIDLB";
+            this._addWAEmplIDLB.Size = new System.Drawing.Size(137, 24);
+            this._addWAEmplIDLB.TabIndex = 0;
+            this._addWAEmplIDLB.Text = "Employee ID:";
+            // 
+            // _editWorkAttendance
+            // 
+            this._editWorkAttendance.Location = new System.Drawing.Point(4, 34);
+            this._editWorkAttendance.Name = "_editWorkAttendance";
+            this._editWorkAttendance.Padding = new System.Windows.Forms.Padding(3);
+            this._editWorkAttendance.Size = new System.Drawing.Size(1540, 824);
+            this._editWorkAttendance.TabIndex = 1;
+            this._editWorkAttendance.Text = "Edit";
+            this._editWorkAttendance.UseVisualStyleBackColor = true;
+            // 
+            // _reimburse
+            // 
+            this._reimburse.Location = new System.Drawing.Point(4, 34);
+            this._reimburse.Name = "_reimburse";
+            this._reimburse.Padding = new System.Windows.Forms.Padding(3);
+            this._reimburse.Size = new System.Drawing.Size(1558, 872);
+            this._reimburse.TabIndex = 2;
+            this._reimburse.Text = "Reimburse";
+            this._reimburse.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._newEmplDeptIDLB.AutoSize = true;
             this._newEmplDeptIDLB.Location = new System.Drawing.Point(32, 375);
@@ -1044,7 +1471,17 @@
             this._newEmplDeptIDLB.TabIndex = 14;
             this._newEmplDeptIDLB.Text = "Department:";
             // 
+<<<<<<< HEAD
             // _newEmplBasicSalaryLB
+=======
+            this._bonus.Location = new System.Drawing.Point(4, 34);
+            this._bonus.Name = "_bonus";
+            this._bonus.Padding = new System.Windows.Forms.Padding(3);
+            this._bonus.Size = new System.Drawing.Size(1558, 872);
+            this._bonus.TabIndex = 3;
+            this._bonus.Text = "Bonus";
+            this._bonus.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._newEmplBasicSalaryLB.AutoSize = true;
             this._newEmplBasicSalaryLB.Location = new System.Drawing.Point(32, 467);
@@ -1054,7 +1491,17 @@
             this._newEmplBasicSalaryLB.TabIndex = 13;
             this._newEmplBasicSalaryLB.Text = "Basic Salary:";
             // 
+<<<<<<< HEAD
             // _newEmplBirthLB
+=======
+            this._salary.Location = new System.Drawing.Point(4, 34);
+            this._salary.Name = "_salary";
+            this._salary.Padding = new System.Windows.Forms.Padding(3);
+            this._salary.Size = new System.Drawing.Size(1558, 872);
+            this._salary.TabIndex = 4;
+            this._salary.Text = "Salary";
+            this._salary.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._newEmplBirthLB.AutoSize = true;
             this._newEmplBirthLB.Location = new System.Drawing.Point(447, 27);
@@ -1064,7 +1511,17 @@
             this._newEmplBirthLB.TabIndex = 12;
             this._newEmplBirthLB.Text = "Birth Day:";
             // 
+<<<<<<< HEAD
             // _newEmplSpouseLB
+=======
+            this._traning.Location = new System.Drawing.Point(4, 34);
+            this._traning.Name = "_traning";
+            this._traning.Padding = new System.Windows.Forms.Padding(3);
+            this._traning.Size = new System.Drawing.Size(1558, 872);
+            this._traning.TabIndex = 5;
+            this._traning.Text = "Traning";
+            this._traning.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._newEmplSpouseLB.AutoSize = true;
             this._newEmplSpouseLB.Location = new System.Drawing.Point(447, 326);
@@ -1074,7 +1531,17 @@
             this._newEmplSpouseLB.TabIndex = 11;
             this._newEmplSpouseLB.Text = "Spouse:";
             // 
+<<<<<<< HEAD
             // _newEmplMarriedStatLB
+=======
+            this._careerPlanning.Location = new System.Drawing.Point(4, 34);
+            this._careerPlanning.Name = "_careerPlanning";
+            this._careerPlanning.Padding = new System.Windows.Forms.Padding(3);
+            this._careerPlanning.Size = new System.Drawing.Size(1558, 872);
+            this._careerPlanning.TabIndex = 6;
+            this._careerPlanning.Text = "Career Plainning";
+            this._careerPlanning.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._newEmplMarriedStatLB.AutoSize = true;
             this._newEmplMarriedStatLB.Location = new System.Drawing.Point(447, 278);
@@ -1084,7 +1551,17 @@
             this._newEmplMarriedStatLB.TabIndex = 10;
             this._newEmplMarriedStatLB.Text = "Married Status:";
             // 
+<<<<<<< HEAD
             // _newEmplJobStatLB
+=======
+            this._report.Location = new System.Drawing.Point(4, 34);
+            this._report.Name = "_report";
+            this._report.Padding = new System.Windows.Forms.Padding(3);
+            this._report.Size = new System.Drawing.Size(1558, 872);
+            this._report.TabIndex = 7;
+            this._report.Text = "Report";
+            this._report.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._newEmplJobStatLB.AutoSize = true;
             this._newEmplJobStatLB.Location = new System.Drawing.Point(32, 326);
@@ -1094,7 +1571,18 @@
             this._newEmplJobStatLB.TabIndex = 9;
             this._newEmplJobStatLB.Text = "Job Status:";
             // 
+<<<<<<< HEAD
             // _newEmplMilitaryLB
+=======
+            this._authorization.Controls.Add(this._authorizationPage);
+            this._authorization.Location = new System.Drawing.Point(4, 34);
+            this._authorization.Name = "_authorization";
+            this._authorization.Padding = new System.Windows.Forms.Padding(3);
+            this._authorization.Size = new System.Drawing.Size(1558, 872);
+            this._authorization.TabIndex = 8;
+            this._authorization.Text = "Authorization";
+            this._authorization.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._newEmplMilitaryLB.AutoSize = true;
             this._newEmplMilitaryLB.Location = new System.Drawing.Point(447, 219);
@@ -1114,7 +1602,24 @@
             this._newEmplEmerPhoneLB.TabIndex = 7;
             this._newEmplEmerPhoneLB.Text = "Emergency Phone:";
             // 
+<<<<<<< HEAD
             // _newEmplEmerPersonLB
+=======
+            this._newAuthorization.Controls.Add(this._insertAuthoButton);
+            this._newAuthorization.Controls.Add(this._newAuthoLevelCB);
+            this._newAuthorization.Controls.Add(this._newAuthoNameTB);
+            this._newAuthorization.Controls.Add(this._newAuthoIDTB);
+            this._newAuthorization.Controls.Add(this._newAuthoLevelLB);
+            this._newAuthorization.Controls.Add(this._newAuthoNameLB);
+            this._newAuthorization.Controls.Add(this._newAuthoIDLB);
+            this._newAuthorization.Location = new System.Drawing.Point(4, 34);
+            this._newAuthorization.Name = "_newAuthorization";
+            this._newAuthorization.Padding = new System.Windows.Forms.Padding(3);
+            this._newAuthorization.Size = new System.Drawing.Size(1538, 822);
+            this._newAuthorization.TabIndex = 0;
+            this._newAuthorization.Text = "Add";
+            this._newAuthorization.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._newEmplEmerPersonLB.AutoSize = true;
             this._newEmplEmerPersonLB.Location = new System.Drawing.Point(32, 225);
@@ -1231,7 +1736,25 @@
             this._editEmployee.Text = "Edit";
             this._editEmployee.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
             // _searchEmplButtom
+=======
+            this._editAuthorization.Controls.Add(this._editAuthoButton);
+            this._editAuthorization.Controls.Add(this._searchAuthoButton);
+            this._editAuthorization.Controls.Add(this._editAuthoLevelCB);
+            this._editAuthorization.Controls.Add(this._editAuthoNameTB);
+            this._editAuthorization.Controls.Add(this._editAuthoIDTB);
+            this._editAuthorization.Controls.Add(this._editAuthoLevelLB);
+            this._editAuthorization.Controls.Add(this._editAuthoNameLB);
+            this._editAuthorization.Controls.Add(this._editAuthoIDLB);
+            this._editAuthorization.Location = new System.Drawing.Point(4, 34);
+            this._editAuthorization.Name = "_editAuthorization";
+            this._editAuthorization.Padding = new System.Windows.Forms.Padding(3);
+            this._editAuthorization.Size = new System.Drawing.Size(1538, 822);
+            this._editAuthorization.TabIndex = 1;
+            this._editAuthorization.Text = "Edit";
+            this._editAuthorization.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._searchEmplButtom.Location = new System.Drawing.Point(719, 484);
             this._searchEmplButtom.Margin = new System.Windows.Forms.Padding(2);
@@ -1347,7 +1870,19 @@
             this._editEmplJobStatCB.Size = new System.Drawing.Size(215, 24);
             this._editEmplJobStatCB.TabIndex = 67;
             // 
+<<<<<<< HEAD
             // _editEmplSpouseTB
+=======
+            this._position.Controls.Add(this._positionPage);
+            this._position.Location = new System.Drawing.Point(4, 34);
+            this._position.Margin = new System.Windows.Forms.Padding(4);
+            this._position.Name = "_position";
+            this._position.Padding = new System.Windows.Forms.Padding(4);
+            this._position.Size = new System.Drawing.Size(1558, 872);
+            this._position.TabIndex = 9;
+            this._position.Text = "Position";
+            this._position.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplSpouseTB.Location = new System.Drawing.Point(508, 323);
             this._editEmplSpouseTB.Margin = new System.Windows.Forms.Padding(2);
@@ -1356,7 +1891,18 @@
             this._editEmplSpouseTB.Size = new System.Drawing.Size(150, 27);
             this._editEmplSpouseTB.TabIndex = 66;
             // 
+<<<<<<< HEAD
             // _editEmplMarriedStatCB
+=======
+            this._positionPage.Controls.Add(this._addPosition);
+            this._positionPage.Controls.Add(this._editPosition);
+            this._positionPage.Location = new System.Drawing.Point(4, 9);
+            this._positionPage.Margin = new System.Windows.Forms.Padding(4);
+            this._positionPage.Name = "_positionPage";
+            this._positionPage.SelectedIndex = 0;
+            this._positionPage.Size = new System.Drawing.Size(2328, 1290);
+            this._positionPage.TabIndex = 0;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplMarriedStatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._editEmplMarriedStatCB.Enabled = false;
@@ -1371,7 +1917,27 @@
             this._editEmplMarriedStatCB.TabIndex = 65;
             this._editEmplMarriedStatCB.SelectedIndexChanged += new System.EventHandler(this.ChangedEditEmplMarriedStatCBSelectedIndex);
             // 
+<<<<<<< HEAD
             // _editEmplMilitaryStatCB
+=======
+            this._addPosition.Controls.Add(this._addPositionButton);
+            this._addPosition.Controls.Add(this._addPositionIDTB);
+            this._addPosition.Controls.Add(this._addPositionNameTB);
+            this._addPosition.Controls.Add(this._addPositionBSTB);
+            this._addPosition.Controls.Add(this._addPositionAuthoCB);
+            this._addPosition.Controls.Add(this._addPositionAuthoLB);
+            this._addPosition.Controls.Add(this._addPositionBSLB);
+            this._addPosition.Controls.Add(this._addPositionNameLB);
+            this._addPosition.Controls.Add(this._addPositionIDLB);
+            this._addPosition.Location = new System.Drawing.Point(4, 34);
+            this._addPosition.Margin = new System.Windows.Forms.Padding(4);
+            this._addPosition.Name = "_addPosition";
+            this._addPosition.Padding = new System.Windows.Forms.Padding(4);
+            this._addPosition.Size = new System.Drawing.Size(2320, 1252);
+            this._addPosition.TabIndex = 0;
+            this._addPosition.Text = "Add";
+            this._addPosition.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplMilitaryStatCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._editEmplMilitaryStatCB.Enabled = false;
@@ -1388,7 +1954,18 @@
             this._editEmplMilitaryStatCB.Size = new System.Drawing.Size(103, 24);
             this._editEmplMilitaryStatCB.TabIndex = 64;
             // 
+<<<<<<< HEAD
             // _editEmplEmerPhoneTB
+=======
+            this._addPositionButton.Location = new System.Drawing.Point(753, 693);
+            this._addPositionButton.Margin = new System.Windows.Forms.Padding(4);
+            this._addPositionButton.Name = "_addPositionButton";
+            this._addPositionButton.Size = new System.Drawing.Size(170, 68);
+            this._addPositionButton.TabIndex = 8;
+            this._addPositionButton.Text = "Add";
+            this._addPositionButton.UseVisualStyleBackColor = true;
+            this._addPositionButton.Click += new System.EventHandler(this.ClickAddPositionButton);
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplEmerPhoneTB.Location = new System.Drawing.Point(160, 275);
             this._editEmplEmerPhoneTB.Margin = new System.Windows.Forms.Padding(2);
@@ -1397,7 +1974,15 @@
             this._editEmplEmerPhoneTB.Size = new System.Drawing.Size(167, 27);
             this._editEmplEmerPhoneTB.TabIndex = 63;
             // 
+<<<<<<< HEAD
             // _editEmplEmerPersonTB
+=======
+            this._addPositionIDTB.Location = new System.Drawing.Point(268, 66);
+            this._addPositionIDTB.Margin = new System.Windows.Forms.Padding(4);
+            this._addPositionIDTB.Name = "_addPositionIDTB";
+            this._addPositionIDTB.Size = new System.Drawing.Size(415, 36);
+            this._addPositionIDTB.TabIndex = 7;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplEmerPersonTB.Location = new System.Drawing.Point(163, 223);
             this._editEmplEmerPersonTB.Margin = new System.Windows.Forms.Padding(2);
@@ -1406,7 +1991,15 @@
             this._editEmplEmerPersonTB.Size = new System.Drawing.Size(164, 27);
             this._editEmplEmerPersonTB.TabIndex = 62;
             // 
+<<<<<<< HEAD
             // _editEmplAddrTB
+=======
+            this._addPositionNameTB.Location = new System.Drawing.Point(314, 198);
+            this._addPositionNameTB.Margin = new System.Windows.Forms.Padding(4);
+            this._addPositionNameTB.Name = "_addPositionNameTB";
+            this._addPositionNameTB.Size = new System.Drawing.Size(370, 36);
+            this._addPositionNameTB.TabIndex = 6;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplAddrTB.Location = new System.Drawing.Point(100, 172);
             this._editEmplAddrTB.Margin = new System.Windows.Forms.Padding(2);
@@ -1415,7 +2008,16 @@
             this._editEmplAddrTB.Size = new System.Drawing.Size(680, 27);
             this._editEmplAddrTB.TabIndex = 61;
             // 
+<<<<<<< HEAD
             // _editEmplPhoneTB
+=======
+            this._addPositionBSTB.Location = new System.Drawing.Point(405, 348);
+            this._addPositionBSTB.Margin = new System.Windows.Forms.Padding(4);
+            this._addPositionBSTB.Name = "_addPositionBSTB";
+            this._addPositionBSTB.Size = new System.Drawing.Size(278, 36);
+            this._addPositionBSTB.TabIndex = 5;
+            this._addPositionBSTB.Text = "0";
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplPhoneTB.Location = new System.Drawing.Point(555, 127);
             this._editEmplPhoneTB.Margin = new System.Windows.Forms.Padding(2);
@@ -1424,7 +2026,19 @@
             this._editEmplPhoneTB.Size = new System.Drawing.Size(225, 27);
             this._editEmplPhoneTB.TabIndex = 60;
             // 
+<<<<<<< HEAD
             // _editEmplSsnTB
+=======
+            this._addPositionAuthoCB.DataSource = this.authorizationBindingSource;
+            this._addPositionAuthoCB.DisplayMember = "authoName";
+            this._addPositionAuthoCB.FormattingEnabled = true;
+            this._addPositionAuthoCB.Location = new System.Drawing.Point(417, 477);
+            this._addPositionAuthoCB.Margin = new System.Windows.Forms.Padding(4);
+            this._addPositionAuthoCB.Name = "_addPositionAuthoCB";
+            this._addPositionAuthoCB.Size = new System.Drawing.Size(266, 32);
+            this._addPositionAuthoCB.TabIndex = 4;
+            this._addPositionAuthoCB.ValueMember = "authoID";
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplSsnTB.Location = new System.Drawing.Point(72, 123);
             this._editEmplSsnTB.Margin = new System.Windows.Forms.Padding(2);
@@ -1489,7 +2103,28 @@
             this._editEmplBasicSalaryLB.TabIndex = 53;
             this._editEmplBasicSalaryLB.Text = "Basic Salary:";
             // 
+<<<<<<< HEAD
             // _editEmplBirthLB
+=======
+            this._editPosition.Controls.Add(this._editPositionButton);
+            this._editPosition.Controls.Add(this._searchPositionButton);
+            this._editPosition.Controls.Add(this._editPositionIDTB);
+            this._editPosition.Controls.Add(this._editPositionNameTB);
+            this._editPosition.Controls.Add(this._editPositionBSTB);
+            this._editPosition.Controls.Add(this._editPositionAuthoCB);
+            this._editPosition.Controls.Add(this._editPositionAuthoLB);
+            this._editPosition.Controls.Add(this._editPositionBSLB);
+            this._editPosition.Controls.Add(this._editPositionNameLB);
+            this._editPosition.Controls.Add(this._editPositionIDLB);
+            this._editPosition.Location = new System.Drawing.Point(4, 34);
+            this._editPosition.Margin = new System.Windows.Forms.Padding(4);
+            this._editPosition.Name = "_editPosition";
+            this._editPosition.Padding = new System.Windows.Forms.Padding(4);
+            this._editPosition.Size = new System.Drawing.Size(2320, 1252);
+            this._editPosition.TabIndex = 1;
+            this._editPosition.Text = "Edit";
+            this._editPosition.UseVisualStyleBackColor = true;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplBirthLB.AutoSize = true;
             this._editEmplBirthLB.Location = new System.Drawing.Point(449, 32);
@@ -1499,7 +2134,19 @@
             this._editEmplBirthLB.TabIndex = 52;
             this._editEmplBirthLB.Text = "Birth Day:";
             // 
+<<<<<<< HEAD
             // _editEmplSpouseLB
+=======
+            this._editPositionButton.Enabled = false;
+            this._editPositionButton.Location = new System.Drawing.Point(1014, 714);
+            this._editPositionButton.Margin = new System.Windows.Forms.Padding(4);
+            this._editPositionButton.Name = "_editPositionButton";
+            this._editPositionButton.Size = new System.Drawing.Size(170, 68);
+            this._editPositionButton.TabIndex = 18;
+            this._editPositionButton.Text = "Edit";
+            this._editPositionButton.UseVisualStyleBackColor = true;
+            this._editPositionButton.Click += new System.EventHandler(this.ClickEditPositionButton);
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplSpouseLB.AutoSize = true;
             this._editEmplSpouseLB.Location = new System.Drawing.Point(449, 331);
@@ -1509,7 +2156,18 @@
             this._editEmplSpouseLB.TabIndex = 51;
             this._editEmplSpouseLB.Text = "Spouse:";
             // 
+<<<<<<< HEAD
             // _editMarriedStatLB
+=======
+            this._searchPositionButton.Location = new System.Drawing.Point(753, 714);
+            this._searchPositionButton.Margin = new System.Windows.Forms.Padding(4);
+            this._searchPositionButton.Name = "_searchPositionButton";
+            this._searchPositionButton.Size = new System.Drawing.Size(170, 68);
+            this._searchPositionButton.TabIndex = 17;
+            this._searchPositionButton.Text = "Search";
+            this._searchPositionButton.UseVisualStyleBackColor = true;
+            this._searchPositionButton.Click += new System.EventHandler(this.ClickSearchPositionButtom);
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editMarriedStatLB.AutoSize = true;
             this._editMarriedStatLB.Location = new System.Drawing.Point(449, 283);
@@ -1519,7 +2177,15 @@
             this._editMarriedStatLB.TabIndex = 50;
             this._editMarriedStatLB.Text = "Married Status:";
             // 
+<<<<<<< HEAD
             // _editEmplJobStatLB
+=======
+            this._editPositionIDTB.Location = new System.Drawing.Point(268, 87);
+            this._editPositionIDTB.Margin = new System.Windows.Forms.Padding(4);
+            this._editPositionIDTB.Name = "_editPositionIDTB";
+            this._editPositionIDTB.Size = new System.Drawing.Size(415, 36);
+            this._editPositionIDTB.TabIndex = 16;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplJobStatLB.AutoSize = true;
             this._editEmplJobStatLB.Location = new System.Drawing.Point(35, 331);
@@ -1529,7 +2195,16 @@
             this._editEmplJobStatLB.TabIndex = 49;
             this._editEmplJobStatLB.Text = "Job Status:";
             // 
+<<<<<<< HEAD
             // _editEmplMilitaryStatLB
+=======
+            this._editPositionNameTB.Location = new System.Drawing.Point(314, 219);
+            this._editPositionNameTB.Margin = new System.Windows.Forms.Padding(4);
+            this._editPositionNameTB.Name = "_editPositionNameTB";
+            this._editPositionNameTB.ReadOnly = true;
+            this._editPositionNameTB.Size = new System.Drawing.Size(370, 36);
+            this._editPositionNameTB.TabIndex = 15;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplMilitaryStatLB.AutoSize = true;
             this._editEmplMilitaryStatLB.Location = new System.Drawing.Point(449, 224);
@@ -1539,7 +2214,16 @@
             this._editEmplMilitaryStatLB.TabIndex = 48;
             this._editEmplMilitaryStatLB.Text = "Military Status:";
             // 
+<<<<<<< HEAD
             // _editEmplEmerPhone
+=======
+            this._editPositionBSTB.Location = new System.Drawing.Point(405, 369);
+            this._editPositionBSTB.Margin = new System.Windows.Forms.Padding(4);
+            this._editPositionBSTB.Name = "_editPositionBSTB";
+            this._editPositionBSTB.ReadOnly = true;
+            this._editPositionBSTB.Size = new System.Drawing.Size(278, 36);
+            this._editPositionBSTB.TabIndex = 14;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplEmerPhone.AutoSize = true;
             this._editEmplEmerPhone.Location = new System.Drawing.Point(35, 283);
@@ -1549,7 +2233,20 @@
             this._editEmplEmerPhone.TabIndex = 47;
             this._editEmplEmerPhone.Text = "Emergency Phone:";
             // 
+<<<<<<< HEAD
             // _editEmplEmerPersonLB
+=======
+            this._editPositionAuthoCB.DataSource = this.authorizationBindingSource;
+            this._editPositionAuthoCB.DisplayMember = "authoName";
+            this._editPositionAuthoCB.Enabled = false;
+            this._editPositionAuthoCB.FormattingEnabled = true;
+            this._editPositionAuthoCB.Location = new System.Drawing.Point(417, 498);
+            this._editPositionAuthoCB.Margin = new System.Windows.Forms.Padding(4);
+            this._editPositionAuthoCB.Name = "_editPositionAuthoCB";
+            this._editPositionAuthoCB.Size = new System.Drawing.Size(266, 32);
+            this._editPositionAuthoCB.TabIndex = 13;
+            this._editPositionAuthoCB.ValueMember = "authoID";
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             // 
             this._editEmplEmerPersonLB.AutoSize = true;
             this._editEmplEmerPersonLB.Location = new System.Drawing.Point(35, 231);
@@ -1777,8 +2474,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.positionDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deptDataSet)).EndInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.authorizationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.authoDataSet)).EndInit();
+=======
+            this._editEmployee.ResumeLayout(false);
+            this._editEmployee.PerformLayout();
+            this._workAttendance.ResumeLayout(false);
+            this._workAttendancePage.ResumeLayout(false);
+            this._addWorkAttendance.ResumeLayout(false);
+            this._addWorkAttendance.PerformLayout();
+            this._authorization.ResumeLayout(false);
+            this._authorizationPage.ResumeLayout(false);
+            this._newAuthorization.ResumeLayout(false);
+            this._newAuthorization.PerformLayout();
+            this._editAuthorization.ResumeLayout(false);
+            this._editAuthorization.PerformLayout();
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
             this._position.ResumeLayout(false);
             this._positionPage.ResumeLayout(false);
             this._addPosition.ResumeLayout(false);
@@ -1939,6 +2651,7 @@
         private System.Windows.Forms.Label _editEmplSsnLB;
         private System.Windows.Forms.Label _editEmplNameLB;
         private System.Windows.Forms.Label editEmplIDLB;
+<<<<<<< HEAD
         private System.Windows.Forms.TabControl _mainFunctionPage;
         private System.Windows.Forms.TabPage _department;
         private System.Windows.Forms.TabControl _departmentPage;
@@ -1953,5 +2666,72 @@
         private System.Windows.Forms.DateTimePicker _newDepartDateDP;
         private System.Windows.Forms.TextBox _newDepartManTB;
         private System.Windows.Forms.TextBox _newDepartNameTB;
+=======
+        private System.Windows.Forms.Button _searchEmplButtom;
+        private System.Windows.Forms.TabControl _authorizationPage;
+        private System.Windows.Forms.TabPage _newAuthorization;
+        private System.Windows.Forms.TabPage _editAuthorization;
+        private System.Windows.Forms.Label _newAuthoNameLB;
+        private System.Windows.Forms.Label _newAuthoIDLB;
+        private System.Windows.Forms.Label _newAuthoLevelLB;
+        private System.Windows.Forms.TextBox _newAuthoIDTB;
+        private System.Windows.Forms.TextBox _newAuthoNameTB;
+        private System.Windows.Forms.ComboBox _newAuthoLevelCB;
+        private System.Windows.Forms.Button _insertAuthoButton;
+        private System.Windows.Forms.ComboBox _editAuthoLevelCB;
+        private System.Windows.Forms.TextBox _editAuthoNameTB;
+        private System.Windows.Forms.TextBox _editAuthoIDTB;
+        private System.Windows.Forms.Label _editAuthoLevelLB;
+        private System.Windows.Forms.Label _editAuthoNameLB;
+        private System.Windows.Forms.Label _editAuthoIDLB;
+        private System.Windows.Forms.Button _editAuthoButton;
+        private System.Windows.Forms.Button _searchAuthoButton;
+        private System.Windows.Forms.TabPage _position;
+        private System.Windows.Forms.TabControl _positionPage;
+        private System.Windows.Forms.TabPage _addPosition;
+        private System.Windows.Forms.TabPage _editPosition;
+        private System.Windows.Forms.Label _addPositionIDLB;
+        private System.Windows.Forms.Label _addPositionNameLB;
+        private System.Windows.Forms.Label _addPositionBSLB;
+        private System.Windows.Forms.Label _addPositionAuthoLB;
+        private System.Windows.Forms.ComboBox _addPositionAuthoCB;
+        private System.Windows.Forms.TextBox _addPositionIDTB;
+        private System.Windows.Forms.TextBox _addPositionNameTB;
+        private System.Windows.Forms.TextBox _addPositionBSTB;
+        private System.Windows.Forms.Button _addPositionButton;
+        private System.Windows.Forms.Button _searchPositionButton;
+        private System.Windows.Forms.TextBox _editPositionIDTB;
+        private System.Windows.Forms.TextBox _editPositionNameTB;
+        private System.Windows.Forms.TextBox _editPositionBSTB;
+        private System.Windows.Forms.ComboBox _editPositionAuthoCB;
+        private System.Windows.Forms.Label _editPositionAuthoLB;
+        private System.Windows.Forms.Label _editPositionBSLB;
+        private System.Windows.Forms.Label _editPositionNameLB;
+        private System.Windows.Forms.Label _editPositionIDLB;
+        private System.Windows.Forms.Button _editPositionButton;
+        private authoDataSet authoDataSet;
+        private System.Windows.Forms.BindingSource authorizationBindingSource;
+        private authoDataSetTableAdapters.authorizationTableAdapter authorizationTableAdapter;
+        private System.Windows.Forms.TabControl _workAttendancePage;
+        private System.Windows.Forms.TabPage _addWorkAttendance;
+        private System.Windows.Forms.TabPage _editWorkAttendance;
+        private System.Windows.Forms.Label _addWAEmplIDLB;
+        private System.Windows.Forms.TextBox _addWAEmplIDTB;
+        private System.Windows.Forms.Label _addWADate;
+        private System.Windows.Forms.DateTimePicker _addWADateDTP;
+        private System.Windows.Forms.Label _addWAStatusLB;
+        private System.Windows.Forms.ComboBox _addWAWorkStatusCB;
+        private System.Windows.Forms.Label _addWAStartWTLB;
+        private System.Windows.Forms.DateTimePicker _addWAStartWTDTP;
+        private System.Windows.Forms.DateTimePicker _addWAEndWTDTP;
+        private System.Windows.Forms.Label _addWAEndWTLB;
+        private System.Windows.Forms.ComboBox _addWAIsOvertimeCB;
+        private System.Windows.Forms.Label _addWAIsOvertime;
+        private System.Windows.Forms.DateTimePicker _addWAEndOTDTP;
+        private System.Windows.Forms.Label _addWAEndOverTimeLB;
+        private System.Windows.Forms.DateTimePicker _addWAStartOTDTP;
+        private System.Windows.Forms.Label _addWAStartOverTimeLB;
+        private System.Windows.Forms.Button _addWAButton;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
     }
 }

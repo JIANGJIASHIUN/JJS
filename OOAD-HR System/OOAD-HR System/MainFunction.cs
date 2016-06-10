@@ -25,8 +25,13 @@ namespace OOAD_HR_System
         private PositionPresentationModel _positionPresentationModel = new PositionPresentationModel();
         private PositionController _positionController;
 
+<<<<<<< HEAD
         private DepartmentPresentationModel _deptPresetationModel = new DepartmentPresentationModel();
         private DepartmentController _deptController;
+=======
+        private WorkAttendancePresentationModel _waPresentationModel = new WorkAttendancePresentationModel();
+        private WorkAttendanController _waController;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
 
         public _mainFunction(Form login)
         {
@@ -50,7 +55,28 @@ namespace OOAD_HR_System
             this.ResetEditEmplUI();
             this.ResetNewAuthoUI();
             this.ResetEditAuthoUI();
+<<<<<<< HEAD
             this.ResetNewDeptUI();
+=======
+            this.ResetNewWAUI();
+        }
+
+        // reset all add work attendance UI
+        private void ResetNewWAUI()
+        {
+            _addWADateDTP.Value = DateTime.Now;
+            _addWAStartWTDTP.Value = DateTime.Now;
+            _addWAEndWTDTP.Value = DateTime.Now;
+            _addWAWorkStatusCB.SelectedIndex = 0;
+            _addWAIsOvertimeCB.SelectedIndex = 0;
+            _addWAStartWTDTP.Enabled = true;
+            _addWAEndWTDTP.Enabled = true;
+            _addWAEmplIDTB.Text = "";
+            _addWAStartOTDTP.Value = DateTime.Now;
+            _addWAStartOTDTP.Enabled = false;
+            _addWAEndOTDTP.Value = DateTime.Now;
+            _addWAEndOTDTP.Enabled = false;
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
         }
 
         // reset all add authorization UI 預設值
@@ -609,6 +635,7 @@ namespace OOAD_HR_System
             }
         }
 
+<<<<<<< HEAD
         // 按下新增部門按鈕
         private void ClickAddDeptButton(object sender, EventArgs e)
         {
@@ -633,5 +660,105 @@ namespace OOAD_HR_System
             //this._deptPresetationModel.setDepartmentEndTime(null);
             this._deptPresetationModel.setDepartmentManager(deptManager);
         }
+=======
+        // 選取狀態更改上下班時間enable
+        private void ChangeWAStatusSelectedIndex(object sender, EventArgs e)
+        {
+            int waStatusIndex = _addWAWorkStatusCB.SelectedIndex;
+
+            // 3 無故未到
+            // 4 病假
+            // 5 婚假
+            // 6 產假
+            // 7 休假
+
+            if (waStatusIndex == 3 || waStatusIndex == 4 || waStatusIndex == 5 || waStatusIndex == 6 || waStatusIndex == 7)
+            {
+                _addWAStartWTDTP.Enabled = false;
+                _addWAEndWTDTP.Enabled = false;
+            }
+            else
+            {
+                _addWAStartWTDTP.Enabled = true;
+                _addWAEndWTDTP.Enabled = true;
+            }
+        }
+
+        // 選取是否加班更改加班時間enable
+        private void ChangeWAIsOvertimeSelectedIndex(object sender, EventArgs e)
+        {
+            int waIsOvertimeIndex = _addWAIsOvertimeCB.SelectedIndex;
+
+            // 0 NO
+            // 1 YES
+
+            if (waIsOvertimeIndex == 0)
+            {
+                _addWAStartOTDTP.Enabled = false;
+                _addWAEndOTDTP.Enabled = false;
+            }
+            else
+            {
+                _addWAStartOTDTP.Enabled = true;
+                _addWAEndOTDTP.Enabled = true;
+            }
+        }
+
+        // 設置work attendance UI變數至work attendance model
+        private void SetAllNewWAVariableToPM()
+        {
+            String emplID = _addWAEmplIDTB.Text;
+            DateTime waDate = _addWADateDTP.Value;
+            String waStatus = _addWAWorkStatusCB.SelectedItem.ToString();
+            Boolean isOvertime;
+
+            this._waPresentationModel.SetWAEmplID(emplID);
+            this._waPresentationModel.SetWADate(waDate);
+            this._waPresentationModel.SetWAStatus(waStatus);
+            MessageBox.Show(waStatus);
+
+            int waStatusIndex = _addWAWorkStatusCB.SelectedIndex;
+            // 3 無故未到
+            // 4 病假
+            // 5 婚假
+            // 6 產假
+            // 7 休假
+            if (!(waStatusIndex == 3 || waStatusIndex == 4 || waStatusIndex == 5 || waStatusIndex == 6 || waStatusIndex == 7))
+            {
+                DateTime startWorkTime = _addWAStartWTDTP.Value;
+                DateTime endWorkTime = _addWAEndWTDTP.Value;
+                this._waPresentationModel.SetStartTime(startWorkTime);
+                this._waPresentationModel.SetEndTime(endWorkTime);
+            }
+
+            int waIsOvertimeIndex = _addWAIsOvertimeCB.SelectedIndex;
+            // 0 NO
+            // 1 YES
+            if (waIsOvertimeIndex == 0)
+            {
+                isOvertime = false;
+                this._waPresentationModel.SetIsOvertime(isOvertime);
+            }
+            else
+            {
+                isOvertime = true;
+                DateTime startOvertime = _addWAStartOTDTP.Value;
+                DateTime endOvertime = _addWAEndOTDTP.Value;
+                this._waPresentationModel.SetIsOvertime(isOvertime);
+                this._waPresentationModel.SetStartOvertime(startOvertime);
+                this._waPresentationModel.SetEndOvertime(endOvertime);
+            }
+            
+        }
+
+        // 按下新增考勤資料按鈕
+        private void ClickAddWAButton(object sender, EventArgs e)
+        {
+            this.SetAllNewWAVariableToPM();
+            this._waController = new WorkAttendanController(_waPresentationModel);
+            _waController.AddWorkAttendance();
+        }
+
+>>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
     }
 }
