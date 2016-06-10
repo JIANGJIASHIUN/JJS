@@ -24,7 +24,7 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置id---------------------------------------------
-        public void setId(String departmentID, String newDepartmentID)
+        public void setId(String newDepartmentID)
         {
             this._depertmentID = newDepartmentID;
         }
@@ -36,49 +36,49 @@ namespace OOAD_HR_System.Class
         }
 
         // ---------------------------------------------設置名稱---------------------------------------------
-        public void setName(String departmentID, String departmentName)
+        public void setName(String departmentName)
         {
             this._departmentName = departmentName;
         }
 
         // ---------------------------------------------取得名稱---------------------------------------------
-        public String getName(String departmentID)
+        public String getName()
         {
             return this._departmentName;
         }
 
         // ---------------------------------------------設置創立時間---------------------------------------------
-        public void setStartTime(String departmentID, DateTime departmentStartTime)
+        public void setStartTime(DateTime departmentStartTime)
         {
             this._departmentStartTime = departmentStartTime;
         }
 
         // ---------------------------------------------取得創立時間---------------------------------------------
-        public DateTime getStartTime(String departmentID)
+        public DateTime getStartTime()
         {
             return this._departmentStartTime;
         }
 
         // ---------------------------------------------設置關閉時間---------------------------------------------
-        public void setEndTime(String departmentID, DateTime departmentEndTime)
+        public void setEndTime(DateTime departmentEndTime)
         {
             this._departmentEndTime = departmentEndTime;
         }
 
         // ---------------------------------------------取得關閉時間---------------------------------------------
-        public DateTime getEndTime(String departmentID)
+        public DateTime getEndTime()
         {
             return this._departmentEndTime;
         }
 
         // ---------------------------------------------設置管理人---------------------------------------------
-        public void setManager(String departmentID, String departmentManager)
+        public void setManager(String departmentManager)
         {
             this._departmentManager = departmentManager;
         }
 
         // ---------------------------------------------取得管理人---------------------------------------------
-        public String getManager(String departmentID)
+        public String getManager()
         {
             return this._departmentManager; 
         }
