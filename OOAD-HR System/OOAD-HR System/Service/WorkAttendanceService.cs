@@ -31,6 +31,7 @@ namespace OOAD_HR_System.Service
             }
             catch (MySqlException ex)
             {
+                Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
                 return false;
             }
         }
@@ -48,23 +49,23 @@ namespace OOAD_HR_System.Service
             {
                 try
                 {
-                    String addString = String.Format("INSERT INTO workattendance (emplID,date,status,startworktime,endworktime,isovertime) VALUES('" +
-                        this._workAttendanceModel.GetWAEmplID() + "','" + this._workAttendanceModel.GetWADate() + "','" + this._workAttendanceModel.GetWAStatus() + "','" +
-                        this._workAttendanceModel.GetStartTime() + "','" + this._workAttendanceModel.GetEndTime() + "','" + this._workAttendanceModel.GetIsOvertime() + "');");
+                    String addString = String.Format("INSERT INTO workattendance (emplID,waDate,status,startworktime,endworktime,isovertime) VALUES('" +
+                        this._workAttendanceModel.GetWAEmplID() + "','" + this._workAttendanceModel.GetWADate().ToString("yyyy-MM-dd") + "','" + this._workAttendanceModel.GetWAStatus() + "','" +
+                        this._workAttendanceModel.GetStartTime().ToString("H:mm:ss") + "','" + this._workAttendanceModel.GetEndTime().ToString("H:mm:ss") + "','" + this._workAttendanceModel.GetIsOvertime() + "');");
                     
                     String waStatus = this._workAttendanceModel.GetWAStatus();
                     if (waStatus == "無故未到" || waStatus == "病假" || waStatus == "婚假" || waStatus == "產假" || waStatus == "休假")
                     {
-                        addString = String.Format("INSERT INTO workattendance (emplID,date,status) VALUES('" +
-                        this._workAttendanceModel.GetWAEmplID() + "','" + this._workAttendanceModel.GetWADate() + "','" + this._workAttendanceModel.GetWAStatus() + "');");
+                        addString = String.Format("INSERT INTO workattendance (emplID,waDate,status) VALUES('" +
+                        this._workAttendanceModel.GetWAEmplID() + "','" + this._workAttendanceModel.GetWADate().ToString("yyyy-MM-dd") + "','" + this._workAttendanceModel.GetWAStatus() + "');");
                     }
 
                     if (this._workAttendanceModel.GetIsOvertime())
                     {
-                        addString = String.Format("INSERT INTO workattendance (emplID,date,status,startworktime,endworktime,isovertime,startovertime,endovertime) VALUES('" +
-                        this._workAttendanceModel.GetWAEmplID() + "','" + this._workAttendanceModel.GetWADate() + "','" + this._workAttendanceModel.GetWAStatus() + "','" +
-                        this._workAttendanceModel.GetStartTime() + "','" + this._workAttendanceModel.GetEndTime() + "','" + this._workAttendanceModel.GetIsOvertime() + "','" +
-                        this._workAttendanceModel.GetStartOvertime() + "','" + this._workAttendanceModel.GetEndOvertime() + "');");
+                        addString = String.Format("INSERT INTO workattendance (emplID,waDate,status,startworktime,endworktime,isovertime,startovertime,endovertime) VALUES('" +
+                        this._workAttendanceModel.GetWAEmplID() + "','" + this._workAttendanceModel.GetWADate().ToString("yyyy-MM-dd") + "','" + this._workAttendanceModel.GetWAStatus() + "','" +
+                        this._workAttendanceModel.GetStartTime().ToString("H:mm:ss") + "','" + this._workAttendanceModel.GetEndTime().ToString("H:mm:ss") + "','" + this._workAttendanceModel.GetIsOvertime() + "','" +
+                        this._workAttendanceModel.GetStartOvertime().ToString("H:mm:ss") + "','" + this._workAttendanceModel.GetEndOvertime().ToString("H:mm:ss") + "');");
                     }
                         
 
@@ -74,6 +75,7 @@ namespace OOAD_HR_System.Service
                 }
                 catch (MySqlException ex)
                 {
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
                     return false;
                 }
             }

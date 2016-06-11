@@ -5,13 +5,6 @@ C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD
 C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.csprojResolveAssemblyReference.cache
 C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.dll
 C:\Users\Genius\Documents\OOAD\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.pdb
-C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR SystemTests.dll
-C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR SystemTests.pdb
-C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR System.exe
-C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR System.pdb
-C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.csprojResolveAssemblyReference.cache
-C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.dll
-C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.pdb
 C:\Users\U\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.csprojResolveAssemblyReference.cache
 C:\Users\U\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR SystemTests.dll
 C:\Users\U\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR SystemTests.pdb
@@ -19,3 +12,10 @@ C:\Users\U\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-H
 C:\Users\U\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR System.pdb
 C:\Users\U\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.dll
 C:\Users\U\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.pdb
+C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR SystemTests.dll
+C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR SystemTests.pdb
+C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR System.exe
+C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\bin\Debug\OOAD-HR System.pdb
+C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.csprojResolveAssemblyReference.cache
+C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.dll
+C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR SystemTests\obj\Debug\OOAD-HR SystemTests.pdb

@@ -28,6 +28,7 @@ namespace OOAD_HR_System.Service
             }
             catch (MySqlException ex)
             {
+                Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
                 return false;
             }
         }
@@ -53,6 +54,7 @@ namespace OOAD_HR_System.Service
                 }
                 catch (MySqlException ex)
                 {
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
                     return false;
                 }
             }
@@ -85,7 +87,7 @@ namespace OOAD_HR_System.Service
                 }
                 catch (MySqlException ex)
                 {
-
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
                 }
             }
 
@@ -119,7 +121,7 @@ namespace OOAD_HR_System.Service
                 }
                 catch (MySqlException ex)
                 {
-
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
                 }
 
 
@@ -145,6 +147,7 @@ namespace OOAD_HR_System.Service
                 }
                 catch (MySqlException ex)
                 {
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
                     return false;
                 }
             }

@@ -630,11 +630,14 @@ namespace OOAD_HR_System
 
             if (waStatusIndex == 3 || waStatusIndex == 4 || waStatusIndex == 5 || waStatusIndex == 6 || waStatusIndex == 7)
             {
+                _addWAIsOvertimeCB.SelectedIndex = 0;
+                _addWAIsOvertimeCB.Enabled = false;
                 _addWAStartWTDTP.Enabled = false;
                 _addWAEndWTDTP.Enabled = false;
             }
             else
             {
+                _addWAIsOvertimeCB.Enabled = true;
                 _addWAStartWTDTP.Enabled = true;
                 _addWAEndWTDTP.Enabled = true;
             }
@@ -671,7 +674,6 @@ namespace OOAD_HR_System
             this._waPresentationModel.SetWAEmplID(emplID);
             this._waPresentationModel.SetWADate(waDate);
             this._waPresentationModel.SetWAStatus(waStatus);
-            MessageBox.Show(waStatus);
 
             int waStatusIndex = _addWAWorkStatusCB.SelectedIndex;
             // 3 無故未到

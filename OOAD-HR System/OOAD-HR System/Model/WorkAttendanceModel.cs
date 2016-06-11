@@ -93,7 +93,7 @@ namespace OOAD_HR_System.Model
         // 設置加班開始時間
         public void SetStartOvertime(DateTime startOvertime)
         {
-            this.SetStartOvertime(startOvertime);
+            this._workAttendance.SetStartOvertime(startOvertime);
         }
 
         // 取得加班開始時間

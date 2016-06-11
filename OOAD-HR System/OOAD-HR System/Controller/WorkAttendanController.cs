@@ -21,6 +21,7 @@ namespace OOAD_HR_System.Controller
         {
             this._workAttendanceModel.SetWAEmplID(waPresentationModel.GetWAEmplID());
             this._workAttendanceModel.SetWADate(waPresentationModel.GetWADate());
+            this._workAttendanceModel.SetWAStatus(waPresentationModel.GetWAStatus());
             String waStatus = this._workAttendanceModel.GetWAStatus();
             if (!(waStatus == "無故未到" || waStatus == "病假" || waStatus == "婚假" || waStatus == "產假" || waStatus == "休假"))
             {
