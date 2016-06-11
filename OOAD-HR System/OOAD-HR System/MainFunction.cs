@@ -25,13 +25,8 @@ namespace OOAD_HR_System
         private PositionPresentationModel _positionPresentationModel = new PositionPresentationModel();
         private PositionController _positionController;
 
-<<<<<<< HEAD
-        private DepartmentPresentationModel _deptPresetationModel = new DepartmentPresentationModel();
-        private DepartmentController _deptController;
-=======
         private WorkAttendancePresentationModel _waPresentationModel = new WorkAttendancePresentationModel();
         private WorkAttendanController _waController;
->>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
 
         public _mainFunction(Form login)
         {
@@ -55,9 +50,6 @@ namespace OOAD_HR_System
             this.ResetEditEmplUI();
             this.ResetNewAuthoUI();
             this.ResetEditAuthoUI();
-<<<<<<< HEAD
-            this.ResetNewDeptUI();
-=======
             this.ResetNewWAUI();
         }
 
@@ -76,7 +68,6 @@ namespace OOAD_HR_System
             _addWAStartOTDTP.Enabled = false;
             _addWAEndOTDTP.Value = DateTime.Now;
             _addWAEndOTDTP.Enabled = false;
->>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
         }
 
         // reset all add authorization UI 預設值
@@ -102,15 +93,6 @@ namespace OOAD_HR_System
             //_editAuthoLevelCB.Text = "";
             _editAuthoLevelCB.Text = _authoPresentationModel.GetAuthoValue();
             _editAuthoButton.Enabled = true;
-        }
-
-        // reset all add department UI 預設值
-        private void ResetNewDeptUI()
-        {
-            _newDepartIDTB.Text = "";
-            _newDepartNameTB.Text = "";
-            _newDepartDateDP.Value = DateTime.Now;
-            _newDepartManTB.Text = "";
         }
 
         // reset all add employee UI 預設值
@@ -635,32 +617,6 @@ namespace OOAD_HR_System
             }
         }
 
-<<<<<<< HEAD
-        // 按下新增部門按鈕
-        private void ClickAddDeptButton(object sender, EventArgs e)
-        {
-            this.SetAllNewDeptVariableToPM();
-
-            _deptController = new DepartmentController(_deptPresetationModel);
-            _deptController.AddDepartment();
-            this.ResetNewDeptUI();
-        }
-
-        // 將新增部門的所有變數存至presentation model
-        private void SetAllNewDeptVariableToPM()
-        {
-            String deptID = _newDepartIDTB.Text;
-            String deptName = _newDepartNameTB.Text;
-            DateTime deptStartTime = _newDepartDateDP.Value;
-            String deptManager = _newDepartManTB.Text;
-
-            this._deptPresetationModel.setDepartmentID(deptID);
-            this._deptPresetationModel.setDepartmentName(deptName);
-            this._deptPresetationModel.setDepartmentStartTime(deptStartTime);
-            //this._deptPresetationModel.setDepartmentEndTime(null);
-            this._deptPresetationModel.setDepartmentManager(deptManager);
-        }
-=======
         // 選取狀態更改上下班時間enable
         private void ChangeWAStatusSelectedIndex(object sender, EventArgs e)
         {
@@ -759,6 +715,5 @@ namespace OOAD_HR_System
             _waController.AddWorkAttendance();
         }
 
->>>>>>> 57c38a2c6a2d9518c16d76f32ad4b0b1d6a4b5a2
     }
 }
