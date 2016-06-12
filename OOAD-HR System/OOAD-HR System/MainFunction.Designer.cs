@@ -254,7 +254,7 @@
             this._mainFunctionPage.Location = new System.Drawing.Point(12, 12);
             this._mainFunctionPage.Name = "_mainFunctionPage";
             this._mainFunctionPage.SelectedIndex = 0;
-            this._mainFunctionPage.Size = new System.Drawing.Size(1566, 910);
+            this._mainFunctionPage.Size = new System.Drawing.Size(1592, 910);
             this._mainFunctionPage.TabIndex = 0;
             // 
             // _employee
@@ -1076,7 +1076,7 @@
             this._workAttendance.Location = new System.Drawing.Point(4, 34);
             this._workAttendance.Name = "_workAttendance";
             this._workAttendance.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this._workAttendance.Size = new System.Drawing.Size(1558, 872);
+            this._workAttendance.Size = new System.Drawing.Size(1584, 872);
             this._workAttendance.TabIndex = 1;
             this._workAttendance.Text = "Work Attendance";
             this._workAttendance.UseVisualStyleBackColor = true;
@@ -1311,7 +1311,7 @@
             // _editWAButton
             // 
             this._editWAButton.Enabled = false;
-            this._editWAButton.Location = new System.Drawing.Point(1650, 898);
+            this._editWAButton.Location = new System.Drawing.Point(1048, 590);
             this._editWAButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWAButton.Name = "_editWAButton";
             this._editWAButton.Size = new System.Drawing.Size(146, 62);
@@ -1322,7 +1322,7 @@
             // 
             // _searchWAButton
             // 
-            this._searchWAButton.Location = new System.Drawing.Point(1454, 898);
+            this._searchWAButton.Location = new System.Drawing.Point(850, 590);
             this._searchWAButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._searchWAButton.Name = "_searchWAButton";
             this._searchWAButton.Size = new System.Drawing.Size(146, 62);
@@ -1335,7 +1335,7 @@
             // 
             this._editWAEndOTDTP.Enabled = false;
             this._editWAEndOTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this._editWAEndOTDTP.Location = new System.Drawing.Point(1233, 358);
+            this._editWAEndOTDTP.Location = new System.Drawing.Point(828, 202);
             this._editWAEndOTDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWAEndOTDTP.Name = "_editWAEndOTDTP";
             this._editWAEndOTDTP.Size = new System.Drawing.Size(366, 36);
@@ -1344,7 +1344,7 @@
             // _editWAEndOTLB
             // 
             this._editWAEndOTLB.AutoSize = true;
-            this._editWAEndOTLB.Location = new System.Drawing.Point(980, 376);
+            this._editWAEndOTLB.Location = new System.Drawing.Point(681, 214);
             this._editWAEndOTLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._editWAEndOTLB.Name = "_editWAEndOTLB";
             this._editWAEndOTLB.Size = new System.Drawing.Size(143, 24);
@@ -1355,7 +1355,7 @@
             // 
             this._editWAStartOTDTP.Enabled = false;
             this._editWAStartOTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this._editWAStartOTDTP.Location = new System.Drawing.Point(1244, 214);
+            this._editWAStartOTDTP.Location = new System.Drawing.Point(839, 116);
             this._editWAStartOTDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWAStartOTDTP.Name = "_editWAStartOTDTP";
             this._editWAStartOTDTP.Size = new System.Drawing.Size(355, 36);
@@ -1364,7 +1364,7 @@
             // _editWAStartOTLB
             // 
             this._editWAStartOTLB.AutoSize = true;
-            this._editWAStartOTLB.Location = new System.Drawing.Point(980, 232);
+            this._editWAStartOTLB.Location = new System.Drawing.Point(681, 128);
             this._editWAStartOTLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._editWAStartOTLB.Name = "_editWAStartOTLB";
             this._editWAStartOTLB.Size = new System.Drawing.Size(150, 24);
@@ -1379,7 +1379,7 @@
             this._editWAIsOvertimeCB.Items.AddRange(new object[] {
             "No",
             "Yes"});
-            this._editWAIsOvertimeCB.Location = new System.Drawing.Point(1176, 74);
+            this._editWAIsOvertimeCB.Location = new System.Drawing.Point(813, 37);
             this._editWAIsOvertimeCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWAIsOvertimeCB.Name = "_editWAIsOvertimeCB";
             this._editWAIsOvertimeCB.Size = new System.Drawing.Size(234, 32);
@@ -1389,7 +1389,7 @@
             // _editWAIsOvertimeLB
             // 
             this._editWAIsOvertimeLB.AutoSize = true;
-            this._editWAIsOvertimeLB.Location = new System.Drawing.Point(981, 81);
+            this._editWAIsOvertimeLB.Location = new System.Drawing.Point(681, 45);
             this._editWAIsOvertimeLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._editWAIsOvertimeLB.Name = "_editWAIsOvertimeLB";
             this._editWAIsOvertimeLB.Size = new System.Drawing.Size(124, 24);
@@ -1400,7 +1400,7 @@
             // 
             this._editWAEndWTDTP.Enabled = false;
             this._editWAEndWTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this._editWAEndWTDTP.Location = new System.Drawing.Point(334, 652);
+            this._editWAEndWTDTP.Location = new System.Drawing.Point(216, 390);
             this._editWAEndWTDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWAEndWTDTP.Name = "_editWAEndWTDTP";
             this._editWAEndWTDTP.Size = new System.Drawing.Size(366, 36);
@@ -1409,7 +1409,7 @@
             // _editWAEndWTLB
             // 
             this._editWAEndWTLB.AutoSize = true;
-            this._editWAEndWTLB.Location = new System.Drawing.Point(81, 670);
+            this._editWAEndWTLB.Location = new System.Drawing.Point(49, 402);
             this._editWAEndWTLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._editWAEndWTLB.Name = "_editWAEndWTLB";
             this._editWAEndWTLB.Size = new System.Drawing.Size(163, 24);
@@ -1420,7 +1420,7 @@
             // 
             this._editWAStartWTDTP.Enabled = false;
             this._editWAStartWTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this._editWAStartWTDTP.Location = new System.Drawing.Point(345, 508);
+            this._editWAStartWTDTP.Location = new System.Drawing.Point(227, 296);
             this._editWAStartWTDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWAStartWTDTP.Name = "_editWAStartWTDTP";
             this._editWAStartWTDTP.Size = new System.Drawing.Size(355, 36);
@@ -1429,7 +1429,7 @@
             // _editWAStartWTLB
             // 
             this._editWAStartWTLB.AutoSize = true;
-            this._editWAStartWTLB.Location = new System.Drawing.Point(81, 526);
+            this._editWAStartWTLB.Location = new System.Drawing.Point(49, 308);
             this._editWAStartWTLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._editWAStartWTLB.Name = "_editWAStartWTLB";
             this._editWAStartWTLB.Size = new System.Drawing.Size(170, 24);
@@ -1450,17 +1450,17 @@
             "婚假",
             "產假",
             "休假"});
-            this._editWAStatusCB.Location = new System.Drawing.Point(284, 368);
+            this._editWAStatusCB.Location = new System.Drawing.Point(185, 219);
             this._editWAStatusCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWAStatusCB.Name = "_editWAStatusCB";
-            this._editWAStatusCB.Size = new System.Drawing.Size(416, 32);
+            this._editWAStatusCB.Size = new System.Drawing.Size(327, 32);
             this._editWAStatusCB.TabIndex = 22;
             this._editWAStatusCB.SelectedIndexChanged += new System.EventHandler(this.ChangeEditWAStatusSelectedIndex);
             // 
             // _editWAWorkStatusLB
             // 
             this._editWAWorkStatusLB.AutoSize = true;
-            this._editWAWorkStatusLB.Location = new System.Drawing.Point(81, 380);
+            this._editWAWorkStatusLB.Location = new System.Drawing.Point(49, 222);
             this._editWAWorkStatusLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._editWAWorkStatusLB.Name = "_editWAWorkStatusLB";
             this._editWAWorkStatusLB.Size = new System.Drawing.Size(128, 24);
@@ -1470,17 +1470,17 @@
             // _editWADateDTP
             // 
             this._editWADateDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this._editWADateDTP.Location = new System.Drawing.Point(183, 220);
+            this._editWADateDTP.Location = new System.Drawing.Point(115, 128);
             this._editWADateDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWADateDTP.Name = "_editWADateDTP";
-            this._editWADateDTP.Size = new System.Drawing.Size(517, 36);
+            this._editWADateDTP.Size = new System.Drawing.Size(397, 36);
             this._editWADateDTP.TabIndex = 20;
             this._editWADateDTP.Value = new System.DateTime(2016, 6, 10, 0, 0, 0, 0);
             // 
             // _editWADateLB
             // 
             this._editWADateLB.AutoSize = true;
-            this._editWADateLB.Location = new System.Drawing.Point(81, 232);
+            this._editWADateLB.Location = new System.Drawing.Point(49, 136);
             this._editWADateLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._editWADateLB.Name = "_editWADateLB";
             this._editWADateLB.Size = new System.Drawing.Size(58, 24);
@@ -1489,16 +1489,16 @@
             // 
             // _editWAEmplIDTB
             // 
-            this._editWAEmplIDTB.Location = new System.Drawing.Point(297, 76);
+            this._editWAEmplIDTB.Location = new System.Drawing.Point(194, 42);
             this._editWAEmplIDTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._editWAEmplIDTB.Name = "_editWAEmplIDTB";
-            this._editWAEmplIDTB.Size = new System.Drawing.Size(403, 36);
+            this._editWAEmplIDTB.Size = new System.Drawing.Size(318, 36);
             this._editWAEmplIDTB.TabIndex = 18;
             // 
             // _editWAEmplIDLB
             // 
             this._editWAEmplIDLB.AutoSize = true;
-            this._editWAEmplIDLB.Location = new System.Drawing.Point(81, 86);
+            this._editWAEmplIDLB.Location = new System.Drawing.Point(49, 54);
             this._editWAEmplIDLB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._editWAEmplIDLB.Name = "_editWAEmplIDLB";
             this._editWAEmplIDLB.Size = new System.Drawing.Size(137, 24);
