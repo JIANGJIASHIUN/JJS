@@ -504,7 +504,6 @@ namespace OOAD_HR_System
             _authoController.AddAuthorization();
         }
 
-//<<<<<<< HEAD
         // 按下查詢權限按鈕
         private void ClickSearchAuthoButtom(object sender, EventArgs e)
         {
@@ -751,7 +750,6 @@ namespace OOAD_HR_System
             _waController.AddWorkAttendance();
         }
 
-<<<<<<< HEAD
         // 選取狀態更改edit上下班時間enable
         private void ChangeEditWAStatusSelectedIndex(object sender, EventArgs e)
         {
@@ -903,7 +901,8 @@ namespace OOAD_HR_System
             {
                 this.ResetEditWAUI();
             }
-=======
+        }
+
         // 將新增部門的所有變數存至presentation model
         private void SetAllNewDeptVariableToPM()
         {
@@ -928,7 +927,7 @@ namespace OOAD_HR_System
             _deptController.AddDepartment();
             this.ResetNewDeptUI();
             this.departmentTableAdapter.Fill(this.deptDataSet.department);
->>>>>>> origin/master
+
         }
 
     }
