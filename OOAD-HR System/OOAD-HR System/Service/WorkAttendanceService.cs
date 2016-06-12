@@ -139,7 +139,7 @@ namespace OOAD_HR_System.Service
                 {
                     String addString = String.Format("UPDATE workattendance SET status='" + this._workAttendanceModel.GetWAStatus() +
                         "',startworktime='" + this._workAttendanceModel.GetStartTime().ToString("H:mm:ss") + "',endworktime='" + this._workAttendanceModel.GetEndTime().ToString("H:mm:ss") +
-                        "',isovertime='" + this._workAttendanceModel.GetIsOvertime() + "',startovertime='" + null +
+                        "',isovertime='" + System.Convert.ToInt32(this._workAttendanceModel.GetIsOvertime()) + "',startovertime='" + null +
                         "',endovertime='" + null + "' WHERE emplID='" + this._workAttendanceModel.GetWAEmplID() +
                         "' AND waDate='" + this._workAttendanceModel.GetWADate().ToString("yyyy-MM-dd") + "';");
                     String waStatus = this._workAttendanceModel.GetWAStatus();
@@ -156,7 +156,7 @@ namespace OOAD_HR_System.Service
                     {
                         addString = String.Format("UPDATE workattendance SET status='" + this._workAttendanceModel.GetWAStatus() +
                         "',startworktime='" + this._workAttendanceModel.GetStartTime().ToString("H:mm:ss") + "',endworktime='" + this._workAttendanceModel.GetEndTime().ToString("H:mm:ss") +
-                        "',isovertime='" + this._workAttendanceModel.GetIsOvertime() + "',startovertime='" + this._workAttendanceModel.GetStartOvertime().ToString("H:mm:ss") +
+                        "',isovertime='" + System.Convert.ToInt32(this._workAttendanceModel.GetIsOvertime()) + "',startovertime='" + this._workAttendanceModel.GetStartOvertime().ToString("H:mm:ss") +
                         "',endovertime='" + this._workAttendanceModel.GetEndOvertime().ToString("H:mm:ss") + "' WHERE emplID='" + this._workAttendanceModel.GetWAEmplID() +
                         "' AND waDate='" + this._workAttendanceModel.GetWADate().ToString("yyyy-MM-dd") + "';");
                     }
