@@ -28,6 +28,9 @@ namespace OOAD_HR_System
         private WorkAttendancePresentationModel _waPresentationModel = new WorkAttendancePresentationModel();
         private WorkAttendanController _waController;
 
+        private DepartmentPresentationModel _deptPresentationModel = new DepartmentPresentationModel();
+        private DepartmentController _deptController;
+
         public _mainFunction(Form login)
         {
             _login = login;
@@ -187,6 +190,14 @@ namespace OOAD_HR_System
             _editEmplPhoneTB.Text = _employeePresentationModel.GetPhone();
             _editEmplDeptCB.SelectedValue = _employeePresentationModel.GetDeptID();
             _editEmplPositionCB.SelectedValue = _employeePresentationModel.GetPositionID();
+        }
+
+        private void ResetNewDeptUI()
+        {
+            _newDeptIDTB.Text = "";
+            _newDeptNameTB.Text = "";
+            _newDeptTimeDP.Value = DateTime.Now;
+            _newDeptManTB.Text = "";
         }
 
         // 按下登出鍵
@@ -740,6 +751,7 @@ namespace OOAD_HR_System
             _waController.AddWorkAttendance();
         }
 
+<<<<<<< HEAD
         // 選取狀態更改edit上下班時間enable
         private void ChangeEditWAStatusSelectedIndex(object sender, EventArgs e)
         {
@@ -891,6 +903,32 @@ namespace OOAD_HR_System
             {
                 this.ResetEditWAUI();
             }
+=======
+        // 將新增部門的所有變數存至presentation model
+        private void SetAllNewDeptVariableToPM()
+        {
+            String deptID = _newDeptIDTB.Text;
+            String deptName = _newDeptNameTB.Text;
+            DateTime deptStartTime = _newDeptTimeDP.Value;
+            String deptManager = _newDeptManTB.Text;
+
+            this._deptPresentationModel.setDepartmentID(deptID);
+            this._deptPresentationModel.setDepartmentName(deptName);
+            this._deptPresentationModel.setDepartmentStartTime(deptStartTime);
+            //this._deptPresetationModel.setDepartmentEndTime(null);
+            this._deptPresentationModel.setDepartmentManager(deptManager);
+        }
+
+        // 按下新增部門資料按鈕
+        private void ClickAddDeptButton(object sender, EventArgs e)
+        {
+            this.SetAllNewDeptVariableToPM();
+
+            _deptController = new DepartmentController(_deptPresentationModel);
+            _deptController.AddDepartment();
+            this.ResetNewDeptUI();
+            this.departmentTableAdapter.Fill(this.deptDataSet.department);
+>>>>>>> origin/master
         }
 
     }
