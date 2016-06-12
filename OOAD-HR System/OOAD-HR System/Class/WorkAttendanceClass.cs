@@ -11,7 +11,7 @@ namespace OOAD_HR_System.Class
 
         private String _emplID;
         private DateTime _waDate;
-        private String _waState;
+        private String _waState = null;
         private DateTime _waStartTime;
         private DateTime _waEndTime;
         private Boolean _isOverTime = false;

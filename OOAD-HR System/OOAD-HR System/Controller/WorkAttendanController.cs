@@ -53,6 +53,25 @@ namespace OOAD_HR_System.Controller
             return true;
         }
 
+        // 判斷該天是否已經有考勤紀錄
+        private Boolean JudgeWAExist()
+        {
+            WorkAttendanceModel waModel = new WorkAttendanceModel();
+
+            waModel.SetWAEmplID(this._workAttendanceModel.GetWAEmplID());
+            waModel.SetWADate(this._workAttendanceModel.GetWADate());
+
+            this._waService = new WorkAttendanceService(waModel);
+
+            waModel = this._waService.SearchWAByEmplIDAndDate();
+
+            String waStatus = waModel.GetWAStatus();
+            if (waStatus != null)
+                return true;
+
+            return false;
+        }
+
         // 呼叫service 將考勤資料新增置資料庫
         public void AddWorkAttendance()
         {
@@ -62,12 +81,65 @@ namespace OOAD_HR_System.Controller
                 return;
             }
 
+            if (this.JudgeWAExist())
+            {
+                MessageBox.Show("此員工該天的考勤紀錄已存在!");
+                return;
+            }
+
             this._waService = new WorkAttendanceService(_workAttendanceModel);
 
-            if (_waService.AddWorkAttendance())
+            if (this._waService.AddWorkAttendance())
                 MessageBox.Show("新增成功!");
             else
                 MessageBox.Show("新增失敗!");
+        }
+
+        //呼叫service 利用員工ID與日期查詢work attendance資料
+        public WorkAttendancePresentationModel SearchDataByEmplIDAndDate()
+        {
+            WorkAttendancePresentationModel waPresentationModel = new WorkAttendancePresentationModel();
+
+            if (this._workAttendanceModel.GetWAEmplID() == null || this._workAttendanceModel.GetWAEmplID() == "")
+                MessageBox.Show("請輸入員工ID");
+            else
+            {
+                this._waService = new WorkAttendanceService(_workAttendanceModel);
+                this._workAttendanceModel = this._waService.SearchWAByEmplIDAndDate();
+
+                waPresentationModel.SetWAEmplID(this._workAttendanceModel.GetWAEmplID());
+                waPresentationModel.SetWADate(this._workAttendanceModel.GetWADate());
+                waPresentationModel.SetWAStatus(this._workAttendanceModel.GetWAStatus());
+                waPresentationModel.SetStartTime(this._workAttendanceModel.GetStartTime());
+                waPresentationModel.SetEndTime(this._workAttendanceModel.GetStartTime());
+                waPresentationModel.SetIsOvertime(this._workAttendanceModel.GetIsOvertime());
+                waPresentationModel.SetStartOvertime(this._workAttendanceModel.GetStartOvertime());
+                waPresentationModel.SetEndOvertime(this._workAttendanceModel.GetEndOvertime());
+
+                if (waPresentationModel.GetWAStatus() == null || waPresentationModel.GetWAStatus() == "")
+                {
+                    MessageBox.Show("該筆考勤紀錄不存在!");
+                    waPresentationModel.SetWAEmplID(null);
+                }
+            }
+            return waPresentationModel;
+        }
+
+        // 呼叫service, 將資料新增至資料庫(edit)
+        public Boolean EditWorkAttendance()
+        {
+            this._waService = new WorkAttendanceService(_workAttendanceModel);
+
+            if (this._waService.EditWorkAttendance())
+                MessageBox.Show("修改成功！");
+            else
+            {
+                MessageBox.Show("修改失敗！");
+                return false;
+            }
+
+
+            return true;
         }
 
     }

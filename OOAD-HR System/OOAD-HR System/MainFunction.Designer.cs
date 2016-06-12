@@ -130,12 +130,26 @@
             this._addWAEmplIDTB = new System.Windows.Forms.TextBox();
             this._addWAEmplIDLB = new System.Windows.Forms.Label();
             this._editWorkAttendance = new System.Windows.Forms.TabPage();
-            this._reimburse = new System.Windows.Forms.TabPage();
+            this._editWAButton = new System.Windows.Forms.Button();
+            this._searchWAButton = new System.Windows.Forms.Button();
+            this._editWAEndOTDTP = new System.Windows.Forms.DateTimePicker();
+            this._editWAEndOTLB = new System.Windows.Forms.Label();
+            this._editWAStartOTDTP = new System.Windows.Forms.DateTimePicker();
+            this._editWAStartOTLB = new System.Windows.Forms.Label();
+            this._editWAIsOvertimeCB = new System.Windows.Forms.ComboBox();
+            this._editWAIsOvertimeLB = new System.Windows.Forms.Label();
+            this._editWAEndWTDTP = new System.Windows.Forms.DateTimePicker();
+            this._editWAEndWTLB = new System.Windows.Forms.Label();
+            this._editWAStartWTDTP = new System.Windows.Forms.DateTimePicker();
+            this._editWAStartWTLB = new System.Windows.Forms.Label();
+            this._editWAStatusCB = new System.Windows.Forms.ComboBox();
+            this._editWAWorkStatusLB = new System.Windows.Forms.Label();
+            this._editWADateDTP = new System.Windows.Forms.DateTimePicker();
+            this._editWADateLB = new System.Windows.Forms.Label();
+            this._editWAEmplIDTB = new System.Windows.Forms.TextBox();
+            this._editWAEmplIDLB = new System.Windows.Forms.Label();
             this._bonus = new System.Windows.Forms.TabPage();
             this._salary = new System.Windows.Forms.TabPage();
-            this._traning = new System.Windows.Forms.TabPage();
-            this._careerPlanning = new System.Windows.Forms.TabPage();
-            this._report = new System.Windows.Forms.TabPage();
             this._authorization = new System.Windows.Forms.TabPage();
             this._authorizationPage = new System.Windows.Forms.TabControl();
             this._newAuthorization = new System.Windows.Forms.TabPage();
@@ -196,6 +210,7 @@
             this._workAttendance.SuspendLayout();
             this._workAttendancePage.SuspendLayout();
             this._addWorkAttendance.SuspendLayout();
+            this._editWorkAttendance.SuspendLayout();
             this._authorization.SuspendLayout();
             this._authorizationPage.SuspendLayout();
             this._newAuthorization.SuspendLayout();
@@ -212,12 +227,8 @@
             // 
             this._mainFunctionPage.Controls.Add(this._employee);
             this._mainFunctionPage.Controls.Add(this._workAttendance);
-            this._mainFunctionPage.Controls.Add(this._reimburse);
             this._mainFunctionPage.Controls.Add(this._bonus);
             this._mainFunctionPage.Controls.Add(this._salary);
-            this._mainFunctionPage.Controls.Add(this._traning);
-            this._mainFunctionPage.Controls.Add(this._careerPlanning);
-            this._mainFunctionPage.Controls.Add(this._report);
             this._mainFunctionPage.Controls.Add(this._authorization);
             this._mainFunctionPage.Controls.Add(this._position);
             this._mainFunctionPage.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -1252,6 +1263,24 @@
             // 
             // _editWorkAttendance
             // 
+            this._editWorkAttendance.Controls.Add(this._editWAButton);
+            this._editWorkAttendance.Controls.Add(this._searchWAButton);
+            this._editWorkAttendance.Controls.Add(this._editWAEndOTDTP);
+            this._editWorkAttendance.Controls.Add(this._editWAEndOTLB);
+            this._editWorkAttendance.Controls.Add(this._editWAStartOTDTP);
+            this._editWorkAttendance.Controls.Add(this._editWAStartOTLB);
+            this._editWorkAttendance.Controls.Add(this._editWAIsOvertimeCB);
+            this._editWorkAttendance.Controls.Add(this._editWAIsOvertimeLB);
+            this._editWorkAttendance.Controls.Add(this._editWAEndWTDTP);
+            this._editWorkAttendance.Controls.Add(this._editWAEndWTLB);
+            this._editWorkAttendance.Controls.Add(this._editWAStartWTDTP);
+            this._editWorkAttendance.Controls.Add(this._editWAStartWTLB);
+            this._editWorkAttendance.Controls.Add(this._editWAStatusCB);
+            this._editWorkAttendance.Controls.Add(this._editWAWorkStatusLB);
+            this._editWorkAttendance.Controls.Add(this._editWADateDTP);
+            this._editWorkAttendance.Controls.Add(this._editWADateLB);
+            this._editWorkAttendance.Controls.Add(this._editWAEmplIDTB);
+            this._editWorkAttendance.Controls.Add(this._editWAEmplIDLB);
             this._editWorkAttendance.Location = new System.Drawing.Point(4, 34);
             this._editWorkAttendance.Name = "_editWorkAttendance";
             this._editWorkAttendance.Padding = new System.Windows.Forms.Padding(3);
@@ -1260,15 +1289,184 @@
             this._editWorkAttendance.Text = "Edit";
             this._editWorkAttendance.UseVisualStyleBackColor = true;
             // 
-            // _reimburse
+            // _editWAButton
             // 
-            this._reimburse.Location = new System.Drawing.Point(4, 34);
-            this._reimburse.Name = "_reimburse";
-            this._reimburse.Padding = new System.Windows.Forms.Padding(3);
-            this._reimburse.Size = new System.Drawing.Size(1558, 872);
-            this._reimburse.TabIndex = 2;
-            this._reimburse.Text = "Reimburse";
-            this._reimburse.UseVisualStyleBackColor = true;
+            this._editWAButton.Enabled = false;
+            this._editWAButton.Location = new System.Drawing.Point(1100, 599);
+            this._editWAButton.Name = "_editWAButton";
+            this._editWAButton.Size = new System.Drawing.Size(97, 41);
+            this._editWAButton.TabIndex = 34;
+            this._editWAButton.Text = "Edit";
+            this._editWAButton.UseVisualStyleBackColor = true;
+            this._editWAButton.Click += new System.EventHandler(this.ClickEditWAButton);
+            // 
+            // _searchWAButton
+            // 
+            this._searchWAButton.Location = new System.Drawing.Point(969, 599);
+            this._searchWAButton.Name = "_searchWAButton";
+            this._searchWAButton.Size = new System.Drawing.Size(97, 41);
+            this._searchWAButton.TabIndex = 33;
+            this._searchWAButton.Text = "Search";
+            this._searchWAButton.UseVisualStyleBackColor = true;
+            this._searchWAButton.Click += new System.EventHandler(this.ClickSearchWAButton);
+            // 
+            // _editWAEndOTDTP
+            // 
+            this._editWAEndOTDTP.Enabled = false;
+            this._editWAEndOTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this._editWAEndOTDTP.Location = new System.Drawing.Point(822, 239);
+            this._editWAEndOTDTP.Name = "_editWAEndOTDTP";
+            this._editWAEndOTDTP.Size = new System.Drawing.Size(245, 36);
+            this._editWAEndOTDTP.TabIndex = 32;
+            // 
+            // _editWAEndOTLB
+            // 
+            this._editWAEndOTLB.AutoSize = true;
+            this._editWAEndOTLB.Location = new System.Drawing.Point(653, 251);
+            this._editWAEndOTLB.Name = "_editWAEndOTLB";
+            this._editWAEndOTLB.Size = new System.Drawing.Size(143, 24);
+            this._editWAEndOTLB.TabIndex = 31;
+            this._editWAEndOTLB.Text = "End Overtime:";
+            // 
+            // _editWAStartOTDTP
+            // 
+            this._editWAStartOTDTP.Enabled = false;
+            this._editWAStartOTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this._editWAStartOTDTP.Location = new System.Drawing.Point(829, 143);
+            this._editWAStartOTDTP.Name = "_editWAStartOTDTP";
+            this._editWAStartOTDTP.Size = new System.Drawing.Size(238, 36);
+            this._editWAStartOTDTP.TabIndex = 30;
+            // 
+            // _editWAStartOTLB
+            // 
+            this._editWAStartOTLB.AutoSize = true;
+            this._editWAStartOTLB.Location = new System.Drawing.Point(653, 155);
+            this._editWAStartOTLB.Name = "_editWAStartOTLB";
+            this._editWAStartOTLB.Size = new System.Drawing.Size(150, 24);
+            this._editWAStartOTLB.TabIndex = 29;
+            this._editWAStartOTLB.Text = "Start Overtime:";
+            // 
+            // _editWAIsOvertimeCB
+            // 
+            this._editWAIsOvertimeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editWAIsOvertimeCB.Enabled = false;
+            this._editWAIsOvertimeCB.FormattingEnabled = true;
+            this._editWAIsOvertimeCB.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
+            this._editWAIsOvertimeCB.Location = new System.Drawing.Point(784, 49);
+            this._editWAIsOvertimeCB.Name = "_editWAIsOvertimeCB";
+            this._editWAIsOvertimeCB.Size = new System.Drawing.Size(157, 32);
+            this._editWAIsOvertimeCB.TabIndex = 28;
+            this._editWAIsOvertimeCB.SelectedIndexChanged += new System.EventHandler(this.ChangeEditWAIsOvertimeSelectedIndex);
+            // 
+            // _editWAIsOvertimeLB
+            // 
+            this._editWAIsOvertimeLB.AutoSize = true;
+            this._editWAIsOvertimeLB.Location = new System.Drawing.Point(654, 54);
+            this._editWAIsOvertimeLB.Name = "_editWAIsOvertimeLB";
+            this._editWAIsOvertimeLB.Size = new System.Drawing.Size(124, 24);
+            this._editWAIsOvertimeLB.TabIndex = 27;
+            this._editWAIsOvertimeLB.Text = "Is Overtime:";
+            // 
+            // _editWAEndWTDTP
+            // 
+            this._editWAEndWTDTP.Enabled = false;
+            this._editWAEndWTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this._editWAEndWTDTP.Location = new System.Drawing.Point(223, 435);
+            this._editWAEndWTDTP.Name = "_editWAEndWTDTP";
+            this._editWAEndWTDTP.Size = new System.Drawing.Size(245, 36);
+            this._editWAEndWTDTP.TabIndex = 26;
+            // 
+            // _editWAEndWTLB
+            // 
+            this._editWAEndWTLB.AutoSize = true;
+            this._editWAEndWTLB.Location = new System.Drawing.Point(54, 447);
+            this._editWAEndWTLB.Name = "_editWAEndWTLB";
+            this._editWAEndWTLB.Size = new System.Drawing.Size(163, 24);
+            this._editWAEndWTLB.TabIndex = 25;
+            this._editWAEndWTLB.Text = "End Work Time:";
+            // 
+            // _editWAStartWTDTP
+            // 
+            this._editWAStartWTDTP.Enabled = false;
+            this._editWAStartWTDTP.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this._editWAStartWTDTP.Location = new System.Drawing.Point(230, 339);
+            this._editWAStartWTDTP.Name = "_editWAStartWTDTP";
+            this._editWAStartWTDTP.Size = new System.Drawing.Size(238, 36);
+            this._editWAStartWTDTP.TabIndex = 24;
+            // 
+            // _editWAStartWTLB
+            // 
+            this._editWAStartWTLB.AutoSize = true;
+            this._editWAStartWTLB.Location = new System.Drawing.Point(54, 351);
+            this._editWAStartWTLB.Name = "_editWAStartWTLB";
+            this._editWAStartWTLB.Size = new System.Drawing.Size(170, 24);
+            this._editWAStartWTLB.TabIndex = 23;
+            this._editWAStartWTLB.Text = "Start Work Time:";
+            // 
+            // _editWAStatusCB
+            // 
+            this._editWAStatusCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._editWAStatusCB.Enabled = false;
+            this._editWAStatusCB.FormattingEnabled = true;
+            this._editWAStatusCB.Items.AddRange(new object[] {
+            "正常上下班",
+            "遲到",
+            "早退",
+            "無故未到",
+            "病假",
+            "婚假",
+            "產假",
+            "休假"});
+            this._editWAStatusCB.Location = new System.Drawing.Point(189, 245);
+            this._editWAStatusCB.Name = "_editWAStatusCB";
+            this._editWAStatusCB.Size = new System.Drawing.Size(279, 32);
+            this._editWAStatusCB.TabIndex = 22;
+            this._editWAStatusCB.SelectedIndexChanged += new System.EventHandler(this.ChangeEditWAStatusSelectedIndex);
+            // 
+            // _editWAWorkStatusLB
+            // 
+            this._editWAWorkStatusLB.AutoSize = true;
+            this._editWAWorkStatusLB.Location = new System.Drawing.Point(54, 253);
+            this._editWAWorkStatusLB.Name = "_editWAWorkStatusLB";
+            this._editWAWorkStatusLB.Size = new System.Drawing.Size(128, 24);
+            this._editWAWorkStatusLB.TabIndex = 21;
+            this._editWAWorkStatusLB.Text = "Work Status:";
+            // 
+            // _editWADateDTP
+            // 
+            this._editWADateDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this._editWADateDTP.Location = new System.Drawing.Point(122, 147);
+            this._editWADateDTP.Name = "_editWADateDTP";
+            this._editWADateDTP.Size = new System.Drawing.Size(346, 36);
+            this._editWADateDTP.TabIndex = 20;
+            this._editWADateDTP.Value = new System.DateTime(2016, 6, 10, 0, 0, 0, 0);
+            // 
+            // _editWADateLB
+            // 
+            this._editWADateLB.AutoSize = true;
+            this._editWADateLB.Location = new System.Drawing.Point(54, 155);
+            this._editWADateLB.Name = "_editWADateLB";
+            this._editWADateLB.Size = new System.Drawing.Size(58, 24);
+            this._editWADateLB.TabIndex = 19;
+            this._editWADateLB.Text = "Date:";
+            // 
+            // _editWAEmplIDTB
+            // 
+            this._editWAEmplIDTB.Location = new System.Drawing.Point(198, 51);
+            this._editWAEmplIDTB.Name = "_editWAEmplIDTB";
+            this._editWAEmplIDTB.Size = new System.Drawing.Size(270, 36);
+            this._editWAEmplIDTB.TabIndex = 18;
+            // 
+            // _editWAEmplIDLB
+            // 
+            this._editWAEmplIDLB.AutoSize = true;
+            this._editWAEmplIDLB.Location = new System.Drawing.Point(54, 57);
+            this._editWAEmplIDLB.Name = "_editWAEmplIDLB";
+            this._editWAEmplIDLB.Size = new System.Drawing.Size(137, 24);
+            this._editWAEmplIDLB.TabIndex = 17;
+            this._editWAEmplIDLB.Text = "Employee ID:";
             // 
             // _bonus
             // 
@@ -1289,36 +1487,6 @@
             this._salary.TabIndex = 4;
             this._salary.Text = "Salary";
             this._salary.UseVisualStyleBackColor = true;
-            // 
-            // _traning
-            // 
-            this._traning.Location = new System.Drawing.Point(4, 34);
-            this._traning.Name = "_traning";
-            this._traning.Padding = new System.Windows.Forms.Padding(3);
-            this._traning.Size = new System.Drawing.Size(1558, 872);
-            this._traning.TabIndex = 5;
-            this._traning.Text = "Traning";
-            this._traning.UseVisualStyleBackColor = true;
-            // 
-            // _careerPlanning
-            // 
-            this._careerPlanning.Location = new System.Drawing.Point(4, 34);
-            this._careerPlanning.Name = "_careerPlanning";
-            this._careerPlanning.Padding = new System.Windows.Forms.Padding(3);
-            this._careerPlanning.Size = new System.Drawing.Size(1558, 872);
-            this._careerPlanning.TabIndex = 6;
-            this._careerPlanning.Text = "Career Plainning";
-            this._careerPlanning.UseVisualStyleBackColor = true;
-            // 
-            // _report
-            // 
-            this._report.Location = new System.Drawing.Point(4, 34);
-            this._report.Name = "_report";
-            this._report.Padding = new System.Windows.Forms.Padding(3);
-            this._report.Size = new System.Drawing.Size(1558, 872);
-            this._report.TabIndex = 7;
-            this._report.Text = "Report";
-            this._report.UseVisualStyleBackColor = true;
             // 
             // _authorization
             // 
@@ -1838,6 +2006,8 @@
             this._workAttendancePage.ResumeLayout(false);
             this._addWorkAttendance.ResumeLayout(false);
             this._addWorkAttendance.PerformLayout();
+            this._editWorkAttendance.ResumeLayout(false);
+            this._editWorkAttendance.PerformLayout();
             this._authorization.ResumeLayout(false);
             this._authorizationPage.ResumeLayout(false);
             this._newAuthorization.ResumeLayout(false);
@@ -1861,12 +2031,8 @@
         private System.Windows.Forms.TabControl _mainFunctionPage;
         private System.Windows.Forms.TabPage _employee;
         private System.Windows.Forms.TabPage _workAttendance;
-        private System.Windows.Forms.TabPage _reimburse;
         private System.Windows.Forms.TabPage _bonus;
         private System.Windows.Forms.TabPage _salary;
-        private System.Windows.Forms.TabPage _traning;
-        private System.Windows.Forms.TabPage _careerPlanning;
-        private System.Windows.Forms.TabPage _report;
         private System.Windows.Forms.TabPage _authorization;
         private System.Windows.Forms.Button _logoutButton;
         private System.Windows.Forms.TabControl _employeePage;
@@ -2013,5 +2179,23 @@
         private System.Windows.Forms.DateTimePicker _addWAStartOTDTP;
         private System.Windows.Forms.Label _addWAStartOverTimeLB;
         private System.Windows.Forms.Button _addWAButton;
+        private System.Windows.Forms.Button _searchWAButton;
+        private System.Windows.Forms.DateTimePicker _editWAEndOTDTP;
+        private System.Windows.Forms.Label _editWAEndOTLB;
+        private System.Windows.Forms.DateTimePicker _editWAStartOTDTP;
+        private System.Windows.Forms.Label _editWAStartOTLB;
+        private System.Windows.Forms.ComboBox _editWAIsOvertimeCB;
+        private System.Windows.Forms.Label _editWAIsOvertimeLB;
+        private System.Windows.Forms.DateTimePicker _editWAEndWTDTP;
+        private System.Windows.Forms.Label _editWAEndWTLB;
+        private System.Windows.Forms.DateTimePicker _editWAStartWTDTP;
+        private System.Windows.Forms.Label _editWAStartWTLB;
+        private System.Windows.Forms.ComboBox _editWAStatusCB;
+        private System.Windows.Forms.Label _editWAWorkStatusLB;
+        private System.Windows.Forms.DateTimePicker _editWADateDTP;
+        private System.Windows.Forms.Label _editWADateLB;
+        private System.Windows.Forms.TextBox _editWAEmplIDTB;
+        private System.Windows.Forms.Label _editWAEmplIDLB;
+        private System.Windows.Forms.Button _editWAButton;
     }
 }
