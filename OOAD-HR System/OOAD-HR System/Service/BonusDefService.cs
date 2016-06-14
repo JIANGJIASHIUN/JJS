@@ -40,7 +40,7 @@ namespace OOAD_HR_System.Service
             myConnection.Close();
         }
 
-        // 新增職位資料至資料庫表單
+        // 新增獎金定義資料至資料庫表單
         public Boolean AddBonusDef()
         {
             if (this.connectToDB())

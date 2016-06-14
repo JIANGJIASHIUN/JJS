@@ -34,6 +34,9 @@ namespace OOAD_HR_System
         private BonusDefPresentationModel _bonusDefPresentationModel = new BonusDefPresentationModel();
         private BonusDefController _bonusDefController;
 
+        private BonusPresentationModel _bonusPresentationModel = new BonusPresentationModel();
+        private BonusController _bonusController;
+
         public _mainFunction(Form login)
         {
             _login = login;
@@ -44,6 +47,8 @@ namespace OOAD_HR_System
         // form load
         private void LoadMainFunction(object sender, EventArgs e)
         {
+            // TODO:  這行程式碼會將資料載入 'bonusDefDataSet.bonusdef' 資料表。您可以視需要進行移動或移除。
+            this.bonusdefTableAdapter.Fill(this.bonusDefDataSet.bonusdef);
             // TODO:  這行程式碼會將資料載入 'authoDataSet.authorization' 資料表。您可以視需要進行移動或移除。
             this.authorizationTableAdapter.Fill(this.authoDataSet.authorization);
             // TODO:  這行程式碼會將資料載入 'positionDataSet.position' 資料表。您可以視需要進行移動或移除。
@@ -1082,6 +1087,29 @@ namespace OOAD_HR_System
             {
                 this.ResetEditBonusDefUI();
             }
+        }
+
+        // set all add bonus data to presentationModel
+        private void SetAllBonusVariableToPM()
+        {
+            String bonusDefID = _addBonusCB.SelectedValue.ToString();
+            String EmplID = _addBonusEmplIDTB.Text;
+            DateTime bonusDate = _addBonusDateDTP.Value.Date;
+            String bonusT = _addbonusPeriodTB.Text;
+
+            this._bonusPresentationModel.SetBonusDefID(bonusDefID);
+            this._bonusPresentationModel.SetEmplID(EmplID);
+            this._bonusPresentationModel.SetBonusDate(bonusDate);
+            this._bonusPresentationModel.SetBonusT(bonusT);
+        }
+
+        // 按下新增員工獎金button
+        private void ClickAddBonusbutton(object sender, EventArgs e)
+        {
+            this.SetAllBonusVariableToPM();
+
+            _bonusController = new BonusController(this._bonusPresentationModel);
+            _bonusController.AddBonus();
         }
 
     }

@@ -56,6 +56,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>authoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="bonusDefDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bonusDefDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Class\AuthorizationClass.cs" />
     <Compile Include="Class\BonusClass.cs" />
     <Compile Include="Class\BonusDefClass.cs" />
@@ -73,6 +78,7 @@
     <Compile Include="Class\TraningCourseClass.cs" />
     <Compile Include="Class\WorkAttendanceClass.cs" />
     <Compile Include="Controller\AuthorizationController.cs" />
+    <Compile Include="Controller\BonusController.cs" />
     <Compile Include="Controller\BonusDefController.cs" />
     <Compile Include="Controller\DepartmentController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
@@ -97,6 +103,7 @@
       <DependentUpon>MainFunction.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\AuthorizationModel.cs" />
+    <Compile Include="Model\BonusModel.cs" />
     <Compile Include="Model\BonusDefModel.cs" />
     <Compile Include="Model\DepartmentModel.cs" />
     <Compile Include="Model\EmployeeModel.cs" />
@@ -110,6 +117,7 @@
     </Compile>
     <Compile Include="PresentationModel\AuthorizationPresentationModel.cs" />
     <Compile Include="PresentationModel\BonusDefPresentationModel.cs" />
+    <Compile Include="PresentationModel\BonusPresentationModel.cs" />
     <Compile Include="PresentationModel\DepartmentPresentationModel.cs" />
     <Compile Include="PresentationModel\EmployeePresentationModel.cs" />
     <Compile Include="PresentationModel\PositionPresentationModel.cs" />
@@ -119,6 +127,7 @@
     <Compile Include="Service\AccountService.cs" />
     <Compile Include="Service\AuthorizationService.cs" />
     <Compile Include="Service\BonusDefService.cs" />
+    <Compile Include="Service\BonusService.cs" />
     <Compile Include="Service\DepartmentService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\PositionService.cs" />
@@ -149,6 +158,17 @@
     </None>
     <None Include="authoDataSet.xss">
       <DependentUpon>authoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bonusDefDataSet.xsc">
+      <DependentUpon>bonusDefDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bonusDefDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bonusDefDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bonusDefDataSet.xss">
+      <DependentUpon>bonusDefDataSet.xsd</DependentUpon>
     </None>
     <None Include="deptDataSet.xsc">
       <DependentUpon>deptDataSet.xsd</DependentUpon>

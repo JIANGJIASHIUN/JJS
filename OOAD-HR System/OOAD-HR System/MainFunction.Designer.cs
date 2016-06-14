@@ -217,7 +217,7 @@
             this._editBonusDef = new System.Windows.Forms.TabPage();
             this._addBonusDefIDLB = new System.Windows.Forms.Label();
             this._addBonusDefIDTB = new System.Windows.Forms.TextBox();
-            this._addBonusNameLB = new System.Windows.Forms.Label();
+            this._addBonusDefNameLB = new System.Windows.Forms.Label();
             this._addBonusNameTB = new System.Windows.Forms.TextBox();
             this._addBonusDefDescLB = new System.Windows.Forms.Label();
             this._addBonusDefDescTB = new System.Windows.Forms.TextBox();
@@ -242,6 +242,19 @@
             this._editBonusDefIDTB = new System.Windows.Forms.TextBox();
             this._editBonusDefIDLB = new System.Windows.Forms.Label();
             this._editBonusDefButton = new System.Windows.Forms.Button();
+            this._addBonusTLB = new System.Windows.Forms.TabPage();
+            this._addBonusNameLB = new System.Windows.Forms.Label();
+            this._addBonusCB = new System.Windows.Forms.ComboBox();
+            this.bonusDefDataSet = new OOAD_HR_System.bonusDefDataSet();
+            this.bonusdefBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bonusdefTableAdapter = new OOAD_HR_System.bonusDefDataSetTableAdapters.bonusdefTableAdapter();
+            this._addBonusEmplID = new System.Windows.Forms.Label();
+            this._addBonusEmplIDTB = new System.Windows.Forms.TextBox();
+            this._addBonusDateLB = new System.Windows.Forms.Label();
+            this._addBonusDateDTP = new System.Windows.Forms.DateTimePicker();
+            this._addBonusButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this._addbonusPeriodTB = new System.Windows.Forms.TextBox();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this._employeePage.SuspendLayout();
@@ -272,6 +285,9 @@
             this._bonusPage.SuspendLayout();
             this._addBonusDef.SuspendLayout();
             this._editBonusDef.SuspendLayout();
+            this._addBonusTLB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bonusDefDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bonusdefBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainFunctionPage
@@ -2203,6 +2219,7 @@
             // 
             this._bonusPage.Controls.Add(this._addBonusDef);
             this._bonusPage.Controls.Add(this._editBonusDef);
+            this._bonusPage.Controls.Add(this._addBonusTLB);
             this._bonusPage.Location = new System.Drawing.Point(4, 7);
             this._bonusPage.Name = "_bonusPage";
             this._bonusPage.SelectedIndex = 0;
@@ -2221,7 +2238,7 @@
             this._addBonusDef.Controls.Add(this._addBonusDefDescTB);
             this._addBonusDef.Controls.Add(this._addBonusDefDescLB);
             this._addBonusDef.Controls.Add(this._addBonusNameTB);
-            this._addBonusDef.Controls.Add(this._addBonusNameLB);
+            this._addBonusDef.Controls.Add(this._addBonusDefNameLB);
             this._addBonusDef.Controls.Add(this._addBonusDefIDTB);
             this._addBonusDef.Controls.Add(this._addBonusDefIDLB);
             this._addBonusDef.Location = new System.Drawing.Point(4, 34);
@@ -2272,14 +2289,14 @@
             this._addBonusDefIDTB.Size = new System.Drawing.Size(268, 36);
             this._addBonusDefIDTB.TabIndex = 1;
             // 
-            // _addBonusNameLB
+            // _addBonusDefNameLB
             // 
-            this._addBonusNameLB.AutoSize = true;
-            this._addBonusNameLB.Location = new System.Drawing.Point(40, 131);
-            this._addBonusNameLB.Name = "_addBonusNameLB";
-            this._addBonusNameLB.Size = new System.Drawing.Size(133, 24);
-            this._addBonusNameLB.TabIndex = 2;
-            this._addBonusNameLB.Text = "Bonus Name:";
+            this._addBonusDefNameLB.AutoSize = true;
+            this._addBonusDefNameLB.Location = new System.Drawing.Point(40, 131);
+            this._addBonusDefNameLB.Name = "_addBonusDefNameLB";
+            this._addBonusDefNameLB.Size = new System.Drawing.Size(133, 24);
+            this._addBonusDefNameLB.TabIndex = 2;
+            this._addBonusDefNameLB.Text = "Bonus Name:";
             // 
             // _addBonusNameTB
             // 
@@ -2488,6 +2505,119 @@
             this._editBonusDefButton.UseVisualStyleBackColor = true;
             this._editBonusDefButton.Click += new System.EventHandler(this.ClickEditBonusDefButton);
             // 
+            // _addBonusTLB
+            // 
+            this._addBonusTLB.Controls.Add(this._addbonusPeriodTB);
+            this._addBonusTLB.Controls.Add(this.label1);
+            this._addBonusTLB.Controls.Add(this._addBonusButton);
+            this._addBonusTLB.Controls.Add(this._addBonusDateDTP);
+            this._addBonusTLB.Controls.Add(this._addBonusDateLB);
+            this._addBonusTLB.Controls.Add(this._addBonusEmplIDTB);
+            this._addBonusTLB.Controls.Add(this._addBonusEmplID);
+            this._addBonusTLB.Controls.Add(this._addBonusCB);
+            this._addBonusTLB.Controls.Add(this._addBonusNameLB);
+            this._addBonusTLB.Location = new System.Drawing.Point(4, 34);
+            this._addBonusTLB.Name = "_addBonusTLB";
+            this._addBonusTLB.Padding = new System.Windows.Forms.Padding(3);
+            this._addBonusTLB.Size = new System.Drawing.Size(1542, 821);
+            this._addBonusTLB.TabIndex = 2;
+            this._addBonusTLB.Text = "Add";
+            this._addBonusTLB.UseVisualStyleBackColor = true;
+            // 
+            // _addBonusNameLB
+            // 
+            this._addBonusNameLB.AutoSize = true;
+            this._addBonusNameLB.Location = new System.Drawing.Point(70, 49);
+            this._addBonusNameLB.Name = "_addBonusNameLB";
+            this._addBonusNameLB.Size = new System.Drawing.Size(133, 24);
+            this._addBonusNameLB.TabIndex = 0;
+            this._addBonusNameLB.Text = "Bonus Name:";
+            // 
+            // _addBonusCB
+            // 
+            this._addBonusCB.DataSource = this.bonusdefBindingSource;
+            this._addBonusCB.DisplayMember = "bonusName";
+            this._addBonusCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._addBonusCB.FormattingEnabled = true;
+            this._addBonusCB.Location = new System.Drawing.Point(210, 39);
+            this._addBonusCB.Name = "_addBonusCB";
+            this._addBonusCB.Size = new System.Drawing.Size(243, 32);
+            this._addBonusCB.TabIndex = 1;
+            this._addBonusCB.ValueMember = "bonusDefID";
+            // 
+            // bonusDefDataSet
+            // 
+            this.bonusDefDataSet.DataSetName = "bonusDefDataSet";
+            this.bonusDefDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bonusdefBindingSource
+            // 
+            this.bonusdefBindingSource.DataMember = "bonusdef";
+            this.bonusdefBindingSource.DataSource = this.bonusDefDataSet;
+            // 
+            // bonusdefTableAdapter
+            // 
+            this.bonusdefTableAdapter.ClearBeforeFill = true;
+            // 
+            // _addBonusEmplID
+            // 
+            this._addBonusEmplID.AutoSize = true;
+            this._addBonusEmplID.Location = new System.Drawing.Point(70, 167);
+            this._addBonusEmplID.Name = "_addBonusEmplID";
+            this._addBonusEmplID.Size = new System.Drawing.Size(137, 24);
+            this._addBonusEmplID.TabIndex = 2;
+            this._addBonusEmplID.Text = "Employee ID:";
+            // 
+            // _addBonusEmplIDTB
+            // 
+            this._addBonusEmplIDTB.Location = new System.Drawing.Point(217, 155);
+            this._addBonusEmplIDTB.Name = "_addBonusEmplIDTB";
+            this._addBonusEmplIDTB.Size = new System.Drawing.Size(236, 36);
+            this._addBonusEmplIDTB.TabIndex = 3;
+            // 
+            // _addBonusDateLB
+            // 
+            this._addBonusDateLB.AutoSize = true;
+            this._addBonusDateLB.Location = new System.Drawing.Point(70, 285);
+            this._addBonusDateLB.Name = "_addBonusDateLB";
+            this._addBonusDateLB.Size = new System.Drawing.Size(102, 24);
+            this._addBonusDateLB.TabIndex = 4;
+            this._addBonusDateLB.Text = "Add Date:";
+            // 
+            // _addBonusDateDTP
+            // 
+            this._addBonusDateDTP.Location = new System.Drawing.Point(178, 273);
+            this._addBonusDateDTP.Name = "_addBonusDateDTP";
+            this._addBonusDateDTP.Size = new System.Drawing.Size(275, 36);
+            this._addBonusDateDTP.TabIndex = 5;
+            // 
+            // _addBonusButton
+            // 
+            this._addBonusButton.Location = new System.Drawing.Point(478, 519);
+            this._addBonusButton.Name = "_addBonusButton";
+            this._addBonusButton.Size = new System.Drawing.Size(95, 37);
+            this._addBonusButton.TabIndex = 6;
+            this._addBonusButton.Text = "Add";
+            this._addBonusButton.UseVisualStyleBackColor = true;
+            this._addBonusButton.Click += new System.EventHandler(this.ClickAddBonusbutton);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(74, 409);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 24);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Period:";
+            // 
+            // _addbonusPeriodTB
+            // 
+            this._addbonusPeriodTB.AcceptsReturn = true;
+            this._addbonusPeriodTB.Location = new System.Drawing.Point(155, 397);
+            this._addbonusPeriodTB.Name = "_addbonusPeriodTB";
+            this._addbonusPeriodTB.Size = new System.Drawing.Size(298, 36);
+            this._addbonusPeriodTB.TabIndex = 8;
+            // 
             // _mainFunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -2540,6 +2670,10 @@
             this._addBonusDef.PerformLayout();
             this._editBonusDef.ResumeLayout(false);
             this._editBonusDef.PerformLayout();
+            this._addBonusTLB.ResumeLayout(false);
+            this._addBonusTLB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bonusDefDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bonusdefBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2735,7 +2869,7 @@
         private System.Windows.Forms.Label _addBonusDefIDLB;
         private System.Windows.Forms.TextBox _addBonusDefIDTB;
         private System.Windows.Forms.TextBox _addBonusNameTB;
-        private System.Windows.Forms.Label _addBonusNameLB;
+        private System.Windows.Forms.Label _addBonusDefNameLB;
         private System.Windows.Forms.TextBox _addBonusDefDescTB;
         private System.Windows.Forms.Label _addBonusDefDescLB;
         private System.Windows.Forms.Label _addBonusDefCreateDateLB;
@@ -2759,5 +2893,18 @@
         private System.Windows.Forms.Label _editBonusDefNameLB;
         private System.Windows.Forms.TextBox _editBonusDefIDTB;
         private System.Windows.Forms.Label _editBonusDefIDLB;
+        private System.Windows.Forms.TabPage _addBonusTLB;
+        private System.Windows.Forms.Label _addBonusNameLB;
+        private System.Windows.Forms.ComboBox _addBonusCB;
+        private bonusDefDataSet bonusDefDataSet;
+        private System.Windows.Forms.BindingSource bonusdefBindingSource;
+        private bonusDefDataSetTableAdapters.bonusdefTableAdapter bonusdefTableAdapter;
+        private System.Windows.Forms.Label _addBonusEmplID;
+        private System.Windows.Forms.TextBox _addBonusEmplIDTB;
+        private System.Windows.Forms.Label _addBonusDateLB;
+        private System.Windows.Forms.Button _addBonusButton;
+        private System.Windows.Forms.DateTimePicker _addBonusDateDTP;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox _addbonusPeriodTB;
     }
 }
