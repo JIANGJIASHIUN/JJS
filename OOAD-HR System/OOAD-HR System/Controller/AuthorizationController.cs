@@ -50,7 +50,6 @@ namespace OOAD_HR_System.Controller
         public Boolean editAuthorization()
         {
             this._authoService = new AuthorizationService(this._authoModel);
-            int error_flag = 0;
             if (this._authoModel.GetAuthoName() == "")
             {
                 MessageBox.Show("請輸入權限名稱");

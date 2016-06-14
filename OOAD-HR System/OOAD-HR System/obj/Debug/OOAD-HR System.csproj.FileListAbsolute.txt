@@ -7,3 +7,4 @@ C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD_H
 C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.csproj.GenerateResource.Cache
 C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.exe
 C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.pdb
+C:\Users\meteor\Documents\OOAD2.0\OOAD-HR System\OOAD-HR System\obj\Debug\OOAD-HR System.csprojResolveAssemblyReference.cache

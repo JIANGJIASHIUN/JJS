@@ -11,8 +11,9 @@ namespace OOAD_HR_System.Class
 
         private String _bonusDefID;
         private String _bonusDefName;
+        private String _bonusDefDesc;
         private DateTime _bonusDefCreateDate;
-        private String _bonusDefEffiTime;
+        private DateTime _bonusDefEffiDate;
         private float _bonusDefAmount;
 
         // ---------------------------------------------建構子---------------------------------------------
@@ -24,9 +25,9 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置獎金id---------------------------------------------
-        public void setId(String bonusDefID, String newBonusDefID)
+        public void setId(String bonusDefID)
         {
-            this._bonusDefID = newBonusDefID;
+            this._bonusDefID = bonusDefID;
         }
 
         // ---------------------------------------------取得獎金id---------------------------------------------
@@ -36,49 +37,61 @@ namespace OOAD_HR_System.Class
         }
 
         // ---------------------------------------------設置獎金名稱---------------------------------------------
-        public void setName(String bonusDefId, String bonusDefName)
+        public void setName(String bonusDefName)
         {
             this._bonusDefName = bonusDefName;
         }
 
         // ---------------------------------------------取得獎金名稱---------------------------------------------
-        public String getName(String bonusDefId)
+        public String getName()
         {
             return this._bonusDefName;
         }
 
+        // ---------------------------------------------設置獎金描述---------------------------------------------
+        public void setDesc(String bonusDefDesc)
+        {
+            this._bonusDefDesc = bonusDefDesc;
+        }
+
+        // ---------------------------------------------取得獎金描述---------------------------------------------
+        public String getDesc()
+        {
+            return this._bonusDefDesc;
+        }
+
         // ---------------------------------------------設置獎金建立日期---------------------------------------------
-        public void setCreateDate(String bonusDefId, DateTime bonusDefCreateDate)
+        public void setCreateDate(DateTime bonusDefCreateDate)
         {
             this._bonusDefCreateDate = bonusDefCreateDate;
         }
 
         // ---------------------------------------------取得獎金建立日期---------------------------------------------
-        public DateTime getCreateDate(String bonusDefID)
+        public DateTime getCreateDate()
         {
             return this._bonusDefCreateDate;
         }
 
         // ---------------------------------------------設置獎金有效期限---------------------------------------------
-        public void setEffiTime(String bonusDefID, String bonusDefEffiTime)
+        public void setEffiTime(DateTime bonusDefEffiDate)
         {
-            this._bonusDefEffiTime = bonusDefEffiTime;
+            this._bonusDefEffiDate = bonusDefEffiDate;
         }
 
         // ---------------------------------------------取得獎金有效期限---------------------------------------------
-        public String getEffiTime(String bonusDefID)
+        public DateTime getEffiTime()
         {
-            return this._bonusDefEffiTime;
+            return this._bonusDefEffiDate;
         }
 
         // ---------------------------------------------設置獎金金額---------------------------------------------
-        public void setAmount(String bonusDefID, float bonusDefAmount)
+        public void setAmount(float bonusDefAmount)
         {
             this._bonusDefAmount = bonusDefAmount;
         }
 
         // ---------------------------------------------取得獎金金額---------------------------------------------
-        public float getAmount(String bonusDefID)
+        public float getAmount()
         {
             return this._bonusDefAmount;
         }

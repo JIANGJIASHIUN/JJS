@@ -3,26 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 using MySql.Data.MySqlClient;
+using System.Data;
 using OOAD_HR_System.Model;
 
 namespace OOAD_HR_System.Service
 {
-    public class DepartmentService
+    public class BonusDefService
     {
-        private MySqlConnection myConnection = new MySqlConnection("server=csie-noip.ddns.net;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
-        private DepartmentModel _departmentModel = new DepartmentModel();
 
-        // 建構子
-        public DepartmentService(DepartmentModel departmentModel)
+        private MySqlConnection myConnection = new MySqlConnection("server=csie-noip.ddns.net;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
+        private BonusDefModel _bonusDefModel = new BonusDefModel();
+
+        public BonusDefService(BonusDefModel bonusDefModel)
         {
-            this._departmentModel = departmentModel;
+            this._bonusDefModel = bonusDefModel;
         }
 
         // 建立與資料庫連線
-        private Boolean connectToDB()
-        {
+        private Boolean connectToDB() {
             try
             {
                 myConnection.Open();
@@ -41,16 +40,16 @@ namespace OOAD_HR_System.Service
             myConnection.Close();
         }
 
-        // 新增部門資料至資料庫表單
-        public Boolean AddDepartment()
+        // 新增職位資料至資料庫表單
+        public Boolean AddBonusDef()
         {
-            if(this.connectToDB())
+            if (this.connectToDB())
             {
                 try
                 {
-                    String addString = String.Format("INSERT INTO department(departmentID,departmentName,departmentStartTime,departmentEndTime,departmentManager) VALUES('" +
-                        this._departmentModel.getDepartmentID() + "','" + this._departmentModel.getDepartmentName() + "','" + this._departmentModel.getDepartmentStartTime() + 
-                        "','" + this._departmentModel.getDepartmentEndTime() + "','" + this._departmentModel.getDepartmentManager() + "');");
+                    String addString = String.Format("INSERT INTO bonusdef (bonusDefID,bonusName,bonusDescription,bonusCreateDate,bonusEffiDate,bonusAmount) VALUES('" +
+                        this._bonusDefModel.GetBonusDefID() + "','" + this._bonusDefModel.GetBonusDefName() + "','" + this._bonusDefModel.GetBonusDefDesc() +
+                        "','" + this._bonusDefModel.GetBonusDefCreateDate().ToString("yyyy/MM/dd") + "','" + this._bonusDefModel.GetBonusDefEffiDate().ToString("yyyy/MM/dd") + "','" + this._bonusDefModel.GetBonusDefAmount() + "');");
                     MySqlCommand addCommand = new MySqlCommand(addString, myConnection);
                     addCommand.Connection = myConnection;
                     addCommand.ExecuteNonQuery();
@@ -61,8 +60,11 @@ namespace OOAD_HR_System.Service
                     return false;
                 }
             }
+
             this.closeConnection();
+
             return true;
         }
+
     }
 }

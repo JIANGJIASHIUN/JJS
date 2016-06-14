@@ -31,6 +31,9 @@ namespace OOAD_HR_System
         private DepartmentPresentationModel _deptPresentationModel = new DepartmentPresentationModel();
         private DepartmentController _deptController;
 
+        private BonusDefPresentationModel _bonusDefPresentationModel = new BonusDefPresentationModel();
+        private BonusDefController _bonusDefController;
+
         public _mainFunction(Form login)
         {
             _login = login;
@@ -928,6 +931,44 @@ namespace OOAD_HR_System
             this.ResetNewDeptUI();
             this.departmentTableAdapter.Fill(this.deptDataSet.department);
 
+        }
+
+        // 設置所有add bonus def 變數進presentationModel
+        private Boolean SetAllNewBonusDefVariableToPM()
+        {
+            String bonusDefID = _addBonusDefIDTB.Text;
+            String bonusDefName = _addBonusNameTB.Text;
+            String bonusDefDesc = _addBonusDefDescTB.Text;
+            DateTime bonusDefCreateDate = _addBonusDefCreateDateDTP.Value.Date;
+            DateTime bonusDefEffiDate = _addBonusDefEffiDateDTP.Value.Date;
+            float bonusDefAmount;
+            try
+            {
+                bonusDefAmount = System.Convert.ToSingle(_addBonusDefAmountTB.Text);
+            }
+            catch
+            {
+                MessageBox.Show("輸入的職位底薪不為數字, 請重新輸入!");
+                return false;
+            }
+
+            this._bonusDefPresentationModel.SetBonusDefID(bonusDefID);
+            this._bonusDefPresentationModel.SetBonusDefName(bonusDefName);
+            this._bonusDefPresentationModel.SetBonusDefDesc(bonusDefDesc);
+            this._bonusDefPresentationModel.SetBonusDefCreateDate(bonusDefCreateDate);
+            this._bonusDefPresentationModel.SetBonusDefEffiDate(bonusDefEffiDate);
+            this._bonusDefPresentationModel.SetBonusDefAmount(bonusDefAmount);
+            return true;
+        }
+
+        // 按下新增bonus def button
+        private void ClickAddBonusDefButton(object sender, EventArgs e)
+        {
+            if (SetAllNewBonusDefVariableToPM())
+            {
+                _bonusDefController = new BonusDefController(_bonusDefPresentationModel);
+                _bonusDefController.AddBonusDef();
+            }
         }
 
     }

@@ -79,7 +79,6 @@ namespace OOAD_HR_System.Controller
         public Boolean EditPosition()
         {
             this._positionService = new PositionService(this._positionModel);
-            int error_flag = 0;
             if (this._positionModel.GetName() == "")
             {
                 MessageBox.Show("請輸入職位名稱");
