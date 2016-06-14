@@ -10,7 +10,7 @@ namespace OOAD_HR_System.Class
     {
 
         private String _bonusDefID;
-        private String _bonusDefName;
+        private String _bonusDefName = null;
         private String _bonusDefDesc;
         private DateTime _bonusDefCreateDate;
         private DateTime _bonusDefEffiDate;

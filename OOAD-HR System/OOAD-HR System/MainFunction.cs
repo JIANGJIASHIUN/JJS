@@ -58,6 +58,39 @@ namespace OOAD_HR_System
             this.ResetEditAuthoUI();
             this.ResetNewWAUI();
             this.ResetEditWAUI();
+            this.ResetAddBonusDefUI();
+            this.ResetEditBonusDefUI();
+        }
+
+        // reset all edit bonus def UI
+        private void ResetEditBonusDefUI()
+        {
+            _editBonusDefIDTB.Enabled = true;
+            _editBonusDefIDTB.Text = "";
+            _editBonusDefNameTB.Enabled = false;
+            _editBonusDefNameTB.Text = "";
+            _editBonusDefDescTB.Text = "";
+            _editBonusDefDescTB.Enabled = false;
+            _editBonusDefCreateDateDTP.Value = DateTime.Now;
+            _editBonusDefCreateDateDTP.Enabled = false;
+            _editBonusDefEffiDateDTP.Value = DateTime.Now;
+            _editBonusDefEffiDateDTP.Enabled = false;
+            _editBonusDefAmountTB.Text = "0";
+            _editBonusDefAmountTB.Enabled = false;
+            _searchBonusDefButton.Enabled = true;
+            _editBonusDefButton.Enabled = false;
+        }
+
+        // reste all add bonus def UI
+        private void ResetAddBonusDefUI()
+        {
+            _addBonusDefIDTB.Text = "";
+            _addBonusNameTB.Text = "";
+            _addBonusDefDescTB.Text = "";
+            _addBonusDefCreateDateDTP.Value = DateTime.Now;
+            _addBonusDefEffiDateDTP.Value = DateTime.Now;
+            _addBonusDefAmountTB.Text = "0";
+            _addBonusDefButton.Enabled = true;
         }
 
         // reset all add work attendance UI
@@ -948,7 +981,7 @@ namespace OOAD_HR_System
             }
             catch
             {
-                MessageBox.Show("輸入的職位底薪不為數字, 請重新輸入!");
+                MessageBox.Show("輸入的獎金金額不為數字, 請重新輸入!");
                 return false;
             }
 
@@ -968,6 +1001,86 @@ namespace OOAD_HR_System
             {
                 _bonusDefController = new BonusDefController(_bonusDefPresentationModel);
                 _bonusDefController.AddBonusDef();
+            }
+        }
+
+        // reset all edit bonus def UI to enable
+        private void ResetAllEditUIToEnable()
+        {
+            _editBonusDefIDTB.Enabled = false;
+            _editBonusDefNameTB.Enabled = true;
+            _editBonusDefDescTB.Enabled = true;
+            _editBonusDefCreateDateDTP.Enabled = true;
+            _editBonusDefEffiDateDTP.Enabled = true;
+            _editBonusDefAmountTB.Enabled = true;
+            _searchBonusDefButton.Enabled = false;
+            _editBonusDefButton.Enabled = true;
+        }
+
+        // set all edit bonus def variable from presentationModel
+        private void SetAllEditBonusDefVariableFormPM()
+        {
+            _editBonusDefNameTB.Text = this._bonusDefPresentationModel.GetBonusDefName();
+            _editBonusDefDescTB.Text = this._bonusDefPresentationModel.GetBonusDefDesc();
+            _editBonusDefCreateDateDTP.Value = this._bonusDefPresentationModel.GetBonusDefCreateDate();
+            _editBonusDefEffiDateDTP.Value = this._bonusDefPresentationModel.GetBonusDefEffiDate();
+            _editBonusDefAmountTB.Text = this._bonusDefPresentationModel.GetBonusDefAmount().ToString();
+        }
+
+        // 按下搜尋bonus def button
+        private void ClickSearchBonusDefButton(object sender, EventArgs e)
+        {
+            String bonusDefID = _editBonusDefIDTB.Text;
+
+            this._bonusDefPresentationModel.SetBonusDefID(bonusDefID);
+
+            this._bonusDefController = new BonusDefController(this._bonusDefPresentationModel);
+
+            this._bonusDefPresentationModel = this._bonusDefController.SearchDataByBonusDefID();
+
+            if (this._bonusDefPresentationModel.GetBonusDefID() != null)
+            {
+                this.ResetAllEditUIToEnable();
+                this.SetAllEditBonusDefVariableFormPM();
+            }
+        }
+
+        // 設置所有edit bonus def 變數進presentationModel
+        private Boolean SetAllEditBonusDefVariableToPM()
+        {
+            String bonusDefID = _editBonusDefIDTB.Text;
+            String bonusDefName = _editBonusDefNameTB.Text;
+            String bonusDefDesc = _editBonusDefDescTB.Text;
+            DateTime bonusDefCreateDate = _editBonusDefCreateDateDTP.Value.Date;
+            DateTime bonusDefEffiDate = _editBonusDefEffiDateDTP.Value.Date;
+            float bonusDefAmount;
+            try
+            {
+                bonusDefAmount = System.Convert.ToSingle(_editBonusDefAmountTB.Text);
+            }
+            catch
+            {
+                MessageBox.Show("輸入的獎金金額不為數字, 請重新輸入!");
+                return false;
+            }
+
+            this._bonusDefPresentationModel.SetBonusDefID(bonusDefID);
+            this._bonusDefPresentationModel.SetBonusDefName(bonusDefName);
+            this._bonusDefPresentationModel.SetBonusDefDesc(bonusDefDesc);
+            this._bonusDefPresentationModel.SetBonusDefCreateDate(bonusDefCreateDate);
+            this._bonusDefPresentationModel.SetBonusDefEffiDate(bonusDefEffiDate);
+            this._bonusDefPresentationModel.SetBonusDefAmount(bonusDefAmount);
+            return true;
+        }
+
+        // 按下edit bonus def button
+        private void ClickEditBonusDefButton(object sender, EventArgs e)
+        {
+            this.SetAllEditBonusDefVariableToPM();
+            this._bonusDefController = new BonusDefController(this._bonusDefPresentationModel);
+            if (_bonusDefController.EditBonusDef())
+            {
+                this.ResetEditBonusDefUI();
             }
         }
 

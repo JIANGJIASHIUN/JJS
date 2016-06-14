@@ -228,6 +228,20 @@
             this._addBonusDefAmountLB = new System.Windows.Forms.Label();
             this._addBonusDefAmountTB = new System.Windows.Forms.TextBox();
             this._addBonusDefButton = new System.Windows.Forms.Button();
+            this._searchBonusDefButton = new System.Windows.Forms.Button();
+            this._editBonusDefAmountTB = new System.Windows.Forms.TextBox();
+            this._editBonusDefAmountLB = new System.Windows.Forms.Label();
+            this._editBonusDefEffiDateDTP = new System.Windows.Forms.DateTimePicker();
+            this._editBonusDefEffiDateLB = new System.Windows.Forms.Label();
+            this._editBonusDefCreateDateDTP = new System.Windows.Forms.DateTimePicker();
+            this._editBonusDefCreateDateLB = new System.Windows.Forms.Label();
+            this._editBonusDefDescTB = new System.Windows.Forms.TextBox();
+            this._editBonusDefDescLB = new System.Windows.Forms.Label();
+            this._editBonusDefNameTB = new System.Windows.Forms.TextBox();
+            this._editBonusDefNameLB = new System.Windows.Forms.Label();
+            this._editBonusDefIDTB = new System.Windows.Forms.TextBox();
+            this._editBonusDefIDLB = new System.Windows.Forms.Label();
+            this._editBonusDefButton = new System.Windows.Forms.Button();
             this._mainFunctionPage.SuspendLayout();
             this._employee.SuspendLayout();
             this._employeePage.SuspendLayout();
@@ -257,6 +271,7 @@
             this._newDepartment.SuspendLayout();
             this._bonusPage.SuspendLayout();
             this._addBonusDef.SuspendLayout();
+            this._editBonusDef.SuspendLayout();
             this.SuspendLayout();
             // 
             // _mainFunctionPage
@@ -2219,6 +2234,20 @@
             // 
             // _editBonusDef
             // 
+            this._editBonusDef.Controls.Add(this._editBonusDefButton);
+            this._editBonusDef.Controls.Add(this._searchBonusDefButton);
+            this._editBonusDef.Controls.Add(this._editBonusDefAmountTB);
+            this._editBonusDef.Controls.Add(this._editBonusDefAmountLB);
+            this._editBonusDef.Controls.Add(this._editBonusDefEffiDateDTP);
+            this._editBonusDef.Controls.Add(this._editBonusDefEffiDateLB);
+            this._editBonusDef.Controls.Add(this._editBonusDefCreateDateDTP);
+            this._editBonusDef.Controls.Add(this._editBonusDefCreateDateLB);
+            this._editBonusDef.Controls.Add(this._editBonusDefDescTB);
+            this._editBonusDef.Controls.Add(this._editBonusDefDescLB);
+            this._editBonusDef.Controls.Add(this._editBonusDefNameTB);
+            this._editBonusDef.Controls.Add(this._editBonusDefNameLB);
+            this._editBonusDef.Controls.Add(this._editBonusDefIDTB);
+            this._editBonusDef.Controls.Add(this._editBonusDefIDLB);
             this._editBonusDef.Location = new System.Drawing.Point(4, 34);
             this._editBonusDef.Name = "_editBonusDef";
             this._editBonusDef.Padding = new System.Windows.Forms.Padding(3);
@@ -2335,6 +2364,130 @@
             this._addBonusDefButton.UseVisualStyleBackColor = true;
             this._addBonusDefButton.Click += new System.EventHandler(this.ClickAddBonusDefButton);
             // 
+            // _searchBonusDefButton
+            // 
+            this._searchBonusDefButton.Location = new System.Drawing.Point(884, 588);
+            this._searchBonusDefButton.Name = "_searchBonusDefButton";
+            this._searchBonusDefButton.Size = new System.Drawing.Size(111, 36);
+            this._searchBonusDefButton.TabIndex = 25;
+            this._searchBonusDefButton.Text = "Search";
+            this._searchBonusDefButton.UseVisualStyleBackColor = true;
+            this._searchBonusDefButton.Click += new System.EventHandler(this.ClickSearchBonusDefButton);
+            // 
+            // _editBonusDefAmountTB
+            // 
+            this._editBonusDefAmountTB.Enabled = false;
+            this._editBonusDefAmountTB.Location = new System.Drawing.Point(785, 251);
+            this._editBonusDefAmountTB.Name = "_editBonusDefAmountTB";
+            this._editBonusDefAmountTB.Size = new System.Drawing.Size(210, 36);
+            this._editBonusDefAmountTB.TabIndex = 24;
+            this._editBonusDefAmountTB.Text = "0";
+            // 
+            // _editBonusDefAmountLB
+            // 
+            this._editBonusDefAmountLB.AutoSize = true;
+            this._editBonusDefAmountLB.Location = new System.Drawing.Point(626, 257);
+            this._editBonusDefAmountLB.Name = "_editBonusDefAmountLB";
+            this._editBonusDefAmountLB.Size = new System.Drawing.Size(152, 24);
+            this._editBonusDefAmountLB.TabIndex = 23;
+            this._editBonusDefAmountLB.Text = "Bonus Amount:";
+            // 
+            // _editBonusDefEffiDateDTP
+            // 
+            this._editBonusDefEffiDateDTP.Enabled = false;
+            this._editBonusDefEffiDateDTP.Location = new System.Drawing.Point(795, 142);
+            this._editBonusDefEffiDateDTP.Name = "_editBonusDefEffiDateDTP";
+            this._editBonusDefEffiDateDTP.Size = new System.Drawing.Size(200, 36);
+            this._editBonusDefEffiDateDTP.TabIndex = 22;
+            // 
+            // _editBonusDefEffiDateLB
+            // 
+            this._editBonusDefEffiDateLB.AutoSize = true;
+            this._editBonusDefEffiDateLB.Location = new System.Drawing.Point(622, 154);
+            this._editBonusDefEffiDateLB.Name = "_editBonusDefEffiDateLB";
+            this._editBonusDefEffiDateLB.Size = new System.Drawing.Size(167, 24);
+            this._editBonusDefEffiDateLB.TabIndex = 21;
+            this._editBonusDefEffiDateLB.Text = "Efficacious Date:";
+            // 
+            // _editBonusDefCreateDateDTP
+            // 
+            this._editBonusDefCreateDateDTP.Enabled = false;
+            this._editBonusDefCreateDateDTP.Location = new System.Drawing.Point(751, 48);
+            this._editBonusDefCreateDateDTP.Name = "_editBonusDefCreateDateDTP";
+            this._editBonusDefCreateDateDTP.Size = new System.Drawing.Size(200, 36);
+            this._editBonusDefCreateDateDTP.TabIndex = 20;
+            // 
+            // _editBonusDefCreateDateLB
+            // 
+            this._editBonusDefCreateDateLB.AutoSize = true;
+            this._editBonusDefCreateDateLB.Location = new System.Drawing.Point(622, 60);
+            this._editBonusDefCreateDateLB.Name = "_editBonusDefCreateDateLB";
+            this._editBonusDefCreateDateLB.Size = new System.Drawing.Size(123, 24);
+            this._editBonusDefCreateDateLB.TabIndex = 19;
+            this._editBonusDefCreateDateLB.Text = "Create Date:";
+            // 
+            // _editBonusDefDescTB
+            // 
+            this._editBonusDefDescTB.Enabled = false;
+            this._editBonusDefDescTB.Location = new System.Drawing.Point(241, 249);
+            this._editBonusDefDescTB.Multiline = true;
+            this._editBonusDefDescTB.Name = "_editBonusDefDescTB";
+            this._editBonusDefDescTB.Size = new System.Drawing.Size(281, 375);
+            this._editBonusDefDescTB.TabIndex = 18;
+            // 
+            // _editBonusDefDescLB
+            // 
+            this._editBonusDefDescLB.AutoSize = true;
+            this._editBonusDefDescLB.Location = new System.Drawing.Point(52, 252);
+            this._editBonusDefDescLB.Name = "_editBonusDefDescLB";
+            this._editBonusDefDescLB.Size = new System.Drawing.Size(183, 24);
+            this._editBonusDefDescLB.TabIndex = 17;
+            this._editBonusDefDescLB.Text = "Bonus Description:";
+            // 
+            // _editBonusDefNameTB
+            // 
+            this._editBonusDefNameTB.Enabled = false;
+            this._editBonusDefNameTB.Location = new System.Drawing.Point(188, 148);
+            this._editBonusDefNameTB.Name = "_editBonusDefNameTB";
+            this._editBonusDefNameTB.Size = new System.Drawing.Size(334, 36);
+            this._editBonusDefNameTB.TabIndex = 16;
+            // 
+            // _editBonusDefNameLB
+            // 
+            this._editBonusDefNameLB.AutoSize = true;
+            this._editBonusDefNameLB.Location = new System.Drawing.Point(48, 154);
+            this._editBonusDefNameLB.Name = "_editBonusDefNameLB";
+            this._editBonusDefNameLB.Size = new System.Drawing.Size(133, 24);
+            this._editBonusDefNameLB.TabIndex = 15;
+            this._editBonusDefNameLB.Text = "Bonus Name:";
+            // 
+            // _editBonusDefIDTB
+            // 
+            this._editBonusDefIDTB.Location = new System.Drawing.Point(254, 48);
+            this._editBonusDefIDTB.Name = "_editBonusDefIDTB";
+            this._editBonusDefIDTB.Size = new System.Drawing.Size(268, 36);
+            this._editBonusDefIDTB.TabIndex = 14;
+            // 
+            // _editBonusDefIDLB
+            // 
+            this._editBonusDefIDLB.AutoSize = true;
+            this._editBonusDefIDLB.Location = new System.Drawing.Point(48, 60);
+            this._editBonusDefIDLB.Name = "_editBonusDefIDLB";
+            this._editBonusDefIDLB.Size = new System.Drawing.Size(200, 24);
+            this._editBonusDefIDLB.TabIndex = 13;
+            this._editBonusDefIDLB.Text = "Bonus Definition ID:";
+            // 
+            // _editBonusDefButton
+            // 
+            this._editBonusDefButton.Enabled = false;
+            this._editBonusDefButton.Location = new System.Drawing.Point(1030, 588);
+            this._editBonusDefButton.Name = "_editBonusDefButton";
+            this._editBonusDefButton.Size = new System.Drawing.Size(111, 36);
+            this._editBonusDefButton.TabIndex = 26;
+            this._editBonusDefButton.Text = "Edit";
+            this._editBonusDefButton.UseVisualStyleBackColor = true;
+            this._editBonusDefButton.Click += new System.EventHandler(this.ClickEditBonusDefButton);
+            // 
             // _mainFunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -2385,6 +2538,8 @@
             this._bonusPage.ResumeLayout(false);
             this._addBonusDef.ResumeLayout(false);
             this._addBonusDef.PerformLayout();
+            this._editBonusDef.ResumeLayout(false);
+            this._editBonusDef.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2590,5 +2745,19 @@
         private System.Windows.Forms.Label _addBonusDefAmountLB;
         private System.Windows.Forms.TextBox _addBonusDefAmountTB;
         private System.Windows.Forms.Button _addBonusDefButton;
+        private System.Windows.Forms.Button _editBonusDefButton;
+        private System.Windows.Forms.Button _searchBonusDefButton;
+        private System.Windows.Forms.TextBox _editBonusDefAmountTB;
+        private System.Windows.Forms.Label _editBonusDefAmountLB;
+        private System.Windows.Forms.DateTimePicker _editBonusDefEffiDateDTP;
+        private System.Windows.Forms.Label _editBonusDefEffiDateLB;
+        private System.Windows.Forms.DateTimePicker _editBonusDefCreateDateDTP;
+        private System.Windows.Forms.Label _editBonusDefCreateDateLB;
+        private System.Windows.Forms.TextBox _editBonusDefDescTB;
+        private System.Windows.Forms.Label _editBonusDefDescLB;
+        private System.Windows.Forms.TextBox _editBonusDefNameTB;
+        private System.Windows.Forms.Label _editBonusDefNameLB;
+        private System.Windows.Forms.TextBox _editBonusDefIDTB;
+        private System.Windows.Forms.Label _editBonusDefIDLB;
     }
 }
