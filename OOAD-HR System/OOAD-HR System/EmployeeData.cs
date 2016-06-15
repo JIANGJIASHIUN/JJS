@@ -25,9 +25,9 @@ namespace OOAD_HR_System
             _employeePresentationModel.SetEmplID(emplID);
             _employeePresentationModel.SetEmplLoginPassword(password);
             
-            this.SetAllEmplDataToUI();
-            
             InitializeComponent();
+
+            this.SetAllEmplDataToUI();
         }
 
         // 查詢該員工資料並將資料填進UI中
