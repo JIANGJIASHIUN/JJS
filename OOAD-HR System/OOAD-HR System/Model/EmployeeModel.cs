@@ -11,6 +11,7 @@ namespace OOAD_HR_System.Model
     {
 
         private EmployeeClass _employee = new EmployeeClass();
+        private String _emplLoginPassword;
 
         // 建構子
         public EmployeeModel()
@@ -220,6 +221,18 @@ namespace OOAD_HR_System.Model
         public String GetPositionID()
         {
             return this._employee.GetPositionId();
+        }
+
+        // 設置員工登入密碼
+        public void SetEmplLoginPassword(String loginPW)
+        {
+            this._emplLoginPassword = loginPW;
+        }
+
+        // 取得員工登入密碼
+        public String GetEmplLoginPassword()
+        {
+            return this._emplLoginPassword;
         }
 
     }

@@ -349,6 +349,8 @@ namespace OOAD_HR_System
             if (_newEmplPositionCB.SelectedValue != null)
                 positionID = _newEmplPositionCB.SelectedValue.ToString();
 
+            String emplLoginPW = _addEmplLoginPWTB.Text;
+
             _employeePresentationModel.SetEmplID(emplID);
             _employeePresentationModel.SetName(emplName);
             _employeePresentationModel.SetSsn(ssn);
@@ -366,6 +368,7 @@ namespace OOAD_HR_System
             _employeePresentationModel.SetBasicSalary(basicSalary);
             _employeePresentationModel.SetDeptID(deptID);
             _employeePresentationModel.SetPositoinID(positionID);
+            _employeePresentationModel.SetEmplLoginPassword(emplLoginPW);
         }
 
         // 將UI上的empl變數存入presentationModel中(edit)

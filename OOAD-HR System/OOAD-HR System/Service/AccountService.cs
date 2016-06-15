@@ -14,10 +14,13 @@ namespace OOAD_HR_System.Service
 
         private MySqlConnection myConnection = new MySqlConnection("server=csie-noip.ddns.net;user id=hrms; password=hrms; database=hrms; CharSet=utf8");
         private LoginModel _loginModel = new LoginModel();
+        private String _account;
+        private String _password;
 
-        public AccountService()
+        public AccountService(String account, String password)
         {
-
+            this._account = account;
+            this._password = password;
         }
 
         // 建立與資料庫連線
@@ -40,15 +43,40 @@ namespace OOAD_HR_System.Service
             myConnection.Close();
         }
 
+        // 新增帳號至資料庫表單
+        public Boolean AddAccount()
+        {
+            if (this.connectToDB())
+            {
+                try
+                {
+                    String addString = String.Format("INSERT INTO account (account,password) VALUES('" +
+                        this._account + "','" + this._password + "');");
+                    MySqlCommand addCommand = new MySqlCommand(addString, myConnection);
+                    addCommand.Connection = myConnection;
+                    addCommand.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
+                    return false;
+                }
+            }
+
+            this.closeConnection();
+
+            return true;
+        }
+
         // 以輸入員工ID搜尋帳號密碼
-        public LoginModel searchByAccount(String account)
+        public LoginModel searchByAccount()
         {
             if (this.connectToDB())
             {
                 try {
                     DataTable dataSet = new DataTable();
 
-                    String searchString = String.Format("SELECT * FROM account WHERE account = '" + account + "'");
+                    String searchString = String.Format("SELECT * FROM account WHERE account = '" + _account + "'");
                     MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
                     searchCommand.ExecuteNonQuery();
 

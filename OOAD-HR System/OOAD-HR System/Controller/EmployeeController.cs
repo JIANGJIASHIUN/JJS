@@ -40,6 +40,7 @@ namespace OOAD_HR_System.Controller
             this._employeeModel.SetDeptID(employeePresentationModel.GetDeptID());
             this._employeeModel.SetPositoinID(employeePresentationModel.GetPositionID());
             this._employeeModel.SetBasicSalary(employeePresentationModel.GetBasicSalary());
+            this._employeeModel.SetEmplLoginPassword(employeePresentationModel.GetEmplLoginPassword());
         }
 
         // 判斷各個員工資料格式是否錯誤
@@ -48,7 +49,7 @@ namespace OOAD_HR_System.Controller
             int errorFlag = 0;
 
             if (this._employeeModel.GetEmplID() == "" || this._employeeModel.GetName() == "" || this._employeeModel.GetSsn() == "" || this._employeeModel.GetPhone() == "" ||
-                this._employeeModel.GetAddress() == "" || this._employeeModel.GetEmerPerson() == "" || this._employeeModel.GetEmerPhone() == "" ||
+                this._employeeModel.GetAddress() == "" || this._employeeModel.GetEmerPerson() == "" || this._employeeModel.GetEmerPhone() == "" || this._employeeModel.GetEmplLoginPassword() == "" ||
                 (this._employeeModel.GetMarriedStatus() == "已婚" && this._employeeModel.GetSpouse() == ""))
             {
                 MessageBox.Show("尚有欄位為空白, 請重新確認是否填寫完畢!");
@@ -85,6 +86,7 @@ namespace OOAD_HR_System.Controller
         public void AddEmployee()
         {
             this._employeeService = new EmployeeService(this._employeeModel);
+            AccountService accountService = new AccountService(this._employeeModel.GetEmplID(), this._employeeModel.GetEmplLoginPassword());
 
             int errorFlag = 0;
 
@@ -93,7 +95,8 @@ namespace OOAD_HR_System.Controller
             if (errorFlag == 1)
                 return;
 
-            if (_employeeService.AddEmployee())
+            // 新增員工資料與帳號資訊
+            if (_employeeService.AddEmployee() && accountService.AddAccount())
                 MessageBox.Show("新增成功!");
             else
                 MessageBox.Show("新增失敗!");

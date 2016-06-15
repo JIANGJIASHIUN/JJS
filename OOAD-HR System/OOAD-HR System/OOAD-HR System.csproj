@@ -90,6 +90,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>deptDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="emplDeptDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emplDeptDataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeData.Designer.cs">
+      <DependentUpon>EmployeeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="emplPositionDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>emplPositionDataDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +148,9 @@
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\PositionService.cs" />
     <Compile Include="Service\WorkAttendanceService.cs" />
+    <EmbeddedResource Include="EmployeeData.resx">
+      <DependentUpon>EmployeeData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +199,28 @@
     </None>
     <None Include="deptDataSet.xss">
       <DependentUpon>deptDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="emplDeptDataDataSet.xsc">
+      <DependentUpon>emplDeptDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="emplDeptDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>emplDeptDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="emplDeptDataDataSet.xss">
+      <DependentUpon>emplDeptDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="emplPositionDataDataSet.xsc">
+      <DependentUpon>emplPositionDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="emplPositionDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>emplPositionDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="emplPositionDataDataSet.xss">
+      <DependentUpon>emplPositionDataDataSet.xsd</DependentUpon>
     </None>
     <None Include="positionDataSet.xsc">
       <DependentUpon>positionDataSet.xsd</DependentUpon>

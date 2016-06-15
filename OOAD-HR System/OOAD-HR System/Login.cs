@@ -14,7 +14,7 @@ namespace OOAD_HR_System
     public partial class _login : Form
     {
 
-        private Form _mainFunction;
+        private Form _nextForm;
         private LoginController _loginController = new LoginController();
 
         public _login()
@@ -27,10 +27,17 @@ namespace OOAD_HR_System
             String emplID = _employeeID.Text;
             String password = _password.Text;
 
-            if (_loginController.judgeAccountAndPassword(emplID, password))
+            int authoValue = _loginController.judgeAccountAndPassword(emplID, password);
+            if (authoValue > 0)
             {
-                _mainFunction = new _mainFunction(this);
-                _mainFunction.Show();
+                _nextForm = new _mainFunction(this);
+                _nextForm.Show();
+                this.Visible = false;
+            }
+            else if(authoValue == 0)
+            {
+                _nextForm = new EmployeeData(this, emplID, password);
+                _nextForm.Show();
                 this.Visible = false;
             }
         }
