@@ -65,6 +65,7 @@ namespace OOAD_HR_System
             this.ResetEditWAUI();
             this.ResetAddBonusDefUI();
             this.ResetEditBonusDefUI();
+            this.ResetEditDeptUI();
         }
 
         // reset all edit bonus def UI
@@ -233,12 +234,29 @@ namespace OOAD_HR_System
             _editEmplPositionCB.SelectedValue = _employeePresentationModel.GetPositionID();
         }
 
+        // reset all new Department UI
         private void ResetNewDeptUI()
         {
             _newDeptIDTB.Text = "";
             _newDeptNameTB.Text = "";
             _newDeptTimeDP.Value = DateTime.Now;
             _newDeptManTB.Text = "";
+        }
+
+        // reset all edit Department UI
+        private void ResetEditDeptUI()
+        {
+            _editDeptIDTB.Text = "";
+            _editDeptIDTB.Enabled = true;
+            _editDeptNameTB.Text = "";
+            _editDeptNameTB.Enabled = false;
+            _editDeptStartTimeDP.Value = DateTime.Now;
+            _editDeptStartTimeDP.Enabled = false;
+            _editDeptCheckCB.Enabled = false;
+            _editDeptEndTimeLB.Visible = false;
+            _editDeptEndTimeDP.Visible = false;
+            _editDeptManTB.Text = "";
+            _editDeptManTB.Enabled = false;
         }
 
         // 按下登出鍵
@@ -1112,5 +1130,105 @@ namespace OOAD_HR_System
             _bonusController.AddBonus();
         }
 
+        private void SetAllDeptEditToEnable()
+        {
+            _editDeptIDTB.Enabled = false;
+            _editDeptNameTB.Enabled = true;
+            _editDeptStartTimeDP.Enabled = true;
+            _editDeptCheckCB.Enabled = true;
+            if (_deptPresentationModel.getDepartmentEndTime().ToString() == "1753/1/1 上午 12:00:00")
+                _editDeptEndTimeDP.Visible = false;
+            else
+            {
+                _editDeptEndTimeLB.Visible = true;
+                _editDeptEndTimeDP.Visible = true;
+            }
+            _editDeptManTB.Enabled = true;
+        }
+
+        // 查詢後dept UI放入資料
+        private void ResetSearchEditDeptUI()
+        {
+            _editDeptNameTB.Text = _deptPresentationModel.getDepartmentName();
+            _editDeptStartTimeDP.Value = _deptPresentationModel.getDepartmentStartTime();
+            if (_deptPresentationModel.getDepartmentEndTime().ToString() == "1753/1/1 上午 12:00:00")
+                _editDeptCheckCB.SelectedIndex = 0;
+            else
+            {
+                _editDeptCheckCB.SelectedIndex = 1;
+                _editDeptEndTimeDP.Value = _deptPresentationModel.getDepartmentEndTime();
+            }
+            _editDeptEndTimeDefDP.Value = _editDeptEndTimeDefDP.MinDate;
+            _editDeptManTB.Text = _deptPresentationModel.getDepartmentManager();
+        }
+
+        private void ClickSearchDeptButton(object sender, EventArgs e)
+        {
+            String deptID = _editDeptIDTB.Text;
+            _deptPresentationModel.setDepartmentID(deptID);
+
+            _deptController = new DepartmentController(_deptPresentationModel);
+            _deptPresentationModel = _deptController.SearchDepartmentByID();
+
+            if (_deptPresentationModel.getDepartmentID() == null || _deptPresentationModel.getDepartmentID() == "")
+                return;
+
+            this.SetAllDeptEditToEnable();
+            this.ResetSearchEditDeptUI();
+        }
+
+        private void ChangedEditDeptCheckCBSelectedIndex(object sender, EventArgs e)
+        {
+            // 1/NO：terminated
+            if (_editDeptCheckCB.SelectedIndex == 1)
+            {
+                _editDeptEndTimeLB.Visible = true;
+                _editDeptEndTimeDP.Visible = true;
+                _editDeptEndTimeDP.Enabled = true;
+                DateTime temp = _editDeptEndTimeDP.Value;
+                _editDeptEndTimeDP.Value = _editDeptEndTimeDefDP.Value;
+                _editDeptEndTimeDefDP.Value = temp;
+            }
+            // 0/YES：still operating
+            else if (_editDeptCheckCB.SelectedIndex == 0)
+            {
+                _editDeptEndTimeLB.Visible = false;
+                _editDeptEndTimeDP.Visible = false;
+                _editDeptEndTimeDP.Enabled = false;
+                DateTime temp = _editDeptEndTimeDP.Value;
+                _editDeptEndTimeDP.Value = _editDeptEndTimeDefDP.Value;
+                _editDeptEndTimeDefDP.Value = temp;
+            }
+        }
+
+        private void ClickEditDeptButton(object sender, EventArgs e)
+        {
+            this.SetAllEditDeptVariableToPM();
+            _deptController = new DepartmentController(_deptPresentationModel);
+            if(_deptController.editDepartment())
+            {
+                this.setAllDeptEditToNotEnable();
+                this.ResetEditDeptUI();
+            }
+        }
+
+        private void SetAllEditDeptVariableToPM()
+        {
+            String deptID = _editDeptIDTB.Text;
+            String deptName = _editDeptNameTB.Text;
+            DateTime deptStartTime = _editDeptStartTimeDP.Value;
+            DateTime deptEndTime = _editDeptEndTimeDP.Value;
+            String deptMan = _editDeptManTB.Text;
+
+            this._deptPresentationModel.setDepartmentID(deptID);
+            this._deptPresentationModel.setDepartmentName(deptName);
+            this._deptPresentationModel.setDepartmentStartTime(deptStartTime);
+            this._deptPresentationModel.setDepartmentEndTime(deptEndTime);
+            this._deptPresentationModel.setDepartmentManager(deptMan);
+        }
+        private void setAllDeptEditToNotEnable()
+        {
+
+        }
     }
 }

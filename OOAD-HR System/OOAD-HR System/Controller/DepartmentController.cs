@@ -45,5 +45,57 @@ namespace OOAD_HR_System.Controller
             else
                 MessageBox.Show("新增失敗!");
         }
+
+        // 呼叫service利用departmentID查詢dept資料
+        public DepartmentPresentationModel SearchDepartmentByID()
+        {
+            DepartmentPresentationModel deptPresentModel = new DepartmentPresentationModel();
+
+            if (this._deptModel.getDepartmentID() == null || _deptModel.getDepartmentID() == "")
+                MessageBox.Show("請輸入部門ID");
+            else
+            {
+                _deptService = new DepartmentService(this._deptModel);
+                _deptModel = _deptService.searchByDeptID();
+
+                deptPresentModel.setDepartmentID(_deptModel.getDepartmentID());
+                deptPresentModel.setDepartmentName(_deptModel.getDepartmentName());
+                deptPresentModel.setDepartmentStartTime(_deptModel.getDepartmentStartTime());
+                deptPresentModel.setDepartmentEndTime(_deptModel.getDepartmentEndTime());
+                deptPresentModel.setDepartmentManager(_deptModel.getDepartmentManager());
+
+                if(_deptModel.getDepartmentName() == null || _deptModel.getDepartmentName() == "")
+                {
+                    MessageBox.Show("此部門ID不存在!");
+                    deptPresentModel.setDepartmentID(null);
+                }
+            }
+            return deptPresentModel;
+        }
+
+        // 呼叫service, 將資料新增至資料庫(edit)
+        public Boolean editDepartment()
+        {
+            this._deptService = new DepartmentService(this._deptModel);
+            if(this._deptModel.getDepartmentName() == "")
+            {
+                MessageBox.Show("請輸入部門名稱");
+                return false;
+            }
+            else if(this._deptModel.getDepartmentManager() == "")
+            {
+                MessageBox.Show("請輸入部門主管名稱");
+                return false;
+            }
+
+            if(_deptService.EditDepartment())
+                MessageBox.Show("修改成功");
+            else
+            {
+                MessageBox.Show("修改失敗");
+                return false;
+            }
+            return true;
+        }
     }
 }
