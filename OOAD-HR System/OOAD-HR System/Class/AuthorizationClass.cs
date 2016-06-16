@@ -22,37 +22,37 @@ namespace OOAD_HR_System.Class
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
         // ---------------------------------------------設置id---------------------------------------------
-        public void setId(String newAuthodID)
+        public void SetId(String newAuthodID)
         {
             this._authoID = newAuthodID;
         }
 
         // ---------------------------------------------取得id---------------------------------------------
-        public String getId()
+        public String GetId()
         {
             return this._authoID;
         }
 
         // ---------------------------------------------設置名稱---------------------------------------------
-        public void setName(String authoName)
+        public void SetName(String authoName)
         {
             this._authoName = authoName;
         }
 
         // ---------------------------------------------取得名稱---------------------------------------------
-        public String getName()
+        public String GetName()
         {
             return this._authoName;
         }
 
         //  ---------------------------------------------設置數值---------------------------------------------
-        public void setValue(String authoValue)
+        public void SetValue(String authoValue)
         {
             this._authoValue = authoValue;
         }
 
         // ---------------------------------------------取得數值---------------------------------------------
-        public String getValue()
+        public String GetValue()
         {
             return this._authoValue;
         }

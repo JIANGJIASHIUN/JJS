@@ -49,8 +49,8 @@ namespace OOAD_HR_System.Service
                 try
                 {
                     String addString = String.Format("INSERT INTO department(departmentID,departmentName,departmentStartTime,departmentEndTime,departmentManager) VALUES('" +
-                        this._deptModel.getDepartmentID() + "','" + this._deptModel.getDepartmentName() + "','" + this._deptModel.getDepartmentStartTime() + 
-                        "','" + this._deptModel.getDepartmentEndTime() + "','" + this._deptModel.getDepartmentManager() + "');");
+                        this._deptModel.GetDepartmentID() + "','" + this._deptModel.GetDepartmentName() + "','" + this._deptModel.GetDepartmentStartTime() + 
+                        "','" + this._deptModel.GetDepartmentEndTime() + "','" + this._deptModel.GetDepartmentManager() + "');");
                     MySqlCommand addCommand = new MySqlCommand(addString, myConnection);
                     addCommand.Connection = myConnection;
                     addCommand.ExecuteNonQuery();
@@ -74,7 +74,7 @@ namespace OOAD_HR_System.Service
                 {
                     DataTable dataset = new DataTable();
 
-                    String searchString = String.Format("SELECT * FROM department WHERE departmentID = '" + this._deptModel.getDepartmentID() + "'");
+                    String searchString = String.Format("SELECT * FROM department WHERE departmentID = '" + this._deptModel.GetDepartmentID() + "'");
                     MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
                     searchCommand.ExecuteNonQuery();
 
@@ -83,10 +83,10 @@ namespace OOAD_HR_System.Service
 
                     foreach (DataRow searchDr in dataset.Rows)
                     {
-                        _deptModel.setDepartmentName(searchDr["departmentName"].ToString());
-                        _deptModel.setDepartmentStartTime(System.Convert.ToDateTime(searchDr["departmentStartTime"]));
-                        _deptModel.setDepartmentEndTime(System.Convert.ToDateTime(searchDr["departmentEndTime"]));
-                        _deptModel.setDepartmentManager(searchDr["departmentManager"].ToString());
+                        _deptModel.SetDepartmentName(searchDr["departmentName"].ToString());
+                        _deptModel.SetDepartmentStartTime(System.Convert.ToDateTime(searchDr["departmentStartTime"]));
+                        _deptModel.SetDepartmentEndTime(System.Convert.ToDateTime(searchDr["departmentEndTime"]));
+                        _deptModel.SetDepartmentManager(searchDr["departmentManager"].ToString());
                     }
                 }
                 catch (MySqlException ex)
@@ -105,9 +105,9 @@ namespace OOAD_HR_System.Service
             {
                 try
                 {
-                    String addString = String.Format("UPDATE department SET departmentName='" + this._deptModel.getDepartmentName() +
-                        "',departmentStartTime='" + this._deptModel.getDepartmentStartTime() + "',departmentEndTime='" + this._deptModel.getDepartmentEndTime() +
-                        "',departmentManager='" + _deptModel.getDepartmentManager() + "' WHERE departmentID='" + this._deptModel.getDepartmentID() +
+                    String addString = String.Format("UPDATE department SET departmentName='" + this._deptModel.GetDepartmentName() +
+                        "',departmentStartTime='" + this._deptModel.GetDepartmentStartTime() + "',departmentEndTime='" + this._deptModel.GetDepartmentEndTime() +
+                        "',departmentManager='" + _deptModel.GetDepartmentManager() + "' WHERE departmentID='" + this._deptModel.GetDepartmentID() +
                         "';");
                     MySqlCommand updateCommand = new MySqlCommand(addString, myConnection);
                     updateCommand.Connection = myConnection;
