@@ -99,5 +99,29 @@ namespace OOAD_HR_System.Service
 
             return this._salaryModel;
         }
+
+        // 更新薪資支付資料至資料庫
+        public Boolean EditPayway()
+        {
+            if (this.connectToDB())
+            {
+                try
+                {
+                    String addString = String.Format("UPDATE salary SET salaryPayWay='" + this._salaryModel.getPayway() +
+                        "',accountData='" + this._salaryModel.getAccountData() + "' WHERE emplID='" +
+                        this._salaryModel.getEmplID() + "';");
+                    MySqlCommand updateCommand = new MySqlCommand(addString, myConnection);
+                    updateCommand.Connection = myConnection;
+                    updateCommand.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
+                    return false;
+                }
+            }
+            this.closeConnection();
+            return true;
+        }
     }
 }

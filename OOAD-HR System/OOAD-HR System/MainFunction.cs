@@ -73,6 +73,8 @@ namespace OOAD_HR_System
             this.ResetEditBonusDefUI();
             this.ResetEditDeptUI();
             this.ResetNewPaywayUI();
+            this.ResetEditPaywayUI();
+            this.ResetEditPaywayVariable();
         }
 
         // reset all edit bonus def UI
@@ -1308,6 +1310,7 @@ namespace OOAD_HR_System
 
             _salaryController = new SalaryController(_salaryPresentationModel);
             _salaryController.AddPayway();
+            this.ResetNewPaywayUI();
         }
 
         private void ChangedAddPaywayMethodCBSelectedIndex(object sender, EventArgs e)
@@ -1326,6 +1329,7 @@ namespace OOAD_HR_System
             }
         }
 
+<<<<<<< HEAD
         // 設置所有產生薪資單UI變數至presnetationModel
         private void SetAllProduceSalaryVariableToPM()
         {
@@ -1345,6 +1349,97 @@ namespace OOAD_HR_System
             
             _produceController = new ProduceSalaryController(this._produceSalaryPM);
             _produceController.ProduceSalary();
+=======
+        private void ResetEditPaywayUI()
+        {
+            _editPaywayEmplIDTB.Enabled = true;
+            _editPaywayMethodCB.Enabled = false;
+            _editPaywayAccountTB.Enabled = false;
+            _paywayEditButton.Enabled = false;
+        }
+
+        private void SetEditPaywayUIToEnable()
+        {
+            _editPaywayEmplIDTB.Enabled = false;
+            _editPaywayMethodCB.Enabled = true;
+            _paywayEditButton.Enabled = true;
+
+        }
+
+        private void ClickPaywaySearchButton(object sender, EventArgs e)
+        {
+            String emplID = _editPaywayEmplIDTB.Text;
+            _salaryPresentationModel.setEmplID(emplID);
+
+            _salaryController = new SalaryController(_salaryPresentationModel);
+            _salaryPresentationModel = _salaryController.SearchDataByEmplID();
+
+            if (_salaryPresentationModel.getEmplID() == null || _salaryPresentationModel.getEmplID() == "")
+                return;
+
+            ResetSearchEditPaywayUI();
+            SetEditPaywayUIToEnable();
+        }
+
+        private void ResetSearchEditPaywayUI()
+        {
+            _editPaywayMethodCB.SelectedItem = _salaryPresentationModel.getPayway();
+            if (_editPaywayMethodCB.SelectedIndex == 0)
+            {
+                _editPaywayAccountTB.Text = "";
+                _editPaywayAccountTB.Visible = false;
+            }
+            else
+                _editPaywayAccountTB.Text = _salaryPresentationModel.getAccountData();
+        }
+
+        private void ChangededitPaywayMethodCBSelectedIndex(object sender, EventArgs e)
+        {
+            if (_editPaywayMethodCB.SelectedIndex == 0)
+            {
+                _editPaywayAccountLB.Visible = false;
+                _editPaywayAccountTB.Visible = false;
+                _editPaywayAccountTB.Enabled = false;
+            }
+            else if (_editPaywayMethodCB.SelectedIndex == 1)
+            {
+                _editPaywayAccountLB.Visible = true;
+                _editPaywayAccountTB.Visible = true;
+                _editPaywayAccountTB.Enabled = true;
+            }
+        }
+
+        private void SetAllEditPaywayVariableToPM()
+        {
+            String emplID = _editPaywayEmplIDTB.Text;
+            String payMethod = _editPaywayMethodCB.SelectedItem.ToString();
+            String payAccount = _editPaywayAccountTB.Text;
+
+            this._salaryPresentationModel.setEmplID(emplID);
+            this._salaryPresentationModel.setPayway(payMethod);
+            if (_editPaywayMethodCB.SelectedItem.ToString() == "Transfer")
+                this._salaryPresentationModel.setAccountData(payAccount);
+            else if (_editPaywayMethodCB.SelectedItem.ToString() == "In Person")
+                this._salaryPresentationModel.setAccountData(null);
+        }
+
+        private void ResetEditPaywayVariable()
+        {
+            _editPaywayEmplIDTB.Text = "";
+            _editPaywayMethodCB.SelectedIndex = 0;
+            _editPaywayAccountTB.Text = "";
+        }
+
+        private void ClickPaywayEditButton(object sender, EventArgs e)
+        {
+            this.SetAllEditPaywayVariableToPM();
+            _salaryController = new SalaryController(_salaryPresentationModel);
+            if (_salaryController.editPayway())
+            {
+                this.ResetEditPaywayVariable();
+                this.ResetEditPaywayUI();
+            }
+>>>>>>> origin/master
         }
     }
 }

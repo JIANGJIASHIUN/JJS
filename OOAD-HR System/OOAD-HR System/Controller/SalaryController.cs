@@ -31,33 +31,20 @@ namespace OOAD_HR_System.Controller
         public void AddPayway()
         {
             this._salaryService = new SalaryService(_salaryModel);
-            SalaryPresentationModel salaryPresentModel = new SalaryPresentationModel();
+            //SalaryPresentationModel salaryPresentationModel = new SalaryPresentationModel();
             int errorFlag = 0;
             if(this._salaryModel.getEmplID() == "" ||(this._salaryModel.getPayway() == "Transfer" && this._salaryModel.getAccountData() ==""))
             {
                 MessageBox.Show("尚有重要資料欄位為空白, 請重新確認");
                 errorFlag = 1;
             }
-            else
-            {
-                _salaryModel = _salaryService.searchByEmplID();
-
-                salaryPresentModel.setEmplID(_salaryModel.getEmplID());
-
-                if(_salaryModel.getEmplID() == null ||_salaryModel.getEmplID() == "")
-                {
-                    MessageBox.Show("資料庫內已有該員工轉帳資料");
-                    errorFlag = 1;
-                }
-            }
-
             if (errorFlag == 1)
                 return;
 
             if (_salaryService.addPayway())
                 MessageBox.Show("新增成功!");
             else
-                MessageBox.Show("新增失敗!");
+                MessageBox.Show("資料庫內已有該員工支付資料");
         }
 
         // 以員工ID搜尋支付資料
@@ -76,7 +63,7 @@ namespace OOAD_HR_System.Controller
                 salaryPresentationModel.setPayway(_salaryModel.getPayway());
                 salaryPresentationModel.setAccountData(_salaryModel.getAccountData());
 
-                if (_salaryModel.getEmplID() == null || _salaryModel.getEmplID() == "")
+                if (_salaryModel.getPayway() == null || _salaryModel.getPayway() == "")
                 {
                     MessageBox.Show("此員工ID不存在!");
                     //MessageBox.Show(_authoModel.GetAuthoID());
@@ -85,5 +72,19 @@ namespace OOAD_HR_System.Controller
             }
             return salaryPresentationModel;
         }
+        // 呼叫service, 將資料更新至資料庫
+        public Boolean editPayway()
+        {
+            this._salaryService = new SalaryService(this._salaryModel);
+            if (_salaryService.EditPayway())
+                MessageBox.Show("修改成功");
+            else
+            {
+                MessageBox.Show("修改失敗");
+                return false;
+            }
+            return true;
+        }
+
     }
 }
