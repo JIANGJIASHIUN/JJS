@@ -157,5 +157,58 @@ namespace OOAD_HR_System.Service
             return this._employeeModel;
         }
 
+        // 取得所有員工資料
+        public List<EmployeeModel> GetAllEmplData()
+        {
+            List<EmployeeModel> emplList = new List<EmployeeModel>();
+
+            if (this.connectToDB())
+            {
+                try
+                {
+                    DataTable dataSet = new DataTable();
+
+                    String searchString = String.Format("SELECT * FROM employee");
+                    MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
+                    searchCommand.ExecuteNonQuery();
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(searchCommand);
+                    adapter.Fill(dataSet);
+
+                    foreach (DataRow searchDr in dataSet.Rows)
+                    {
+                        EmployeeModel emplModel = new EmployeeModel();
+                        emplModel.SetEmplID(searchDr["emplID"].ToString());
+                        emplModel.SetAddress(searchDr["address"].ToString());
+                        emplModel.SetBasicSalary(System.Convert.ToSingle(searchDr["basicSalary"]));
+                        emplModel.SetBirth(System.Convert.ToDateTime(searchDr["birth"]));
+                        emplModel.SetBlood(searchDr["blood"].ToString());
+                        emplModel.SetDeptID(searchDr["deptID"].ToString());
+                        emplModel.SetEmerPerson(searchDr["emerPerson"].ToString());
+                        emplModel.SetEmerPhone(searchDr["emerPhoneNum"].ToString());
+                        emplModel.SetEmplID(searchDr["emplID"].ToString());
+                        emplModel.SetName(searchDr["emplName"].ToString());
+                        emplModel.SetJobStatus(searchDr["jobStat"].ToString());
+                        emplModel.SetMarriedStatus(searchDr["marriedStat"].ToString());
+                        emplModel.SetMilitaryStatus(searchDr["military"].ToString());
+                        emplModel.SetPhone(searchDr["phone"].ToString());
+                        emplModel.SetPositoinID(searchDr["positionID"].ToString());
+                        emplModel.SetSex(searchDr["sex"].ToString());
+                        emplModel.SetSpouse(searchDr["spouse"].ToString());
+                        emplModel.SetSsn(searchDr["ssn"].ToString());
+                        emplList.Add(emplModel);
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
+                }
+            }
+
+            this.closeConnection();
+
+            return emplList;
+        }
+
     }
 }

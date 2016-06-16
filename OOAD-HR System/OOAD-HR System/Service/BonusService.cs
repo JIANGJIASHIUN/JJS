@@ -66,5 +66,45 @@ namespace OOAD_HR_System.Service
             return true;
         }
 
+        // 以輸入empl ID搜尋員工獎金資料
+        public List<BonusModel> searchBonusByEmplID()
+        {
+            List<BonusModel> bonusList = new List<BonusModel>();
+
+            if (this.connectToDB())
+            {
+                try
+                {
+                    DataTable dataSet = new DataTable();
+
+                    String searchString = String.Format("SELECT * FROM bonus WHERE emplID = '" + this._bonusModel.GetEmplID() + "'");
+                    MySqlCommand searchCommand = new MySqlCommand(searchString, myConnection);
+                    searchCommand.ExecuteNonQuery();
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(searchCommand);
+                    adapter.Fill(dataSet);
+
+                    foreach (DataRow searchDr in dataSet.Rows)
+                    {
+                        BonusModel bonusModel = new BonusModel();
+                        bonusModel.SetEmplID(searchDr["emplID"].ToString());
+                        bonusModel.SetBonusDefID(searchDr["bonusDefID"].ToString());
+                        bonusModel.SetBonusDate(System.Convert.ToDateTime(searchDr["bonusDate"]));
+                        bonusModel.SetBonusT(searchDr["bonusT"].ToString());
+                        bonusList.Add(bonusModel);
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error " + ex.Number + " : " + ex.Message);
+                }
+
+
+            }
+            this.closeConnection();
+
+            return bonusList;
+        }
+
     }
 }

@@ -12,7 +12,7 @@ namespace OOAD_HR_System.Class
         private String _emplID;
         private String _salaryDate;
         private String _salaryT;           // 期別
-        private String _accountData;
+        private String _accountData = null;
         private String _salaryPayWay;
 
         // ---------------------------------------------建構子---------------------------------------------

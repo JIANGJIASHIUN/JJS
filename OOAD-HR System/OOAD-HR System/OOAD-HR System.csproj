@@ -89,6 +89,7 @@
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PositionController.cs" />
+    <Compile Include="Controller\ProduceSalaryController.cs" />
     <Compile Include="Controller\SalaryController.cs" />
     <Compile Include="Controller\WorkAttendanController.cs" />
     <Compile Include="deptDataSet.Designer.cs">
@@ -131,6 +132,7 @@
     <Compile Include="Model\EmployeeModel.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\PositionModel.cs" />
+    <Compile Include="Model\ProduceSalaryModel.cs" />
     <Compile Include="Model\SalaryModel.cs" />
     <Compile Include="Model\WorkAttendanceModel.cs" />
     <Compile Include="positionDataSet.Designer.cs">
@@ -144,6 +146,7 @@
     <Compile Include="PresentationModel\DepartmentPresentationModel.cs" />
     <Compile Include="PresentationModel\EmployeePresentationModel.cs" />
     <Compile Include="PresentationModel\PositionPresentationModel.cs" />
+    <Compile Include="PresentationModel\ProduceSalaryPresentationModel.cs" />
     <Compile Include="PresentationModel\SalaryPresentationModel.cs" />
     <Compile Include="PresentationModel\WorkAttendancePresentationModel.cs" />
     <Compile Include="Program.cs" />
@@ -155,6 +158,7 @@
     <Compile Include="Service\DepartmentService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\PositionService.cs" />
+    <Compile Include="Service\ProduceSalaryService.cs" />
     <Compile Include="Service\SalaryService.cs" />
     <Compile Include="Service\WorkAttendanceService.cs" />
     <EmbeddedResource Include="EmployeeData.resx">

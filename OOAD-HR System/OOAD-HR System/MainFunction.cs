@@ -40,6 +40,9 @@ namespace OOAD_HR_System
         private SalaryPresentationModel _salaryPresentationModel = new SalaryPresentationModel();
         private SalaryController _salaryController;
 
+        private ProduceSalaryPresentationModel _produceSalaryPM = new ProduceSalaryPresentationModel();
+        private ProduceSalaryController _produceController;
+
         public _mainFunction(Form login)
         {
             _login = login;
@@ -1321,6 +1324,27 @@ namespace OOAD_HR_System
                 _addPaywayAccountTB.Visible = true;
                 _addPaywayAccountTB.Enabled = true;
             }
+        }
+
+        // 設置所有產生薪資單UI變數至presnetationModel
+        private void SetAllProduceSalaryVariableToPM()
+        {
+            DateTime startDate = _produceSalaryStartDateDTP.Value.Date;
+            DateTime endDate = _produceSalaryEndDateDTP.Value.Date;
+            String salaryT = _produceSalaryPeriodTB.Text;
+
+            _produceSalaryPM.SetStartDate(startDate);
+            _produceSalaryPM.SetEndDate(endDate);
+            _produceSalaryPM.SetSalaryT(salaryT);
+        }
+
+        // 按下產生新資單按鈕
+        private void ClickProduceSalaryButton(object sender, EventArgs e)
+        {
+            this.SetAllProduceSalaryVariableToPM();
+            
+            _produceController = new ProduceSalaryController(this._produceSalaryPM);
+            _produceController.ProduceSalary();
         }
     }
 }
