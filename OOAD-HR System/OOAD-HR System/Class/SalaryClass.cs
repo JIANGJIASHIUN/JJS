@@ -9,9 +9,9 @@ namespace OOAD_HR_System.Class
     public class SalaryClass
     {
 
-        private DateTime _salaryY;
-        private DateTime _salaryMN;
-        private int _salaryT;           // 期別
+        private String _emplID;
+        private String _salaryDate;
+        private String _salaryT;           // 期別
         private String _accountData;
         private String _salaryPayWay;
 
@@ -23,62 +23,62 @@ namespace OOAD_HR_System.Class
 
         // 以下class的get set皆會與資料庫連接此部分先寫上基本的部份
 
-        // ---------------------------------------------設置薪水年分---------------------------------------------
-        public void setYear(String emplID, DateTime salaryY)
+        // ---------------------------------------------設置員工ID---------------------------------------------
+        public void setemplID(String emplID)
         {
-            this._salaryY = salaryY;
-        }
-
-        // ---------------------------------------------取得薪水年份---------------------------------------------
-        public DateTime getYear(String emplID)
-        {
-            return this._salaryY;
-        }
-
-        // ---------------------------------------------設置薪水月份---------------------------------------------
-        public void setMonth(String emplID, DateTime salaryMN)
-        {
-            this._salaryMN = salaryMN;
+            this._emplID = emplID;
         }
 
         // ---------------------------------------------取得薪水月份---------------------------------------------
-        public DateTime getMonth(String emplID)
+        public String getEmplID()
         {
-            return this._salaryMN;
+            return this._emplID;
+        }
+
+        // ---------------------------------------------設置薪水年月---------------------------------------------
+        public void setDate(String salaryDate)
+        {
+            this._salaryDate = salaryDate;
+        }
+
+        // ---------------------------------------------取得薪水月份---------------------------------------------
+        public String getDate()
+        {
+            return this._salaryDate;
         }
 
         // ---------------------------------------------設置薪水期別---------------------------------------------
-        public void setSalaryT(String emplID, int salaryT)
+        public void setSalaryT(String salaryT)
         {
             this._salaryT = salaryT;
         }
 
         // ---------------------------------------------取得薪水期別---------------------------------------------
-        public int getSalaryT(String emplID)
+        public String getSalaryT()
         {
             return this._salaryT;
         }
 
         // ---------------------------------------------設置員工帳戶資料---------------------------------------------
-        public void setAccountData(String emplID, String accountData)
+        public void setAccountData(String accountData)
         {
             this._accountData = accountData;
         }
 
         // ---------------------------------------------取得員工帳戶資料---------------------------------------------
-        public String getAccountData(String emplID)
+        public String getAccountData()
         {
             return this._accountData;
         }
 
         // ---------------------------------------------設置支付方式---------------------------------------------
-        public void setPayWay(String emplID, String salaryPayWay)
+        public void setPayWay(String salaryPayWay)
         {
             this._salaryPayWay = salaryPayWay;
         }
 
         // ---------------------------------------------取得支付方式---------------------------------------------
-        public String getPayWay(String emplID)
+        public String getPayWay()
         {
             return this._salaryPayWay;
         }

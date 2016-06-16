@@ -37,6 +37,9 @@ namespace OOAD_HR_System
         private BonusPresentationModel _bonusPresentationModel = new BonusPresentationModel();
         private BonusController _bonusController;
 
+        private SalaryPresentationModel _salaryPresentationModel = new SalaryPresentationModel();
+        private SalaryController _salaryController;
+
         public _mainFunction(Form login)
         {
             _login = login;
@@ -66,6 +69,7 @@ namespace OOAD_HR_System
             this.ResetAddBonusDefUI();
             this.ResetEditBonusDefUI();
             this.ResetEditDeptUI();
+            this.ResetNewPaywayUI();
         }
 
         // reset all edit bonus def UI
@@ -1271,6 +1275,52 @@ namespace OOAD_HR_System
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void setAllNewPaymentToPM()
+        {
+            String emplID = _addPaywayEmplIDTB.Text;
+            String payMethod = _addPaywayMethodCB.SelectedItem.ToString();
+            String payAccount = _addPaywayAccountTB.Text;
+
+            this._salaryPresentationModel.setEmplID(emplID);
+            this._salaryPresentationModel.setPayway(payMethod);
+            if (_addPaywayMethodCB.SelectedItem.ToString() == "Transfer")
+                this._salaryPresentationModel.setAccountData(payAccount);
+        }
+
+        private void ResetNewPaywayUI()
+        {
+            _addPaywayEmplIDTB.Text = "";
+            _addPaywayEmplIDTB.Enabled = true;
+            _addPaywayMethodCB.SelectedIndex = 0;
+            _addPaywayMethodCB.Enabled = true;
+            _addPaywayAccountTB.Text = "";
+            _addPaywayAccountTB.Enabled = true;
+        }
+
+        private void ClickAddPaywayButton(object sender, EventArgs e)
+        {
+            this.setAllNewPaymentToPM();
+
+            _salaryController = new SalaryController(_salaryPresentationModel);
+            _salaryController.AddPayway();
+        }
+
+        private void ChangedAddPaywayMethodCBSelectedIndex(object sender, EventArgs e)
+        {
+            if (_addPaywayMethodCB.SelectedIndex == 0)
+            {
+                _addpaywayAccountLB.Visible = false;
+                _addPaywayAccountTB.Visible = false;
+                _addPaywayAccountTB.Enabled = false;
+            }
+            else if (_addPaywayMethodCB.SelectedIndex == 1)
+            {
+                _addpaywayAccountLB.Visible = true;
+                _addPaywayAccountTB.Visible = true;
+                _addPaywayAccountTB.Enabled = true;
+            }
         }
     }
 }
