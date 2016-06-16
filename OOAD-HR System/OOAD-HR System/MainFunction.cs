@@ -1329,7 +1329,6 @@ namespace OOAD_HR_System
             }
         }
 
-<<<<<<< HEAD
         // 設置所有產生薪資單UI變數至presnetationModel
         private void SetAllProduceSalaryVariableToPM()
         {
@@ -1346,10 +1345,11 @@ namespace OOAD_HR_System
         private void ClickProduceSalaryButton(object sender, EventArgs e)
         {
             this.SetAllProduceSalaryVariableToPM();
-            
+
             _produceController = new ProduceSalaryController(this._produceSalaryPM);
             _produceController.ProduceSalary();
-=======
+        }
+
         private void ResetEditPaywayUI()
         {
             _editPaywayEmplIDTB.Enabled = true;
@@ -1439,7 +1439,6 @@ namespace OOAD_HR_System
                 this.ResetEditPaywayVariable();
                 this.ResetEditPaywayUI();
             }
->>>>>>> origin/master
         }
     }
 }
