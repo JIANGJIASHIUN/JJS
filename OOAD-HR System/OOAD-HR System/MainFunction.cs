@@ -1233,5 +1233,44 @@ namespace OOAD_HR_System
         {
 
         }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bonusTableAdapter.FillBy(this.bonusDataSet.bonus, emplIDToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void searchToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bonusTableAdapter.Search(this.bonusDataSet.bonus, emplIDToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.bonusTableAdapter.FillBy1(this.bonusDataSet.bonus, emplIDToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
