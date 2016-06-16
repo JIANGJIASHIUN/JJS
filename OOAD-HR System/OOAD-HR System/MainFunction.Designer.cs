@@ -1297,6 +1297,7 @@
             this._paywayEditButton.TabIndex = 31;
             this._paywayEditButton.Text = "Edit";
             this._paywayEditButton.UseVisualStyleBackColor = true;
+            this._paywayEditButton.Click += new System.EventHandler(this.ClickPaywayEditButton);
             // 
             // _paywaySearchButton
             // 
@@ -1306,6 +1307,7 @@
             this._paywaySearchButton.TabIndex = 30;
             this._paywaySearchButton.Text = "Search";
             this._paywaySearchButton.UseVisualStyleBackColor = true;
+            this._paywaySearchButton.Click += new System.EventHandler(this.ClickPaywaySearchButton);
             // 
             // _editPaywayMethodCB
             // 
@@ -1317,6 +1319,7 @@
             this._editPaywayMethodCB.Name = "_editPaywayMethodCB";
             this._editPaywayMethodCB.Size = new System.Drawing.Size(166, 24);
             this._editPaywayMethodCB.TabIndex = 29;
+            this._editPaywayMethodCB.SelectedIndexChanged += new System.EventHandler(this.ChangededitPaywayMethodCBSelectedIndex);
             // 
             // _editPaywayAccountTB
             // 
