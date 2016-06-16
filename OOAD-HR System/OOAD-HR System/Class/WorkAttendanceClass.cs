@@ -117,7 +117,7 @@ namespace OOAD_HR_System.Class
         }
 
         // 取得加班結束時間
-        public DateTime GetEnOvertime()
+        public DateTime GetEndOvertime()
         {
             return this._endOvertime;
         }

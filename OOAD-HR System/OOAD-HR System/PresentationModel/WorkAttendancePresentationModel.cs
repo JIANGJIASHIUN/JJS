@@ -111,7 +111,7 @@ namespace OOAD_HR_System.PresentationModel
         // 取得加班結束時間
         public DateTime GetEndOvertime()
         {
-            return this._workAttendance.GetEnOvertime();
+            return this._workAttendance.GetEndOvertime();
         }
 
     }

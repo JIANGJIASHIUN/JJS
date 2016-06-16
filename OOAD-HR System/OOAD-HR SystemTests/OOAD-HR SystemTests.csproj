@@ -50,8 +50,20 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Class\AuthorizationClassTests.cs" />
+    <Compile Include="Class\BonusClassTests.cs" />
+    <Compile Include="Class\BonusDefClassTests.cs" />
+    <Compile Include="Class\DepartmentClassTests.cs" />
     <Compile Include="Class\EmployeeClassTests.cs" />
+    <Compile Include="Class\PositionClassTests.cs" />
+    <Compile Include="Class\WorkAttendanceClassTests.cs" />
+    <Compile Include="Model\AuthorizationModelTests.cs" />
+    <Compile Include="Model\BonusDefModelTests.cs" />
+    <Compile Include="Model\BonusModelTests.cs" />
+    <Compile Include="Model\DepartmentModelTests.cs" />
     <Compile Include="Model\EmployeeModelTests.cs" />
+    <Compile Include="Model\PositionModelTests.cs" />
+    <Compile Include="Model\WorkAttendanceModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

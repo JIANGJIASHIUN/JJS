@@ -21,98 +21,98 @@ namespace OOAD_HR_System.Class.Tests
         }
 
         [TestMethod()]
-        public void EmployeeIdTest()
+        public void TestEmployeeId()
         {
             _employee.SetId("test01");
             Assert.AreEqual("test01", _employee.GetId());
         }
 
         [TestMethod()]
-        public void EmployeeNameTest()
+        public void TestEmployeeName()
         {
             _employee.SetName("String");
             Assert.AreEqual("String", _employee.GetName());
         }
 
         [TestMethod()]
-        public void EmployeeSsnTest()
+        public void TestEmployeeSsn()
         {
             _employee.SetSsn("A123456789");
             Assert.AreEqual("A123456789", _employee.GetSsn());
         }
 
         [TestMethod()]
-        public void EmployeeSexTest()
+        public void TestEmployeeSex()
         {
             _employee.SetSex("Man");
             Assert.AreEqual("Man", _employee.GetSex());
         }
 
         [TestMethod()]
-        public void EmployeeBloodTest()
+        public void TestEmployeeBlood()
         {
             _employee.SetBlood("O");
             Assert.AreEqual("O", _employee.GetBlood());
         }
 
         [TestMethod()]
-        public void EmployeePhoneTest()
+        public void TestEmployeePhone()
         {
             _employee.SetPhone("0987654321");
             Assert.AreEqual("0987654321", _employee.GetPhone());
         }
 
         [TestMethod()]
-        public void EmployeeAddressTest()
+        public void TestEmployeeAddress()
         {
             _employee.SetAddress("Taiwan,Taipei");
             Assert.AreEqual("Taiwan,Taipei", _employee.GetAddress());
         }
 
         [TestMethod()]
-        public void EmployeeEmerPersonTest()
+        public void TestEmployeeEmerPerson()
         {
             _employee.SetEmerPerson("TestName");
             Assert.AreEqual("TestName", _employee.GetEmerPerson());
         }
 
         [TestMethod()]
-        public void EmployeeEmerPhoneTest()
+        public void TestEmployeeEmerPhone()
         {
             _employee.SetEmerPhone("0987987987");
             Assert.AreEqual("0987987987", _employee.GetEmerPhone());
         }
 
         [TestMethod()]
-        public void EmployeeMilitaryTest()
+        public void TestEmployeeMilitary()
         {
             _employee.SetMilitary("NO");
             Assert.AreEqual("NO", _employee.GetMilitary());
         }
 
         [TestMethod()]
-        public void EmployeeJobStateTest()
+        public void TestEmployeeJobState()
         {
             _employee.SetJobState("On");
             Assert.AreEqual("On", _employee.GetJobState());
         }
 
         [TestMethod()]
-        public void EmployeeMarriedStateTest()
+        public void TestEmployeeMarriedState()
         {
             _employee.SetMarriedState("Lu");
             Assert.AreEqual("Lu", _employee.GetMarriedState());
         }
 
         [TestMethod()]
-        public void EmployeeSpouseTest()
+        public void TestEmployeeSpouse()
         {
             _employee.SetSpouse("Righthand");
             Assert.AreEqual("Righthand", _employee.GetSpouse());
         }
 
         [TestMethod()]
-        public void EmployeeBirthTest()
+        public void TestEmployeeBirth()
         {
             DateTime dateTime;
             dateTime = new DateTime(2016, 1, 30);
@@ -121,14 +121,14 @@ namespace OOAD_HR_System.Class.Tests
         }
 
         [TestMethod()]
-        public void EmployeeBasicSalaryTest()
+        public void TestEmployeeBasicSalary()
         {
             _employee.SetBasicSalary(9999.99F);
             Assert.AreEqual(9999.99F, _employee.GetBasicSalary());
         }
 
         [TestMethod()]
-        public void EmployeeDeptIdTest()
+        public void TestEmployeeDeptId()
         {
             String st = "test001";
             _employee.SetDeptId(st);
@@ -136,11 +136,10 @@ namespace OOAD_HR_System.Class.Tests
         }
 
         [TestMethod()]
-        public void EmployeePositionIdTest()
+        public void TestEmployeePositionId()
         {
             _employee.SetPositionId("A1");
             Assert.AreEqual("A1", _employee.GetPositionId());
         }
-
     }
 }

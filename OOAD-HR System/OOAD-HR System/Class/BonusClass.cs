@@ -68,6 +68,5 @@ namespace OOAD_HR_System.Class
         {
             return this._bonusT;
         }
-
     }
 }
